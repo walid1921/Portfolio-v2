@@ -2,7 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
-.dot-blur {
-  background-image: radial-gradient(rgba(0, 0, 0, 0) 1px, #161616c9 1px);
-  background-size: 10px 10px;
+@layer utilities {
+  .dot-blur {
+    background-image: radial-gradient(rgba(0, 0, 0, 0) 1px, #161616c9 1px);
+    background-size: 10px 10px;
+  }
+  .animate-spin-slow {
+    animation: spin-slow 10s linear infinite; /* Adjust the duration (10s) as needed */
+  }
+
+  @keyframes spin-slow {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .center-center {
+    @apply flex items-center justify-center;
+  }
+
+  .center-between {
+    @apply flex items-center justify-between;
+  }
+
+  .center-evenly {
+    @apply flex items-center justify-evenly;
+  }
+
+  .container{
+    max-width: 1300px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: auto;
+  }
 }
