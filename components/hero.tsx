@@ -125,7 +125,7 @@ const Hero = () => {
       </svg>
 
       <div className="relative h-[100vh] flex items-center gap-10 lg:w-[60%]">
-        <div className=" flex flex-col items-center  justify-center text-[26px]  md:text-[52px] xl:text-6xl  sm:pl-[8px] md:w-[100%] z-10 gap-4 bg-[rgba(114,114,114,.2)] backdrop-blur-sm xl:border-r-[1px] border-[rgba(114,114,114,.4)] h-[100%] dot-blur">
+        <div className=" flex flex-col items-center  justify-center text-[26px]  md:text-[52px] xl:text-6xl  sm:pl-[8px] md:w-full z-10 gap-4 bg-[rgba(114,114,114,.2)] backdrop-blur-sm xl:border-r-[1px] border-[rgba(114,114,114,.4)] h-full dot-blur">
           <div className="flex flex-col xl:items-start gap-8 px-[20px]">
             <motion.h2
               className="font-medium bg-gradient-to-r from-white to-[#a5a5a5] bg-clip-text text-transparent text-center lg:text-start"

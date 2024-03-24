@@ -1,12 +1,28 @@
 "use client";
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
+
 import { links } from "@/lib/data";
 import Link from "next/link";
 import Hamburger from "hamburger-react";
 import { BsGithub } from "react-icons/bs";
 import { FiInstagram } from "react-icons/fi";
 import { FaLinkedin } from "react-icons/fa";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+
+const itemVariants: Variants = {
+  closed: { opacity: 0, transition: { duration: 0.2 }, x: 100 },
+  open: {
+    opacity: 1,
+    transition: { duration: 0.3, ease: "easeInOut" },
+    x: 0,
+  },
+};
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +34,7 @@ export default function Header() {
   return (
     <header className="z-[999] relative">
       <motion.nav
-        className="fixed top-4 lg:flex lg:justify-center lg:items-center w-full xl:justify-end md:top-0 xl:right-24 2xl:right-[80px] z-[999]"
+        className="fixed top-4 lg:flex lg:justify-center lg:items-center w-full xl:justify-end md:top-0 xl:right-24 2xl:right-[70px] z-[999]"
         initial={{ x: 100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
       >
@@ -27,8 +43,6 @@ export default function Header() {
             <motion.li
               key={link.hash}
               className="nav-item hover-navLink font-semibold"
-              initial={{ y: -10, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
             >
               <Link
                 className=" hover:text-white ease-in duration-150 font-semibold"
@@ -62,41 +76,108 @@ export default function Header() {
       >
         <ul className="center-center flex-col h-full gap-20 bg-[rgba(12,12,12,0.35)]  backdrop-blur-sm border-l-[1px] border-neutral-700 border-bg-white/20 md:text-lg text-md">
           {links.map((link) => (
-            <li
+            <motion.li
               key={link.hash}
+              variants={itemVariants} // Add variants here
+              animate={isOpen ? "open" : "closed"} // Apply animation based on isOpen state
               className="relative font-semibold hover:text-white transition-all ease-in duration-150 cursor-pointer"
             >
               <Link href={link.hash}>{link.name}</Link>
-            </li>
+            </motion.li>
           ))}
         </ul>
       </div>
 
       <div className="hidden md:flex fixed bottom-0 right-0  flex-col">
-        <Link
-          href="https://github.com/walid1921?tab=repositories"
-          target="_blank" // Opens the link in a new tab
-          rel="noopener noreferrer" // Security reasons
-          className=" p-2 mb-5 mr-5 bg-[rgba(114,114,114,0.21)]  backdrop-blur-sm  z-30 rounded-full hover:cursor-pointer transition-all ease-in-out duration-300 hover:bg-primary hover:text-white opacity-50 hover:opacity-100"
+        <motion.nav
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{
+            delay: 2.6,
+          }}
         >
-          <BsGithub size={28} />
-        </Link>
-        <Link
-          href="https://www.linkedin.com/in/walid-kouider-ayad"
-          target="_blank" // Opens the link in a new tab
-          rel="noopener noreferrer" // Security reasons
-          className=" p-2 mb-5 mr-5 bg-[rgba(114,114,114,0.21)]  backdrop-blur-sm  z-30 rounded-full hover:cursor-pointer transition-all ease-in-out duration-300 hover:bg-primary hover:text-white opacity-50 hover:opacity-100"
+          <TooltipProvider delayDuration={100} skipDelayDuration={100}>
+            <Tooltip>
+              <TooltipTrigger className=" p-2 mb-3 mr-5 bg-[rgba(114,114,114,0.21)]  backdrop-blur-sm  z-30 rounded-full hover:cursor-pointer transition-all ease-in-out duration-300 hover:bg-primary hover:text-white opacity-50 hover:opacity-100">
+                <Link
+                  href="https://github.com/walid1921?tab=repositories"
+                  target="_blank" // Opens the link in a new tab
+                  rel="noopener noreferrer" // Security reasons
+                >
+                  <BsGithub size={28} />
+                </Link>
+              </TooltipTrigger>
+              <TooltipContent
+                className=" rounded-full "
+                sideOffset={10}
+                align="center"
+                side="left"
+              >
+                <p>Github</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        </motion.nav>
+
+        <motion.nav
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{
+            delay: 2.8,
+          }}
         >
-          <FaLinkedin size={28} />
-        </Link>
-        <Link
-          href="https://instagram.com/dev.n.des?igshid=Y2IzZGU1MTFhOQ=="
-          target="_blank" // Opens the link in a new tab
-          rel="noopener noreferrer" // Security reasons
-          className=" p-2 mb-5 mr-5 bg-[rgba(114,114,114,0.21)]  backdrop-blur-sm  z-30 rounded-full hover:cursor-pointer transition-all ease-in-out duration-300 hover:bg-primary hover:text-white opacity-50 hover:opacity-100"
+          <TooltipProvider delayDuration={100} skipDelayDuration={100}>
+            <Tooltip>
+              <TooltipTrigger className=" p-2 mb-3 mr-5 bg-[rgba(114,114,114,0.21)]  backdrop-blur-sm  z-30 rounded-full hover:cursor-pointer transition-all ease-in-out duration-300 hover:bg-primary hover:text-white opacity-50 hover:opacity-100">
+                <Link
+                  href="https://www.linkedin.com/in/walid-kouider-ayad"
+                  target="_blank" // Opens the link in a new tab
+                  rel="noopener noreferrer" // Security reasons
+                >
+                  <FaLinkedin size={28} />
+                </Link>
+              </TooltipTrigger>
+              <TooltipContent
+                className=" rounded-full "
+                sideOffset={10}
+                align="center"
+                side="left"
+              >
+                <p>Linkedin</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>{" "}
+        </motion.nav>
+
+        <motion.nav
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{
+            delay: 3,
+          }}
         >
-          <FiInstagram size={28} />
-        </Link>
+          <TooltipProvider delayDuration={100} skipDelayDuration={100}>
+            <Tooltip>
+              <TooltipTrigger className=" p-2 mb-3 mr-5 bg-[rgba(114,114,114,0.21)]  backdrop-blur-sm  z-30 rounded-full hover:cursor-pointer transition-all ease-in-out duration-300 hover:bg-primary hover:text-white opacity-50 hover:opacity-100">
+                <Link
+                  href="https://instagram.com/dev.n.des?igshid=Y2IzZGU1MTFhOQ=="
+                  target="_blank" // Opens the link in a new tab
+                  rel="noopener noreferrer" // Security reasons
+                >
+                  <FiInstagram size={28} />
+                </Link>
+              </TooltipTrigger>
+              <TooltipContent
+                className=" rounded-full "
+                sideOffset={10}
+                align="center"
+                side="left"
+              >
+                <p>Instagram</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>{" "}
+        </motion.nav>
       </div>
     </header>
   );

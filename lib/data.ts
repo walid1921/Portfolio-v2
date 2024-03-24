@@ -8,6 +8,7 @@ import portfolioImg06 from "@/public/portfolio6.png";
 import portfolioImg07 from "@/public/portfolio7.png";
 import portfolioImg08 from "@/public/portfolio8.png";
 import portfolioImg09 from "@/public/portfolio9.png";
+import { SiPrisma } from "react-icons/si";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
@@ -562,11 +563,21 @@ export const skillsData = [
   },
   {
     id: "sql",
-    name: "SQL",
+    name: "Mysql",
     icon: React.createElement(SiPostgresql),
     color: "#3490dc",
     borderColor: "#1E90FF",
     bgColor: "from-[#1E90FF] to-[#0a2540]",
+    value: 70,
+    percentage: "70%",
+  },
+  {
+    id: "prisma",
+    name: "Prisma",
+    icon: React.createElement(SiPrisma),
+    color: "#fff",
+    borderColor: "#fff",
+    bgColor: "from-[#fff] to-[#fff]",
     value: 70,
     percentage: "70%",
   },
