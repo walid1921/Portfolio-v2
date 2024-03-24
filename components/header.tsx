@@ -4,6 +4,9 @@ import { motion } from "framer-motion";
 import { links } from "@/lib/data";
 import Link from "next/link";
 import Hamburger from "hamburger-react";
+import { BsGithub } from "react-icons/bs";
+import { FiInstagram } from "react-icons/fi";
+import { FaLinkedin } from "react-icons/fa";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -67,6 +70,33 @@ export default function Header() {
             </li>
           ))}
         </ul>
+      </div>
+
+      <div className="hidden md:flex fixed bottom-0 right-0  flex-col">
+        <Link
+          href="https://github.com/walid1921?tab=repositories"
+          target="_blank" // Opens the link in a new tab
+          rel="noopener noreferrer" // Security reasons
+          className=" p-2 mb-5 mr-5 bg-[rgba(114,114,114,0.21)]  backdrop-blur-sm  z-30 rounded-full hover:cursor-pointer transition-all ease-in-out duration-300 hover:bg-primary hover:text-white opacity-50 hover:opacity-100"
+        >
+          <BsGithub size={28} />
+        </Link>
+        <Link
+          href="https://www.linkedin.com/in/walid-kouider-ayad"
+          target="_blank" // Opens the link in a new tab
+          rel="noopener noreferrer" // Security reasons
+          className=" p-2 mb-5 mr-5 bg-[rgba(114,114,114,0.21)]  backdrop-blur-sm  z-30 rounded-full hover:cursor-pointer transition-all ease-in-out duration-300 hover:bg-primary hover:text-white opacity-50 hover:opacity-100"
+        >
+          <FaLinkedin size={28} />
+        </Link>
+        <Link
+          href="https://instagram.com/dev.n.des?igshid=Y2IzZGU1MTFhOQ=="
+          target="_blank" // Opens the link in a new tab
+          rel="noopener noreferrer" // Security reasons
+          className=" p-2 mb-5 mr-5 bg-[rgba(114,114,114,0.21)]  backdrop-blur-sm  z-30 rounded-full hover:cursor-pointer transition-all ease-in-out duration-300 hover:bg-primary hover:text-white opacity-50 hover:opacity-100"
+        >
+          <FiInstagram size={28} />
+        </Link>
       </div>
     </header>
   );

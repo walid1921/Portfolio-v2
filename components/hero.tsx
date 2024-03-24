@@ -159,7 +159,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{
                 duration: 1.1,
-                delay: 1.2,
+                delay: 1.1,
                 type: "tween",
                 ease: "easeInOut",
               }}
@@ -179,7 +179,17 @@ const Hero = () => {
               </span>
             </motion.p>
 
-            <div className="center-center gap-6 mt-10">
+            <motion.div
+              className="center-center gap-6 mt-10"
+              initial={{ opacity: 0, y: 100 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 1.1,
+                delay: 1.3,
+                type: "tween",
+                ease: "easeInOut",
+              }}
+            >
               <Button
                 text="Let's talk"
                 bgColor="#289061"
@@ -189,7 +199,7 @@ const Hero = () => {
               />
               <Button
                 text="Download CV"
-                bgColor="white"
+                bgColor="transparent"
                 borderColor="#727272b3"
                 hoverBg="#72727233"
                 icon={<BsCloudDownloadFill size={18} />}
@@ -199,7 +209,7 @@ const Hero = () => {
                 <BsCloudDownloadFill size={18} />
               
               </button> */}
-            </div>
+            </motion.div>
           </div>
         </div>
         {/* <div className='image-container relative hidden md:block animate-moveInRight'>
