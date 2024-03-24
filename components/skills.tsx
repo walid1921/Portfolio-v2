@@ -203,13 +203,11 @@ const Skills = () => {
                     <div className="w-[110px] h-2 m-5">
                       <div className="relative w-full h-full  rounded-lg bg-slate-200  flex justify-end">
                         <div
-                          className={`absolute left-0 bg-gradient-to-br ${
-                            data.bgColor
-                          } border rounded-full h-full transition-all ease-in-out duration-500 ${
-                            skillWindow ? "tooltip-bar" : ""
-                          }`}
+                          className={`absolute left-0  border rounded-full h-full 
+                          `}
                           style={{
-                            width: skillWindow ? `${data.value}%` : "0%",
+                            width: `${data.value}%`,
+                            backgroundColor: `${data.bgColor}`,
                           }}
                         ></div>
                       </div>
