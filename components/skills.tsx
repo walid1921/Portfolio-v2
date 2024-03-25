@@ -25,6 +25,8 @@ import { skillsData } from "@/lib/data";
 import { TbBrandNextjs } from "react-icons/tb";
 import Image from "next/image";
 import { useScroll, useTransform, motion } from "framer-motion";
+import { useSectionInView } from "@/lib/hooks";
+import { once } from "events";
 
 //! hoveredIconData
 const hoveredIconData = [
@@ -158,11 +160,27 @@ const hoveredIconData = [
   },
 ];
 
+const fadeInAnimationVariants = {
+  initial: {
+    opacity: 0,
+    y: 30,
+  },
+  animate: (index: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.05 * index,
+      ease: "easeInOut",
+      type: "tween",
+    },
+  }),
+};
+
 const Skills = () => {
-  const ref = useRef<HTMLElement>(null);
+  const ref2 = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
-    target: ref,
+    target: ref2,
     offset: ["0 1", "1.33 1"],
   });
   const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
@@ -173,98 +191,105 @@ const Skills = () => {
   const [skillWindow, setSkillWindow] = useState(false);
   const tooltipRef = useRef<HTMLDivElement>(null);
 
+  const { ref } = useSectionInView("Skills");
+
   return (
-    <motion.section
+    <motion.div
       style={{
         scale: scaleProgress,
         opacity: opacityProgress,
       }}
-      ref={ref}
-      className="mb-20 scroll-mt-28"
-      id="skills"
+      ref={ref2}
     >
-      <div className="relative container flex-col items-start justify-around rounded-md py-[50px] md:pb-[100px]  bg-gradient-to-br from-[#272727] to-[#1a1a1a] padding-x padding-t pb-8">
-        <p className="text-2xl font-medium bg-gradient-to-br from-white to-[#000000] bg-clip-text text-transparent md:mb-16 mb-10">
-          Skills & Development Tools
-        </p>
+      <section className="mb-20 scroll-mt-28" id="skills" ref={ref}>
+        <div className="relative container flex-col items-start justify-around rounded-md py-[50px] md:pb-[100px]  bg-gradient-to-br from-[#272727] to-[#1a1a1a] padding-x padding-t pb-8">
+          <p className="text-2xl font-medium bg-gradient-to-br from-white to-[#000000] bg-clip-text text-transparent md:mb-16 mb-10">
+            Skills & Development Tools
+          </p>
 
-        <div>
-          <div
-            ref={tooltipRef}
-            className={`absolute hidden md:block top-0  sm:top-[10px] sm:right-[10px] bg-white/10  w-auto rounded-lg ease-in-out duration-300 ${
-              skillWindow ? "scale-100" : "scale-0"
-            }`}
-            style={{
-              transformOrigin: "center-center",
-              opacity: skillWindow ? 1 : 0,
-            }}
-          >
-            {skillsData.map(
-              (data) =>
-                data.id === hoveredIcon && (
-                  <div
-                    key={data.id}
-                    className="flex   items-center px-2  sm:px-2  border rounded-lg border-gray-300 "
-                    style={{ borderColor: `${data.borderColor}` }}
-                  >
-                    <div
-                      className="mr-1 bg-cover"
-                      style={{ color: `${data.color}` }}
-                    >
-                      {data.icon}
-                    </div>
-
-                    <p className="fira-font text-[12px] ml-2 font-medium">
-                      {data.name}
-                    </p>
-
-                    <div className="w-[110px] h-2 m-5">
-                      <div className="relative w-full h-full  rounded-lg bg-slate-200  flex justify-end">
-                        <div
-                          className={`absolute left-0  border rounded-full h-full 
-                          `}
-                          style={{
-                            width: `${data.value}%`,
-                            backgroundColor: `${data.bgColor}`,
-                          }}
-                        ></div>
-                      </div>
-                    </div>
-
-                    <span className="fira-font text-[12px] font-medium">
-                      {data.percentage}
-                    </span>
-                  </div>
-                )
-            )}
-          </div>
-        </div>
-
-        <div className="center-center gap-8 flex-wrap xl:px-[260px]">
-          {hoveredIconData.map((icon) => (
+          <div>
             <div
-              key={icon.id}
-              onMouseEnter={() => {
-                setIsOpen(true);
-                setHoveredIcon(icon.id);
-                setSkillWindow(true);
+              ref={tooltipRef}
+              className={`absolute hidden md:block top-0  sm:top-[10px] sm:right-[10px] bg-white/10  w-auto rounded-lg ease-in-out duration-300 ${
+                skillWindow ? "scale-100" : "scale-0"
+              }`}
+              style={{
+                transformOrigin: "center-center",
+                opacity: skillWindow ? 1 : 0,
               }}
-              onMouseLeave={() => {
-                setIsOpen(false);
-                setHoveredIcon(null);
-                setSkillWindow(false);
-              }}
-              className="md:opacity-70 hover:opacity-100 transition-all ease-in-out duration-250 hover:cursor-pointer"
             >
-              {icon.icon}
+              {skillsData.map(
+                (data) =>
+                  data.id === hoveredIcon && (
+                    <div
+                      key={data.id}
+                      className="flex   items-center px-2  sm:px-2  border rounded-lg border-gray-300 "
+                      style={{ borderColor: `${data.borderColor}` }}
+                    >
+                      <div
+                        className="mr-1 bg-cover"
+                        style={{ color: `${data.color}` }}
+                      >
+                        {data.icon}
+                      </div>
+
+                      <p className="fira-font text-[12px] ml-2 font-medium">
+                        {data.name}
+                      </p>
+
+                      <div className="w-[110px] h-2 m-5">
+                        <div className="relative w-full h-full  rounded-lg bg-slate-200  flex justify-end">
+                          <div
+                            className={`absolute left-0  border rounded-full h-full 
+                          `}
+                            style={{
+                              width: `${data.value}%`,
+                              backgroundColor: `${data.bgColor}`,
+                            }}
+                          ></div>
+                        </div>
+                      </div>
+
+                      <span className="fira-font text-[12px] font-medium">
+                        {data.percentage}
+                      </span>
+                    </div>
+                  )
+              )}
             </div>
-          ))}
-          <div className="absolute bottom-4 right-6 text-sm hidden md:block">
-            Hover over a skill for current proficiency
           </div>
+
+          <ul className="center-center gap-8 flex-wrap xl:px-[260px]">
+            {hoveredIconData.map((icon, index) => (
+              <motion.li
+                variants={fadeInAnimationVariants}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+                custom={index}
+                key={icon.id}
+                onMouseEnter={() => {
+                  setIsOpen(true);
+                  setHoveredIcon(icon.id);
+                  setSkillWindow(true);
+                }}
+                onMouseLeave={() => {
+                  setIsOpen(false);
+                  setHoveredIcon(null);
+                  setSkillWindow(false);
+                }}
+                className="md:opacity-70 hover:opacity-100 transition-all ease-in-out duration-250 hover:cursor-pointer"
+              >
+                {icon.icon}
+              </motion.li>
+            ))}
+            <div className="absolute bottom-4 right-6 text-sm hidden md:block">
+              Hover over a skill for current proficiency
+            </div>
+          </ul>
         </div>
-      </div>
-    </motion.section>
+      </section>
+    </motion.div>
   );
 };
 

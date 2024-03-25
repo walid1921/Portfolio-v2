@@ -496,10 +496,7 @@ export const skillsData = [
 export const SoftSkills = [
   {
     id: "01",
-    category: "Soft Skills",
-
-    title: "Languages",
-    subtitle: "(English, Arabic, French, German)",
+    title: "Languages : English - Arabic - French - German)",
   },
   {
     id: "02",
@@ -513,7 +510,7 @@ export const SoftSkills = [
     id: "04",
     title: "Content Creation",
   },
-] as const;
+];
 
 //! Online Courses
 export const OnlineCourses = [
@@ -568,4 +565,26 @@ export const OnlineCourses = [
     linkUrl:
       "https://learndigital-staging.withgoogle.com/digitalgarage/course/digital-marketing",
   },
-] as const;
+];
+
+//! Education
+export const EducationData = [
+  {
+    id: "1",
+    title: "Web & App Development Bootcamp",
+    subtitle: "(wbs coding school - Berlin)",
+    linkUrl: "https://www.wbscodingschool.com/",
+  },
+  {
+    id: "2",
+    title: "Master : Environmental Process Engineering",
+    subtitle: "(2021)",
+    linkUrl: "https://www.wbscodingschool.com/",
+  },
+  {
+    id: "3",
+    title: "Bachelor : Process Engineering",
+    subtitle: "(2018)",
+    linkUrl: "https://www.wbscodingschool.com/",
+  },
+];

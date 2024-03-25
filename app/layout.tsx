@@ -1,7 +1,7 @@
 import Header from "@/components/header";
 import "./globals.css";
 import { Nunito } from "next/font/google";
-import ActiveSectionContextProvider from "@/context/activeSectionContext";
+import { ActiveSectionContextProvider } from "@/context/activeSectionContext";
 
 const font = Nunito({ subsets: ["latin"] });
 

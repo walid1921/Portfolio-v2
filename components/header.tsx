@@ -15,6 +15,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
+import { useActiveSection } from "@/context/activeSectionContext";
 
 const itemVariants: Variants = {
   closed: { opacity: 0, transition: { duration: 0.2 }, x: 100 },
@@ -27,6 +28,8 @@ const itemVariants: Variants = {
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const { activeSection, setActiveSection, setTimeOfLastClick } =
+    useActiveSection();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -48,10 +51,13 @@ export default function Header() {
               <Link
                 className={cn(
                   "hover:text-white ease-in duration-150 font-semibold",
-                  { "text-white": activeSection === link.name }
+                  { "text-white py-3 px-6": activeSection === link.name }
                 )}
                 href={link.hash}
-                onClick={() => setActiveSection(link.name)}
+                onClick={() => {
+                  setActiveSection(link.name);
+                  setTimeOfLastClick(Date.now());
+                }}
               >
                 {link.name}
 
@@ -63,7 +69,7 @@ export default function Header() {
                       stiffness: 380,
                       damping: 30,
                     }}
-                    className="bg-[rgba(114,114,114,0.42)] rounded-full inset-0 absolute  -z-10 "
+                    className="bg-[rgba(114,114,114,0.42)] rounded-full inset-0 absolute -z-10 py-4 -top-[5px] "
                   ></motion.span>
                 )}
               </Link>

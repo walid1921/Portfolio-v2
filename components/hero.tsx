@@ -11,10 +11,13 @@ import { motion } from "framer-motion";
 import { BsCloudDownloadFill, BsFillSendFill } from "react-icons/bs";
 import Image from "next/image";
 import Button from "./ui/button";
+import { useSectionInView } from "@/lib/hooks";
 
 const Hero = () => {
+  const { ref } = useSectionInView("Home");
+
   return (
-    <section className="relative overflow-hidden" id="home">
+    <section className="relative overflow-hidden" id="home" ref={ref}>
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}

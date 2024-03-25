@@ -1,11 +1,14 @@
 "use client";
 import { useScroll, motion, useTransform } from "framer-motion";
 import React, { useRef } from "react";
+import { useSectionInView } from "@/lib/hooks";
 
 const About = () => {
-  const ref = useRef<HTMLDivElement>(null);
+  const { ref } = useSectionInView("About");
+
+  const ref2 = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
-    target: ref,
+    target: ref2,
     offset: ["0.8 1", "1.33 1"],
   });
   const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
@@ -19,9 +22,9 @@ const About = () => {
         opacity: opacityProgress,
       }}
       className=" scroll-mt-28"
-      ref={ref}
+      ref={ref2}
     >
-      <section id="about" className="  my-20 text-[#bbbbbb]">
+      <section ref={ref} id="about" className="  my-20 text-[#bbbbbb]">
         <div className="container ">
           <p className="text-2xl font-medium bg-gradient-to-br from-white to-[#000000] bg-clip-text text-transparent md:mb-10 mb-10">
             About

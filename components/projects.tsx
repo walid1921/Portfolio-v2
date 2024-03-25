@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { projectsData } from "@/lib/data";
 import { BsGithub } from "react-icons/bs";
 import { HiOutlineStatusOnline } from "react-icons/hi";
@@ -11,12 +11,14 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import Link from "next/link";
-
+import { useSectionInView } from "@/lib/hooks";
 
 const Projects = () => {
   const [nextItems, setNextItems] = useState(4);
   const [project, setProject] = useState(projectsData);
   const [filter, setFilter] = useState("all");
+
+  const { ref } = useSectionInView("Projects", 0.5);
 
   const loadHandler = () => {
     setNextItems((prev) => prev + 3);
@@ -42,9 +44,12 @@ const Projects = () => {
     }
   }, [filter]);
 
-
   return (
-    <section id="projects" className="flex justify-center mb-20 scroll-mt-28">
+    <section
+      ref={ref}
+      id="projects"
+      className="flex justify-center mb-20 scroll-mt-28"
+    >
       <div className="max-w-[1300px]">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between ">
           <p className="text-2xl pl-[20px] font-medium bg-gradient-to-br from-white to-[#000000] bg-clip-text text-transparent mb-10">
@@ -79,7 +84,7 @@ const Projects = () => {
         <div className="flex items-center gap-4 flex-wrap mt-12 ">
           {project?.slice(0, nextItems)?.map((project) => (
             <div
-              className="relative mx-2 md:mx-0 group sm:w-full md:w-[49%] w-full h-[250px] lg:h-[400px] rounded-md "
+              className="relative mx-2 md:mx-0 group sm:w-full md:w-[49%] w-full h-[250px] lg:h-[400px] rounded-md cursor-pointer "
               key={project.id}
             >
               <Image
@@ -87,66 +92,70 @@ const Projects = () => {
                 src={project.imgUrl}
                 alt={project.title}
               />
+              <div className="h-full w-full absolute inset-0 hover:backdrop-blur-sm transition-all ease-in duration-300 flex justify-center items-start opacity-0 hover:opacity-100">
+                {/* <motion.a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="bg-[#000000] bg-opacity-50 text-white text-lg font-semibold px-4 py-2 rounded-md z-10 select-none"
+                >
+                  View Github
+                </motion.a> */}
+
+                <div className=" flex gap-10 items-center mt-32  transition-all ease-in duration-300">
+                  {" "}
+                  <TooltipProvider delayDuration={100} skipDelayDuration={100}>
+                    <Tooltip>
+                      <TooltipTrigger className="z-30 rounded-full hover:cursor-pointer transition-all ease-in-out duration-300 text-white ">
+                        <Link
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="h hover:scale-75"
+                        >
+                          <BsGithub size={50} />
+                        </Link>
+                      </TooltipTrigger>
+
+                      <TooltipContent
+                        className=" border border-[#fff] text-[#fff] rounded-md px-2 py-1  bg-black/20 backdrop-blur-md text-xs"
+                        sideOffset={10}
+                        align="center"
+                        side="top"
+                      >
+                        <p>Github</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                  <TooltipProvider delayDuration={100} skipDelayDuration={100}>
+                    <Tooltip>
+                      <TooltipTrigger className="z-30 rounded-full hover:cursor-pointer transition-all ease-in-out duration-300 hover:text-white">
+                        <Link
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <HiOutlineStatusOnline size={50} color="#5fcf65a3" />
+                        </Link>
+                      </TooltipTrigger>
+
+                      <TooltipContent
+                        className=" border border-[#5fcf65a3] rounded-md px-2 py-1  bg-[#5fcf656a] backdrop-blur-md text-xs"
+                        sideOffset={10}
+                        align="center"
+                        side="top"
+                      >
+                        <p className="text-[#fff]">Live</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                </div>
+              </div>
               <div className="absolute  bottom-0 left-0 md:px-4 px-2 py-1 md:py-4 right-3 z-1 bg-black/20 backdrop-blur-md w-full ">
                 <div className="flex justify-between items-center">
                   <p className="  md:text-xl font-semibold">{project.title}</p>
-                  <div className="flex gap-4 items-center">
-                    {" "}
-                    <TooltipProvider
-                      delayDuration={100}
-                      skipDelayDuration={100}
-                    >
-                      <Tooltip>
-                        <TooltipTrigger className="z-30 rounded-full hover:cursor-pointer transition-all ease-in-out duration-300 hover:text-white ">
-                          <Link
-                            href={project.githubUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <BsGithub size={20} />
-                          </Link>
-                        </TooltipTrigger>
-
-                        <TooltipContent
-                          className=" border border-[#bab7b766] rounded-md px-2 py-1  bg-black/20 backdrop-blur-md text-xs"
-                          sideOffset={10}
-                          align="center"
-                          side="top"
-                        >
-                          <p>Github</p>
-                        </TooltipContent>
-                      </Tooltip>
-                    </TooltipProvider>
-                    <TooltipProvider
-                      delayDuration={100}
-                      skipDelayDuration={100}
-                    >
-                      <Tooltip>
-                        <TooltipTrigger className="z-30 rounded-full hover:cursor-pointer transition-all ease-in-out duration-300 hover:text-white">
-                          <Link
-                            href={project.liveUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="animate-lightInfinite"
-                          >
-                            <HiOutlineStatusOnline
-                              size={26}
-                              color="#5fcf65a3"
-                            />
-                          </Link>
-                        </TooltipTrigger>
-
-                        <TooltipContent
-                          className=" border border-[#5fcf65a3] rounded-md px-2 py-1  bg-black/20 backdrop-blur-md text-xs"
-                          sideOffset={10}
-                          align="center"
-                          side="top"
-                        >
-                          <p className="text-[#5fcf65a3]">Live</p>
-                        </TooltipContent>
-                      </Tooltip>
-                    </TooltipProvider>
-                  </div>
                 </div>
 
                 <p className=" text-sm overflow-hidden text-ellipsis whitespace-nowrap pr-36 mb-1 md:my-2">
