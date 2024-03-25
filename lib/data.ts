@@ -237,74 +237,74 @@ export const projectsData = [
     liveUrl: "https://my-travellist.netlify.app/",
   },
 
-  {
-    id: 7,
-    imgUrl: portfolioImg06,
-    category: "Landing Page",
-    title: "Nike website",
-    description:
-      "Responsive landing page using REACT and TAILWIND, demonstrating proficiency in cross-device compatibility. The result is a polished, user-friendly interface that adapts seamlessly to various screen sizes.",
-    technologies: [
-      {
-        icon: React.createElement(FaReact),
-        color: "#61DAFB",
-      },
-      {
-        icon: React.createElement(SiTailwindcss),
-        color: "#3490dc",
-      },
-    ],
-    githubUrl: "https://github.com/walid1921/nike.git",
-    liveUrl: "https://nike-walid.netlify.app/",
-  },
-  {
-    id: 8,
-    imgUrl: portfolioImg07,
-    category: "App",
-    title: "Mapty App",
-    description:
-      "Fitness Tracking Web App Created with HTML, CSS, and Vanilla JAVASCRIPT. This app helps users easily keep track of their workouts and organizing their fitness routine. It smoothly loads maps from Leaflet api to show workout routes. It also uses location information for accurate tracking of runs and bike rides.",
-    technologies: [
-      {
-        icon: React.createElement(SiHtml5),
-        color: "#FF4400",
-      },
-      {
-        icon: React.createElement(SiCss3),
-        color: "#1E90FF",
-      },
-      {
-        icon: React.createElement(SiJavascript),
-        color: "#F7DF1E",
-      },
-    ],
-    githubUrl: "https://github.com/walid1921/Mapty-App.git",
-    liveUrl: "https://mapty-walid.netlify.app/",
-  },
-  {
-    id: 9,
-    imgUrl: portfolioImg05,
-    category: "App",
-    title: "Bankist",
-    description:
-      "A dynamic banking application using HTML, SASS, and Vanilla JAVASCRIPT. This user-friendly platform enables secure login, hassle-free money transfers between users, loan requests from the bank, and smooth account closure. Additionally, a timed logout feature enhances security. Explore this intuitive banking solution, showcasing the power of modern web technologies. (Account 1: (owner: js, pin: 1111) / Account 2: (owner: jd, pin: 2222)) ",
-    technologies: [
-      {
-        icon: React.createElement(SiHtml5),
-        color: "#FF4400",
-      },
-      {
-        icon: React.createElement(FaSass),
-        color: "#CD6799",
-      },
-      {
-        icon: React.createElement(SiJavascript),
-        color: "#F7DF1E",
-      },
-    ],
-    githubUrl: "https://github.com/walid1921/Bank-web.git",
-    liveUrl: "https://bankist-walid.netlify.app/",
-  },
+  // {
+  //   id: 7,
+  //   imgUrl: portfolioImg06,
+  //   category: "Landing Page",
+  //   title: "Nike website",
+  //   description:
+  //     "Responsive landing page using REACT and TAILWIND, demonstrating proficiency in cross-device compatibility. The result is a polished, user-friendly interface that adapts seamlessly to various screen sizes.",
+  //   technologies: [
+  //     {
+  //       icon: React.createElement(FaReact),
+  //       color: "#61DAFB",
+  //     },
+  //     {
+  //       icon: React.createElement(SiTailwindcss),
+  //       color: "#3490dc",
+  //     },
+  //   ],
+  //   githubUrl: "https://github.com/walid1921/nike.git",
+  //   liveUrl: "https://nike-walid.netlify.app/",
+  // },
+  // {
+  //   id: 8,
+  //   imgUrl: portfolioImg07,
+  //   category: "App",
+  //   title: "Mapty App",
+  //   description:
+  //     "Fitness Tracking Web App Created with HTML, CSS, and Vanilla JAVASCRIPT. This app helps users easily keep track of their workouts and organizing their fitness routine. It smoothly loads maps from Leaflet api to show workout routes. It also uses location information for accurate tracking of runs and bike rides.",
+  //   technologies: [
+  //     {
+  //       icon: React.createElement(SiHtml5),
+  //       color: "#FF4400",
+  //     },
+  //     {
+  //       icon: React.createElement(SiCss3),
+  //       color: "#1E90FF",
+  //     },
+  //     {
+  //       icon: React.createElement(SiJavascript),
+  //       color: "#F7DF1E",
+  //     },
+  //   ],
+  //   githubUrl: "https://github.com/walid1921/Mapty-App.git",
+  //   liveUrl: "https://mapty-walid.netlify.app/",
+  // },
+  // {
+  //   id: 9,
+  //   imgUrl: portfolioImg05,
+  //   category: "App",
+  //   title: "Bankist",
+  //   description:
+  //     "A dynamic banking application using HTML, SASS, and Vanilla JAVASCRIPT. This user-friendly platform enables secure login, hassle-free money transfers between users, loan requests from the bank, and smooth account closure. Additionally, a timed logout feature enhances security. Explore this intuitive banking solution, showcasing the power of modern web technologies. (Account 1: (owner: js, pin: 1111) / Account 2: (owner: jd, pin: 2222)) ",
+  //   technologies: [
+  //     {
+  //       icon: React.createElement(SiHtml5),
+  //       color: "#FF4400",
+  //     },
+  //     {
+  //       icon: React.createElement(FaSass),
+  //       color: "#CD6799",
+  //     },
+  //     {
+  //       icon: React.createElement(SiJavascript),
+  //       color: "#F7DF1E",
+  //     },
+  //   ],
+  //   githubUrl: "https://github.com/walid1921/Bank-web.git",
+  //   liveUrl: "https://bankist-walid.netlify.app/",
+  // },
 ] as const;
 
 //! Skills

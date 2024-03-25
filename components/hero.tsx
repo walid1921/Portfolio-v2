@@ -128,7 +128,7 @@ const Hero = () => {
         <div className=" flex flex-col items-center  justify-center text-[26px]  md:text-[52px] xl:text-6xl  sm:pl-[8px] md:w-full z-10 gap-4 bg-[rgba(114,114,114,.2)] backdrop-blur-sm xl:border-r-[1px] border-[rgba(114,114,114,.4)] h-full dot-blur">
           <div className="flex flex-col xl:items-start gap-8 px-[20px]">
             <motion.h2
-              className="font-medium bg-gradient-to-r from-white to-[#a5a5a5] bg-clip-text text-transparent text-center lg:text-start"
+              className=" bg-gradient-to-r from-white to-[#a5a5a5] bg-clip-text text-transparent text-center lg:text-start"
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
@@ -137,11 +137,15 @@ const Hero = () => {
                 ease: "easeInOut",
               }}
             >
-              Hello. I'm Walid.
+              {"Hello. I'm Walid.".split("").map((child, idx) => (
+                <span className="hoverText" key={idx}>
+                  {child}
+                </span>
+              ))}
             </motion.h2>
 
             <motion.h2
-              className="font-medium bg-gradient-to-r from-[#58ffb4] to-[#289061] bg-clip-text text-transparent md:mb-8 text-center lg:text-start"
+              className="font-medium bg-gradient-to-br from-[#58ffb4] to-[#289061] bg-clip-text text-transparent md:mb-8 text-center lg:text-start"
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
@@ -151,7 +155,11 @@ const Hero = () => {
                 ease: "easeInOut",
               }}
             >
-              A Full-Stack Web Developer
+              {"A Full-Stack Web Developer".split("").map((child, idx) => (
+                <span className="hoverText" key={idx}>
+                  {child}
+                </span>
+              ))}
             </motion.h2>
             <motion.p
               className=" text-[#bbbbbb] text-lg md:text-2xl max-w-[700px] lg:text-start text-center !leading-[1.5]"
@@ -166,15 +174,15 @@ const Hero = () => {
             >
               Digital Craftsman deeply passionate about delivering exceptional
               experiences with{" "}
-              <span className="font-bold bg-gradient-to-r from-[#58ffb4] to-[#289061] bg-clip-text text-transparent">
+              <span className="font-bold bg-gradient-to-br from-[#58ffb4] to-[#289061] bg-clip-text text-transparent">
                 Passion
               </span>
               ,{" "}
-              <span className="font-bold bg-gradient-to-r from-[#58ffb4] to-[#289061] bg-clip-text text-transparent">
+              <span className="font-bold bg-gradient-to-br from-[#58ffb4] to-[#289061] bg-clip-text text-transparent">
                 Precision
               </span>
               , and{" "}
-              <span className="font-bold bg-gradient-to-r from-[#58ffb4] to-[#289061] bg-clip-text text-transparent">
+              <span className="font-bold bg-gradient-to-br from-[#58ffb4] to-[#289061] bg-clip-text text-transparent">
                 Artistry
               </span>
             </motion.p>
@@ -193,7 +201,7 @@ const Hero = () => {
               <Button
                 text="Let's talk"
                 bgColor="#289061"
-                borderColor="[#289061]"
+                borderColor="#289061"
                 hoverBg="#4b9876"
                 icon={<BsFillSendFill size={18} />}
               />

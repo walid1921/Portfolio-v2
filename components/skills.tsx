@@ -166,7 +166,7 @@ const Skills = () => {
   return (
     <section className="mb-20">
       <div className="relative container flex-col items-start justify-around rounded-md py-[50px] md:pb-[100px] bg-[#1c1c1c]">
-        <p className="text-2xl font-medium  bg-gradient-to-r from-white to-[#a5a5a5] bg-clip-text text-transparent md:mb-16 mb-10">
+        <p className="text-2xl font-medium bg-gradient-to-br from-white to-[#000000] bg-clip-text text-transparent md:mb-16 mb-10">
           Skills & Development Tools
         </p>
 
@@ -241,7 +241,7 @@ const Skills = () => {
               {icon.icon}
             </div>
           ))}
-          <div className="absolute bottom-4 right-6 text-sm text-[#bbb] hidden md:block">
+          <div className="absolute bottom-4 right-6 text-sm hidden md:block">
             Hover over a skill for current proficiency
           </div>
         </div>

@@ -4,7 +4,7 @@ const About = () => {
   return (
     <section id="about" className="  my-20 text-[#bbbbbb]">
       <div className="container ">
-        <p className="text-2xl font-medium bg-gradient-to-r from-white to-[#a5a5a5] bg-clip-text text-transparent md:mb-10 mb-10">
+        <p className="text-2xl font-medium bg-gradient-to-br from-white to-[#000000] bg-clip-text text-transparent md:mb-10 mb-10">
           About
         </p>
 
