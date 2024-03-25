@@ -40,6 +40,7 @@ import {
 } from "react-icons/tb";
 import { BsGithub, BsGit } from "react-icons/bs";
 import { DiNpm } from "react-icons/di";
+import { StaticImageData } from "next/image";
 
 //! Navbar links
 export const links = [
@@ -52,16 +53,12 @@ export const links = [
     hash: "#about",
   },
   {
-    name: "Projects",
-    hash: "#projects",
-  },
-  {
     name: "Skills",
     hash: "#skills",
   },
   {
-    name: "Experience",
-    hash: "#experience",
+    name: "Projects",
+    hash: "#projects",
   },
   {
     name: "Contact",
@@ -90,56 +87,37 @@ export const experiencesData = [
 ] as const;
 
 //! Projects
-export const projectsData = [
+type Project = {
+  id: number;
+  imgUrl: StaticImageData;
+  category: string;
+  title: string;
+  description: string;
+  technologies: string[];
+  githubUrl: string;
+  liveUrl: string;
+};
+
+export const projectsData: Project[] = [
   {
     id: 1,
     imgUrl: portfolioImg1,
     category: "Landing Page",
     title: "Küchen Trend",
     description:
-      "Crafting a responsive landing page utilizing REACT and TAILWIND. The outcome is a refined, user-friendly interface that seamlessly adapts to diverse screen sizes. This design guarantees a smooth and accessible user experience across all devices, emphasizing its responsiveness and accessibility.",
-    technologies: [
-      {
-        icon: React.createElement(FaReact),
-        color: "#61DAFB",
-      },
-      {
-        icon: React.createElement(SiTailwindcss),
-        color: "#3490dc",
-      },
-    ],
+      "A responsive landing page. The outcome is a refined, user-friendly interface that seamlessly adapts to diverse screen sizes. This design guarantees a smooth and accessible user experience across all devices, emphasizing its responsiveness and accessibility.",
+    technologies: ["React", "Tailwindcss"],
     githubUrl: "https://github.com/walid1921/kuchen.git",
-    liveUrl: "https://kuechentrendkayu.vercel.app/",
+    liveUrl: "https://www.kuechentrend-kayu.de/",
   },
   {
     id: 2,
     imgUrl: portfolioImg04,
     category: "App",
-    title: "ResonNex",
+    title: "ResoNex",
     description:
-      "A full-stack task management application built with React, Tailwind css, Node.js, Express.js, and MongoDB. ResoNex is designed to simplify task management by providing a user-friendly interface for creating, deleting, and sorting tasks. It calculates the percentage of tasks completed and ensures a smooth task management experience.",
-    technologies: [
-      {
-        icon: React.createElement(FaReact),
-        color: "#61DAFB",
-      },
-      {
-        icon: React.createElement(SiTailwindcss),
-        color: "#3490dc",
-      },
-      {
-        icon: React.createElement(FaNodeJs),
-        color: "#8CC84B",
-      },
-      {
-        icon: React.createElement(SiExpress),
-        color: "#000",
-      },
-      {
-        icon: React.createElement(SiMongodb),
-        color: "#3FA037",
-      },
-    ],
+      "A Full-Stack task management application. ResoNex is designed to simplify task management by providing a user-friendly interface for creating, deleting, and sorting tasks. It calculates the percentage of tasks completed and ensures a smooth task management experience.",
+    technologies: ["React", "Tailwindcss", "Node.js", "Express.js", "MongoDB"],
     githubUrl: "https://github.com/walid1921/ResoNex.git",
     liveUrl: "https://reso-nex.vercel.app/",
   },
@@ -150,17 +128,8 @@ export const projectsData = [
     category: "App",
     title: "CookSaver",
     description:
-      "A recipe app built using React and Tailwind CSS, leveraging API integration with robust handling of loading and error states. It empowers users to effortlessly search and view recipes, contribute their own creations, and bookmark their favorites. The app boasts a user-friendly interface tailored for food enthusiasts!",
-    technologies: [
-      {
-        icon: React.createElement(FaReact),
-        color: "#61DAFB",
-      },
-      {
-        icon: React.createElement(SiTailwindcss),
-        color: "#3490dc",
-      },
-    ],
+      "A Recipe app with API integration with robust handling of loading and error states. It empowers users to effortlessly search and view recipes, contribute their own creations, and bookmark their favorites. The app boasts a user-friendly interface tailored for food enthusiasts!",
+    technologies: ["React", "Tailwindcss"],
     githubUrl: "https://github.com/walid1921/CookSaver.git",
     liveUrl: "https://cook-saver-walid.netlify.app/",
   },
@@ -170,17 +139,8 @@ export const projectsData = [
     category: "App",
     title: "iMovie App",
     description:
-      "A Web App built using REACT, CSS. leveraging API integration with robust handling of loading and error states. It lets users search, save and rate their favorites movies.",
-    technologies: [
-      {
-        icon: React.createElement(FaReact),
-        color: "#61DAFB",
-      },
-      {
-        icon: React.createElement(SiCss3),
-        color: "#1E90FF",
-      },
-    ],
+      "A Movie App with API integration. It lets users search, save and rate their favorites movies.",
+    technologies: ["React", "CSS"],
     githubUrl: "https://github.com/walid1921/iMovie.git",
     liveUrl: "https://imovie-walid.netlify.app/",
   },
@@ -190,17 +150,8 @@ export const projectsData = [
     category: "Landing Page",
     title: "Swipe",
     description:
-      "Crafted a expansive, responsive landing page using HTML and SASS, demonstrating proficiency in cross-device compatibility. The result is a polished, user-friendly interface that adapts seamlessly to various screen sizes.",
-    technologies: [
-      {
-        icon: React.createElement(SiHtml5),
-        color: "#FF4400",
-      },
-      {
-        icon: React.createElement(FaSass),
-        color: "#CD6799",
-      },
-    ],
+      "A Responsive landing page using HTML and SASS, demonstrating proficiency in cross-device compatibility. The result is a polished, user-friendly interface that adapts seamlessly to various screen sizes.",
+    technologies: ["HTML", "SASS"],
     githubUrl: "https://github.com/walid1921/Swipe.git",
     liveUrl: "https://swipe-walid.netlify.app/",
   },
@@ -210,55 +161,13 @@ export const projectsData = [
     category: "App",
     title: "My Travel List",
     description:
-      "A full-stack travel planning application built with React, CSS, Node.js, Express.js, and MongoDB. My Travel List is designed to simplify trip planning by providing a user-friendly interface for creating, deleting, and sorting items. It calculates the percentage of items packed and ensures a smooth travel preparation experience.",
-    technologies: [
-      {
-        icon: React.createElement(FaReact),
-        color: "#61DAFB",
-      },
-      {
-        icon: React.createElement(SiCss3),
-        color: "#1E90FF",
-      },
-      {
-        icon: React.createElement(FaNodeJs),
-        color: "#8CC84B",
-      },
-      {
-        icon: React.createElement(SiExpress),
-        color: "#000",
-      },
-      {
-        icon: React.createElement(SiMongodb),
-        color: "#3FA037",
-      },
-    ],
+      "A Full-Stack travel planning application. It's designed to simplify trip planning by providing a user-friendly interface for creating, deleting, and sorting items. It calculates the percentage of items packed and ensures a smooth travel preparation experience.",
+    technologies: ["React", "CSS", "Node.js", "Express.js", "MongoDB"],
     githubUrl: "https://github.com/walid1921/My-Travel-List.git",
     liveUrl: "https://my-travellist.netlify.app/",
   },
-
   // {
   //   id: 7,
-  //   imgUrl: portfolioImg06,
-  //   category: "Landing Page",
-  //   title: "Nike website",
-  //   description:
-  //     "Responsive landing page using REACT and TAILWIND, demonstrating proficiency in cross-device compatibility. The result is a polished, user-friendly interface that adapts seamlessly to various screen sizes.",
-  //   technologies: [
-  //     {
-  //       icon: React.createElement(FaReact),
-  //       color: "#61DAFB",
-  //     },
-  //     {
-  //       icon: React.createElement(SiTailwindcss),
-  //       color: "#3490dc",
-  //     },
-  //   ],
-  //   githubUrl: "https://github.com/walid1921/nike.git",
-  //   liveUrl: "https://nike-walid.netlify.app/",
-  // },
-  // {
-  //   id: 8,
   //   imgUrl: portfolioImg07,
   //   category: "App",
   //   title: "Mapty App",
@@ -305,7 +214,7 @@ export const projectsData = [
   //   githubUrl: "https://github.com/walid1921/Bank-web.git",
   //   liveUrl: "https://bankist-walid.netlify.app/",
   // },
-] as const;
+];
 
 //! Skills
 export const skillsData = [

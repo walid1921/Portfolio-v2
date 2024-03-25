@@ -24,6 +24,7 @@ import { BsGit, BsGithub } from "react-icons/bs";
 import { skillsData } from "@/lib/data";
 import { TbBrandNextjs } from "react-icons/tb";
 import Image from "next/image";
+import { useScroll, useTransform, motion } from "framer-motion";
 
 //! hoveredIconData
 const hoveredIconData = [
@@ -45,7 +46,7 @@ const hoveredIconData = [
   },
   {
     id: "github",
-    icon: <BsGithub size={32} color="#000" />,
+    icon: <BsGithub size={32} color="#fff" />,
   },
   {
     id: "react",
@@ -137,7 +138,7 @@ const hoveredIconData = [
   },
   {
     id: "express",
-    icon: <SiExpress size={32} color="#000" />,
+    icon: <SiExpress size={32} color="#fff" />,
   },
   {
     id: "node",
@@ -153,19 +154,36 @@ const hoveredIconData = [
   },
   {
     id: "next",
-    icon: <TbBrandNextjs size={32} color="#000" />,
+    icon: <TbBrandNextjs size={32} color="#fff" />,
   },
 ];
 
 const Skills = () => {
+  const ref = useRef<HTMLElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["0 1", "1.33 1"],
+  });
+  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+  const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+
   const [isOpen, setIsOpen] = useState(false);
   const [hoveredIcon, setHoveredIcon] = useState<string | null>(null);
   const [skillWindow, setSkillWindow] = useState(false);
   const tooltipRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section className="mb-20">
-      <div className="relative container flex-col items-start justify-around rounded-md py-[50px] md:pb-[100px] bg-[#1c1c1c]">
+    <motion.section
+      style={{
+        scale: scaleProgress,
+        opacity: opacityProgress,
+      }}
+      ref={ref}
+      className="mb-20 scroll-mt-28"
+      id="skills"
+    >
+      <div className="relative container flex-col items-start justify-around rounded-md py-[50px] md:pb-[100px]  bg-gradient-to-br from-[#272727] to-[#1a1a1a] padding-x padding-t pb-8">
         <p className="text-2xl font-medium bg-gradient-to-br from-white to-[#000000] bg-clip-text text-transparent md:mb-16 mb-10">
           Skills & Development Tools
         </p>
@@ -246,7 +264,7 @@ const Skills = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

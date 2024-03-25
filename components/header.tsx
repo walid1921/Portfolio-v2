@@ -14,6 +14,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { cn } from "@/lib/utils";
 
 const itemVariants: Variants = {
   closed: { opacity: 0, transition: { duration: 0.2 }, x: 100 },
@@ -42,19 +43,35 @@ export default function Header() {
           {links.map((link) => (
             <motion.li
               key={link.hash}
-              className="nav-item hover-navLink font-semibold"
+              className="relative nav-item hover-navLink font-semibold"
             >
               <Link
-                className=" hover:text-white ease-in duration-150 font-semibold"
+                className={cn(
+                  "hover:text-white ease-in duration-150 font-semibold",
+                  { "text-white": activeSection === link.name }
+                )}
                 href={link.hash}
+                onClick={() => setActiveSection(link.name)}
               >
                 {link.name}
+
+                {link.name === activeSection && (
+                  <motion.span
+                    layoutId="activeSection"
+                    transition={{
+                      type: "spring",
+                      stiffness: 380,
+                      damping: 30,
+                    }}
+                    className="bg-[rgba(114,114,114,0.42)] rounded-full inset-0 absolute  -z-10 "
+                  ></motion.span>
+                )}
               </Link>
             </motion.li>
           ))}
         </ul>
 
-        <div className="lg:hidden flex justify-end sticky pr-4 transition-all ease-in-out duration-500 ">
+        <div className="lg:hidden inline-block sticky mr-4 transition-all ease-in-out duration-500 rounded-full bg-[rgba(114,114,114,.2)] backdrop-blur-md border-[rgba(114,114,114,.4)]">
           <Hamburger
             rounded
             color="#f5f5f5"

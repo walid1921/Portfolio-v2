@@ -14,7 +14,7 @@ import Button from "./ui/button";
 
 const Hero = () => {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden" id="home">
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -128,7 +128,7 @@ const Hero = () => {
         <div className=" flex flex-col items-center  justify-center text-[26px]  md:text-[52px] xl:text-6xl  sm:pl-[8px] md:w-full z-10 gap-4 bg-[rgba(114,114,114,.2)] backdrop-blur-sm xl:border-r-[1px] border-[rgba(114,114,114,.4)] h-full dot-blur">
           <div className="flex flex-col xl:items-start gap-8 px-[20px]">
             <motion.h2
-              className=" bg-gradient-to-r from-white to-[#a5a5a5] bg-clip-text text-transparent text-center lg:text-start"
+              className=" bg-gradient-to-r from-white to-[#a5a5a5] cursor-pointer bg-clip-text text-transparent text-center lg:text-start"
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
@@ -145,7 +145,7 @@ const Hero = () => {
             </motion.h2>
 
             <motion.h2
-              className="font-medium bg-gradient-to-br from-[#58ffb4] to-[#289061] bg-clip-text text-transparent md:mb-8 text-center lg:text-start"
+              className="font-medium bg-gradient-to-br from-[#58ffb4] to-[#289061] cursor-pointer bg-clip-text text-transparent md:mb-8 text-center lg:text-start"
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
@@ -162,7 +162,7 @@ const Hero = () => {
               ))}
             </motion.h2>
             <motion.p
-              className=" text-[#bbbbbb] text-lg md:text-2xl max-w-[700px] lg:text-start text-center !leading-[1.5]"
+              className=" text-[#bbbbbb] text-lg md:text-2xl max-w-[700px] lg:text-start text-center cursor-pointer !leading-[1.5]"
               initial={{ opacity: 0, y: 100 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
@@ -172,52 +172,86 @@ const Hero = () => {
                 ease: "easeInOut",
               }}
             >
-              Digital Craftsman deeply passionate about delivering exceptional
-              experiences with{" "}
+              {"Digital Craftsman deeply passionate about delivering exceptional experiences with"
+                .split("")
+                .map((child, idx) => (
+                  <span className="hoverText" key={idx}>
+                    {child}
+                  </span>
+                ))}{" "}
               <span className="font-bold bg-gradient-to-br from-[#58ffb4] to-[#289061] bg-clip-text text-transparent">
-                Passion
+                {"Passion".split("").map((child, idx) => (
+                  <span className="hoverText" key={idx}>
+                    {child}
+                  </span>
+                ))}
               </span>
               ,{" "}
               <span className="font-bold bg-gradient-to-br from-[#58ffb4] to-[#289061] bg-clip-text text-transparent">
-                Precision
+                {"Precision".split("").map((child, idx) => (
+                  <span className="hoverText" key={idx}>
+                    {child}
+                  </span>
+                ))}
               </span>
-              , and{" "}
+              {", and".split("").map((child, idx) => (
+                <span className="hoverText" key={idx}>
+                  {child}
+                </span>
+              ))}{" "}
               <span className="font-bold bg-gradient-to-br from-[#58ffb4] to-[#289061] bg-clip-text text-transparent">
-                Artistry
+                {"Artistry".split("").map((child, idx) => (
+                  <span className="hoverText" key={idx}>
+                    {child}
+                  </span>
+                ))}
               </span>
             </motion.p>
 
-            <motion.div
-              className="center-center gap-6 mt-10"
-              initial={{ opacity: 0, y: 100 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 1.1,
-                delay: 1.3,
-                type: "tween",
-                ease: "easeInOut",
-              }}
-            >
-              <Button
-                text="Let's talk"
-                bgColor="#289061"
-                borderColor="#289061"
-                hoverBg="#4b9876"
-                icon={<BsFillSendFill size={18} />}
-              />
-              <Button
-                text="Download CV"
-                bgColor="transparent"
-                borderColor="#727272b3"
-                hoverBg="#72727233"
-                icon={<BsCloudDownloadFill size={18} />}
-              />
+            <div className="center-center gap-6 mt-10">
+              <motion.div
+                initial={{ opacity: 0, y: 100 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 1.1,
+                  delay: 1.3,
+                  type: "tween",
+                  ease: "easeInOut",
+                }}
+              >
+                <Button
+                  text="Let's talk"
+                  bgColor="#289061"
+                  borderColor="#289061"
+                  hoverBg="#4b9876"
+                  icon={<BsFillSendFill size={18} />}
+                />
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 100 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 1.1,
+                  delay: 1.5,
+                  type: "tween",
+                  ease: "easeInOut",
+                }}
+              >
+                {" "}
+                <Button
+                  text="Download CV"
+                  bgColor="transparent"
+                  borderColor="#727272b3"
+                  hoverBg="#72727233"
+                  icon={<BsCloudDownloadFill size={18} />}
+                />
+              </motion.div>
+            </div>
 
-              {/* <button className="   backdrop-blur-md  ">
+            {/* <button className="   backdrop-blur-md  ">
                 <BsCloudDownloadFill size={18} />
               
               </button> */}
-            </motion.div>
           </div>
         </div>
         {/* <div className='image-container relative hidden md:block animate-moveInRight'>
