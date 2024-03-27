@@ -67,7 +67,7 @@ const Projects = () => {
       <div className="max-w-[1300px]">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between ">
           <p className="text-2xl pl-[20px] font-medium bg-gradient-to-br from-white to-[#4d4d4d] bg-clip-text text-transparent mb-10">
-            Projects
+            Projects <span className="text-sm">({project.length})</span>
           </p>
 
           <div className="center-center">
@@ -116,14 +116,12 @@ const Projects = () => {
               key={project.id}
             >
               <Image
-                className="rounded-md h-full w-full z-0 object-cover object-center opacity-60  transition-opacity ease-in duration-150"
+                className="rounded-md h-full w-full z-0 object-cover object-center opacity-60  transition-opacity ease-in duration-150 "
                 src={project.imgUrl}
                 alt={project.title}
                 placeholder="blur"
                 priority
               />
-
-    
 
               <div className="h-full w-full absolute inset-0 hover:backdrop-blur-sm transition-all ease-in duration-300 flex justify-center items-start opacity-0 hover:opacity-100">
                 {/* <motion.a
@@ -146,14 +144,14 @@ const Projects = () => {
                       skipDelayDuration={100}
                     >
                       <Tooltip>
-                        <TooltipTrigger className="z-30 rounded-full hover:cursor-pointer transition-all ease-in-out duration-300 text-white ">
+                        <TooltipTrigger className="z-30 rounded-full hover:cursor-pointer transition-all ease-in-out duration-300 text-white hover:scale-110">
                           <Link
                             href={project.githubUrl}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="h hover:scale-75"
                           >
-                            <BsGithub size={50} />
+                            <BsGithub size={40} />
                           </Link>
                         </TooltipTrigger>
 
@@ -172,14 +170,14 @@ const Projects = () => {
                       skipDelayDuration={100}
                     >
                       <Tooltip>
-                        <TooltipTrigger className="z-30 rounded-full hover:cursor-pointer transition-all ease-in-out duration-300 hover:text-white">
+                        <TooltipTrigger className="z-30 rounded-full hover:cursor-pointer transition-all ease-in-out duration-300 hover:text-white hover:scale-110">
                           <Link
                             href={project.liveUrl}
                             target="_blank"
                             rel="noopener noreferrer"
                           >
                             <HiOutlineStatusOnline
-                              size={50}
+                              size={40}
                               color="#5fcf65a3"
                             />
                           </Link>
