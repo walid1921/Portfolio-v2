@@ -91,6 +91,7 @@ type Project = {
   id: number;
   imgUrl: StaticImageData;
   category: string;
+  tag: string;
   title: string;
   description: string;
   technologies: string[];
@@ -103,6 +104,7 @@ export const projectsData: Project[] = [
     id: 1,
     imgUrl: portfolioImg1,
     category: "Landing Page",
+    tag: "Real Project",
     title: "Küchen Trend",
     description:
       "A responsive landing page. The outcome is a refined, user-friendly interface that seamlessly adapts to diverse screen sizes. This design guarantees a smooth and accessible user experience across all devices, emphasizing its responsiveness and accessibility.",
@@ -114,6 +116,7 @@ export const projectsData: Project[] = [
     id: 2,
     imgUrl: portfolioImg04,
     category: "App",
+    tag: "Real Project",
     title: "ResoNex",
     description:
       "A Full-Stack task management application. ResoNex is designed to simplify task management by providing a user-friendly interface for creating, deleting, and sorting tasks. It calculates the percentage of tasks completed and ensures a smooth task management experience.",
@@ -126,6 +129,8 @@ export const projectsData: Project[] = [
     id: 3,
     imgUrl: portfolioImg08,
     category: "App",
+    tag: "Side Project",
+
     title: "CookSaver",
     description:
       "A Recipe app with API integration with robust handling of loading and error states. It empowers users to effortlessly search and view recipes, contribute their own creations, and bookmark their favorites. The app boasts a user-friendly interface tailored for food enthusiasts!",
@@ -137,6 +142,7 @@ export const projectsData: Project[] = [
     id: 4,
     imgUrl: portfolioImg09,
     category: "App",
+    tag: "Side Project",
     title: "iMovie App",
     description:
       "A Movie App with API integration. It lets users search, save and rate their favorites movies.",
@@ -148,6 +154,7 @@ export const projectsData: Project[] = [
     id: 5,
     imgUrl: portfolioImg02,
     category: "Landing Page",
+    tag: "Side Project",
     title: "Swipe",
     description:
       "A Responsive landing page using HTML and SASS, demonstrating proficiency in cross-device compatibility. The result is a polished, user-friendly interface that adapts seamlessly to various screen sizes.",
@@ -159,6 +166,7 @@ export const projectsData: Project[] = [
     id: 6,
     imgUrl: portfolioImg03,
     category: "App",
+    tag: "Side Project",
     title: "My Travel List",
     description:
       "A Full-Stack travel planning application. It's designed to simplify trip planning by providing a user-friendly interface for creating, deleting, and sorting items. It calculates the percentage of items packed and ensures a smooth travel preparation experience.",
@@ -166,54 +174,30 @@ export const projectsData: Project[] = [
     githubUrl: "https://github.com/walid1921/My-Travel-List.git",
     liveUrl: "https://my-travellist.netlify.app/",
   },
-  // {
-  //   id: 7,
-  //   imgUrl: portfolioImg07,
-  //   category: "App",
-  //   title: "Mapty App",
-  //   description:
-  //     "Fitness Tracking Web App Created with HTML, CSS, and Vanilla JAVASCRIPT. This app helps users easily keep track of their workouts and organizing their fitness routine. It smoothly loads maps from Leaflet api to show workout routes. It also uses location information for accurate tracking of runs and bike rides.",
-  //   technologies: [
-  //     {
-  //       icon: React.createElement(SiHtml5),
-  //       color: "#FF4400",
-  //     },
-  //     {
-  //       icon: React.createElement(SiCss3),
-  //       color: "#1E90FF",
-  //     },
-  //     {
-  //       icon: React.createElement(SiJavascript),
-  //       color: "#F7DF1E",
-  //     },
-  //   ],
-  //   githubUrl: "https://github.com/walid1921/Mapty-App.git",
-  //   liveUrl: "https://mapty-walid.netlify.app/",
-  // },
-  // {
-  //   id: 9,
-  //   imgUrl: portfolioImg05,
-  //   category: "App",
-  //   title: "Bankist",
-  //   description:
-  //     "A dynamic banking application using HTML, SASS, and Vanilla JAVASCRIPT. This user-friendly platform enables secure login, hassle-free money transfers between users, loan requests from the bank, and smooth account closure. Additionally, a timed logout feature enhances security. Explore this intuitive banking solution, showcasing the power of modern web technologies. (Account 1: (owner: js, pin: 1111) / Account 2: (owner: jd, pin: 2222)) ",
-  //   technologies: [
-  //     {
-  //       icon: React.createElement(SiHtml5),
-  //       color: "#FF4400",
-  //     },
-  //     {
-  //       icon: React.createElement(FaSass),
-  //       color: "#CD6799",
-  //     },
-  //     {
-  //       icon: React.createElement(SiJavascript),
-  //       color: "#F7DF1E",
-  //     },
-  //   ],
-  //   githubUrl: "https://github.com/walid1921/Bank-web.git",
-  //   liveUrl: "https://bankist-walid.netlify.app/",
-  // },
+  {
+    id: 7,
+    imgUrl: portfolioImg07,
+    category: "App",
+    tag: "Side Project",
+    title: "Mapty App",
+    description:
+      "Fitness Tracking Web App Created with HTML, CSS, and Vanilla JAVASCRIPT. This app helps users easily keep track of their workouts and organizing their fitness routine. It smoothly loads maps from Leaflet api to show workout routes. It also uses location information for accurate tracking of runs and bike rides.",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    githubUrl: "https://github.com/walid1921/Mapty-App.git",
+    liveUrl: "https://mapty-walid.netlify.app/",
+  },
+  {
+    id: 8,
+    imgUrl: portfolioImg05,
+    category: "App",
+    tag: "Side Project",
+    title: "Bankist",
+    description:
+      "A dynamic banking application using HTML, SASS, and Vanilla JAVASCRIPT. This user-friendly platform enables secure login, hassle-free money transfers between users, loan requests from the bank, and smooth account closure. Additionally, a timed logout feature enhances security. Explore this intuitive banking solution, showcasing the power of modern web technologies. (Account 1: (owner: js, pin: 1111) / Account 2: (owner: jd, pin: 2222)) ",
+    technologies: ["HTML", "SASS", "JavaScript"],
+    githubUrl: "https://github.com/walid1921/Bank-web.git",
+    liveUrl: "https://bankist-walid.netlify.app/",
+  },
 ];
 
 //! Skills
