@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useRef, useState } from "react";
 import javascript from "../public/javascript.png";
 import html from "../public/html.png";
 import typescript from "../public/typescript.png";
@@ -14,7 +14,7 @@ import Button from "./ui/button";
 import { useSectionInView } from "@/lib/hooks";
 
 const Hero = () => {
-  const { ref } = useSectionInView("Home");
+  const { ref } = useSectionInView("Home")
 
   return (
     <section className="relative overflow-hidden" id="home" ref={ref}>

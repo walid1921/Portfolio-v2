@@ -4,14 +4,9 @@ import { projectsData } from "@/lib/data";
 import { BsGithub } from "react-icons/bs";
 import { HiOutlineStatusOnline } from "react-icons/hi";
 import Image from "next/image";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-import Link from "next/link";
 import { useSectionInView } from "@/lib/hooks";
+import { CircleArrowDown } from "lucide-react";
+import Popsup from "./ui/popsup";
 
 const Projects = () => {
   const [nextItems, setNextItems] = useState(4);
@@ -138,63 +133,25 @@ const Projects = () => {
                 <div className="relative center-center flex-col  gap-5 mt-12 md:mt-32 w-full  transition-all ease-in duration-300">
                   {" "}
                   <div className="flex gap-10 items-center ">
-                    {" "}
-                    <TooltipProvider
-                      delayDuration={100}
-                      skipDelayDuration={100}
-                    >
-                      <Tooltip>
-                        <TooltipTrigger className="z-30 rounded-full hover:cursor-pointer transition-all ease-in-out duration-300 text-white hover:scale-110">
-                          <Link
-                            href={project.githubUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="h hover:scale-75"
-                          >
-                            <BsGithub size={40} />
-                          </Link>
-                        </TooltipTrigger>
-
-                        <TooltipContent
-                          className=" border border-[#fff] text-[#fff] rounded-md px-2 py-1  bg-black/20 backdrop-blur-md text-xs"
-                          sideOffset={10}
-                          align="center"
-                          side="top"
-                        >
-                          <p>Github</p>
-                        </TooltipContent>
-                      </Tooltip>
-                    </TooltipProvider>
-                    <TooltipProvider
-                      delayDuration={100}
-                      skipDelayDuration={100}
-                    >
-                      <Tooltip>
-                        <TooltipTrigger className="z-30 rounded-full hover:cursor-pointer transition-all ease-in-out duration-300 hover:text-white hover:scale-110">
-                          <Link
-                            href={project.liveUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <HiOutlineStatusOnline
-                              size={40}
-                              color="#5fcf65a3"
-                            />
-                          </Link>
-                        </TooltipTrigger>
-
-                        <TooltipContent
-                          className=" border border-[#5fcf65a3] rounded-md px-2 py-1  bg-[#5fcf656a] backdrop-blur-md text-xs"
-                          sideOffset={10}
-                          align="center"
-                          side="top"
-                        >
-                          <p className="text-[#fff]">Live</p>
-                        </TooltipContent>
-                      </Tooltip>
-                    </TooltipProvider>
+                    <Popsup
+                      content="Github"
+                      link={project.githubUrl}
+                      side="top"
+                      bgColor="#00000033"
+                      icon={<BsGithub size={40} />}
+                    />
+                    <Popsup
+                      content="Live"
+                      link={project.liveUrl}
+                      side="top"
+                      borderColor="#5fcf65a3"
+                      bgColor="#5fcf656a"
+                      icon={
+                        <HiOutlineStatusOnline size={40} color="#5fcf65a3" />
+                      }
+                    />
                   </div>
-                  <p className="text-sm">
+                  <p className="text-sm text-white">
                     Visit Github for Project's documentation
                   </p>
                 </div>
@@ -232,14 +189,20 @@ const Projects = () => {
             </div>
           ))}
         </div>
-        <div className="center-center mt-12 ">
+        <div className="center-center mt-16 ">
           {nextItems < projectsData.length && projectsData.length > 4 && (
-            <button
+            // <button
+            //   onClick={loadHandler}
+            //   className="text-[#bbb] text-sm font-semibold tracking-wide bg-gradient-to-br from-[#404040] to-[#232323] rounded py-2 px-4 cursor-pointer transition-all ease-in duration-150 hover:opacity-75 center gap-2 z-10"
+            // >
+            //   <CircleArrowDown size={50} />
+            // </button>
+            <Popsup
               onClick={loadHandler}
-              className="text-[#bbb] text-sm font-semibold tracking-wide bg-gradient-to-br from-[#404040] to-[#232323] rounded py-2 px-4 cursor-pointer transition-all ease-in duration-150 hover:opacity-75 center gap-2 z-10"
-            >
-              Load More
-            </button>
+              content="Load More"
+              side="top"
+              icon={<CircleArrowDown size={40} color="#404040" />}
+            />
           )}
         </div>
       </div>
