@@ -39,8 +39,13 @@ export default function Header() {
     <header className="z-[999] relative">
       <motion.nav
         className="hidden lg:flex justify-center items-center fixed top-3 w-full z-[999]"
-        initial={{ x: 100, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{
+          duration: 1,
+          type: "tween",
+          ease: "easeInOut",
+        }}
       >
         <ul className="hidden lg:center-center gap-8 text-sm  z-10 py-3 mt-2 px-8 md:text-[16px] md:gap-12 md:py-4 border-b-[0.1px] transition-all ease-in-out duration-500 rounded-full bg-[rgba(114,114,114,.2)] backdrop-blur-md   border-[rgba(114,114,114,.4)]">
           {links.map((link) => (
