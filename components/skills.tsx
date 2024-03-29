@@ -28,6 +28,7 @@ import { useScroll, useTransform, motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
 import { once } from "events";
 import Card from "./card";
+import Section from "./section";
 
 //! hoveredIconData
 const hoveredIconData = [
@@ -202,8 +203,11 @@ const Skills = () => {
       }}
       ref={ref2}
     >
-      <section className="mb-20 scroll-mt-28" id="skills" ref={ref}>
-        <div className="relative overflow-hidden  container flex-col items-start justify-around rounded-md py-[50px] md:pb-[100px]  bg-gradient-to-br from-[#272727] to-[#1a1a1a] padding-x padding-t pb-8">
+      <Section className=" scroll-mt-28" id="skills">
+        <div
+          ref={ref}
+          className="relative overflow-hidden  container flex-col items-start justify-around rounded-md py-[50px] md:pb-[100px]  bg-gradient-to-br from-[#272727] to-[#1a1a1a] padding-x padding-t pb-8"
+        >
           <p className="text-2xl font-medium bg-gradient-to-br from-white to-[#000000] bg-clip-text text-transparent md:mb-16 mb-10">
             Skills & Development Tools
           </p>
@@ -290,7 +294,7 @@ const Skills = () => {
           </ul>
           <Card />
         </div>
-      </section>
+      </Section>
     </motion.div>
   );
 };

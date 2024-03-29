@@ -29,10 +29,9 @@ const HeroSection = () => {
       crosses
       crossesOffset="lg:translate-y-[5.25rem]"
       id="home"
-      ref={ref}
     >
       <div className=" relative" ref={parallaxRef}>
-        <div className="relative z-1 center-center flex-col">
+        <div className="relative z-1 center-center flex-col" ref={ref}>
           <motion.h2
             className="lg:text-6xl text-4xl bg-gradient-to-r from-white to-[#a5a5a5] cursor-pointer bg-clip-text text-transparent text-center"
             initial={{ opacity: 0, y: -50 }}
@@ -71,7 +70,7 @@ const HeroSection = () => {
 
             <Image
               src={curve}
-              className="absolute lg:right-0 left-24  xl:-mt-2 lg:w-[320px] w-[200px]"
+              className="absolute lg:right-0 right-24  xl:-mt-2 lg:w-[320px] w-[200px]"
               alt="Curve"
             />
           </motion.h1>
@@ -163,7 +162,7 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-      <div className="relative max-w-[23rem] mx-auto md:max-w-5xl xl:mb-24 lg:mt-20 mt-28">
+      <div className="relative max-w-[23rem] mx-auto md:max-w-5xl lg:mt-20 mt-28">
         <div className="relative z-1 p-0.5 rounded-[14px] bg-conic-gradient">
           <div className="relative bg-n-8 rounded-[14px]">
             <div className="aspect-[33/40] rounded-[14px] overflow-hidden md:aspect-[688/490] lg:aspect-[1024/490]">
@@ -175,8 +174,8 @@ const HeroSection = () => {
                 alt="AI"
               />{" "}
               <ScrollParallax isAbsolutelyPositioned>
-                <ul className="absolute lg:-left-[5.5rem] lg:bottom-[16rem] bottom-[20px] z-2 px-1 py-1 bg-n-9/40 backdrop-blur border border-n-1/10 rounded-2xl xl:flex">
-                  <div className="center-center gap-5 px-4 py-1">
+                <div className="absolute lg:-left-[5.5rem] lg:bottom-[16rem] bottom-[160px] z-50 px-1 py-1 bg-n-9/40 backdrop-blur border border-n-1/10 rounded-[14px] xl:flex">
+                  <div className="center-center flex-col lg:flex-row gap-5 lg:px-4 lg:py-1 px-1 py-4">
                     <Popsup
                       content="Github"
                       link="https://github.com/walid1921?tab=repositories"
@@ -201,7 +200,12 @@ const HeroSection = () => {
                       icon={<FiInstagram size={35} />}
                     />
                   </div>
-                </ul>
+                </div>
+              </ScrollParallax>
+              <ScrollParallax isAbsolutelyPositioned>
+                <div className="absolute lg:-right-10 lg:bottom-[8rem] bottom-[20px] z-2 px-1 py-1 bg-n-9/40 backdrop-blur border border-[#58ffb4] rounded-[14px] xl:flex">
+                  <p className="px-4 py-1 text-[#58ffb4]">Open to work</p>
+                </div>
               </ScrollParallax>
             </div>
           </div>
@@ -210,6 +214,8 @@ const HeroSection = () => {
 
         <BackgroundCircles />
       </div>
+
+      <BottomLine />
     </Section>
   );
 };

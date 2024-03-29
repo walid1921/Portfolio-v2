@@ -17,24 +17,21 @@ export function Slider() {
   }, [emblaApi]);
 
   return (
-    <div>
+    <div className="max-w-[1300px] m-auto">
       <div className="overflow-hidden pb-10 " ref={emblaRef}>
         <div className="flex gap-3 md:ml-0 ml-3">
           {EducationData.map((data) => (
             <div
               key={data.id}
-              className="md:px-[40px] md:mx-[20px] py-6 bg-neutral-300 hover:bg-neutral-200 hover:cursor-grab transition-all ease-in-out duration-300"
+              className="md:px-[40px] md:mx-[20px] py-6 bg-neutral-300 hover:bg-neutral-200 hover:cursor-grab transition-all ease-in-out duration-300 "
             >
-              <p className="text-primary fill-transparent text-center font-extrabold text-[40px] 2xl:text-[130px] 2xl:mx-16 mx-32">
+              <p className="text-primary fill-transparent text-center font-extrabold text-[40px]  px-[500px]">
                 {data.category}
               </p>
               {data.content.map((item, index) => (
-                <div key={index}>
+                <div key={index} className="">
                   <p className="text-secondary text-center mb-3 md:text-[22px] text-[14px] font-bold">
-                    {item.title}
-                  </p>
-                  <p className="text-secondary text-justify 2xl:text-[16px] text-[13px] 2xl:leading-[40px] md:leading-[30px] leading-[25px] md:px-0 px-6">
-                    {item.subtitle}
+                    {item.title} {item.subtitle}
                   </p>
                 </div>
               ))}

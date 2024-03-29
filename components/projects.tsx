@@ -7,6 +7,8 @@ import Image from "next/image";
 import { useSectionInView } from "@/lib/hooks";
 import { CircleArrowDown } from "lucide-react";
 import Popsup from "./ui/popsup";
+import { BottomLine } from "./ui/circleHero";
+import Section from "./section";
 
 const Projects = () => {
   const [nextItems, setNextItems] = useState(4);
@@ -54,12 +56,8 @@ const Projects = () => {
   }, [filter]);
 
   return (
-    <section
-      ref={ref}
-      id="projects"
-      className="flex justify-center mb-20 scroll-mt-28"
-    >
-      <div className="max-w-[1300px]">
+    <Section id="projects" className="flex justify-center scroll-mt-28">
+      <div className="max-w-[1300px] z-1" ref={ref}>
         <div className="flex flex-col md:flex-row md:items-center md:justify-between ">
           <p className="text-2xl pl-[20px] font-medium bg-gradient-to-br from-white to-[#4d4d4d] bg-clip-text text-transparent mb-10">
             Projects <span className="text-sm">({project.length})</span>
@@ -206,7 +204,8 @@ const Projects = () => {
           )}
         </div>
       </div>
-    </section>
+      <BottomLine />
+    </Section>
   );
 };
 

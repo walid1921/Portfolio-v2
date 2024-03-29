@@ -1,11 +1,12 @@
 import React from "react";
 import { Slider } from "./slider";
+import Section from "./section";
 
 const Education = () => {
   return (
-    <section className="max-w-[1300px] m-auto">
-      <Slider  />
-    </section>
+    <Section >
+      <Slider />
+    </Section>
   );
 };
 

@@ -2,6 +2,7 @@
 import { useScroll, motion, useTransform } from "framer-motion";
 import React, { useRef } from "react";
 import { useSectionInView } from "@/lib/hooks";
+import Section from "./section";
 
 const About = () => {
   const { ref } = useSectionInView("About");
@@ -24,8 +25,8 @@ const About = () => {
       className=" scroll-mt-28"
       ref={ref2}
     >
-      <section ref={ref} id="about" className="  my-20 text-[#bbbbbb]">
-        <div className="container ">
+      <Section id="about" className=" text-[#bbbbbb]">
+        <div className="container" ref={ref}>
           <p className="text-2xl font-medium bg-gradient-to-br from-white to-[#000000] bg-clip-text text-transparent md:mb-10 mb-10">
             About
           </p>
@@ -43,7 +44,7 @@ const About = () => {
             </p>
           </div>
         </div>
-      </section>
+      </Section>
     </motion.div>
   );
 };

@@ -1,7 +1,12 @@
 import { useEffect, useState } from "react";
 import { MouseParallax } from "react-just-parallax";
+
+import github from "../../public/github.png";
+import html from "../../public/html.png";
 import typescript from "../../public/typescript.png";
-import { motion } from "framer-motion";
+import mongodb from "../../public/mongo-db.png";
+import react from "../../public/react.png";
+import nodejs from "../../public/nodejs.png";
 
 import PlusSvg from "./plusSvg";
 import Image from "next/image";
@@ -39,7 +44,7 @@ const Rings = () => {
 };
 
 type BackgroundCirclesProps = {
-  parallaxRef: React.RefObject<HTMLDivElement>;
+  parallaxRef?: React.RefObject<HTMLDivElement>;
 };
 
 export const BackgroundCircles = ({ parallaxRef }: BackgroundCirclesProps) => {
@@ -56,70 +61,93 @@ export const BackgroundCircles = ({ parallaxRef }: BackgroundCirclesProps) => {
       {/* Moving background colored circle balls */}
       <MouseParallax strength={0.07} parallaxContainerRef={parallaxRef}>
         <div className="absolute bottom-1/2 left-1/2 w-0.25 h-1/2 origin-bottom rotate-[46deg]">
-          {/* <div
-            className={`w-2 h-2 -ml-1 -mt-36 bg-gradient-to-b from-[#DD734F] to-[#1A1A32] rounded-full transition-transform duration-500 ease-out ${
-              mounted ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-            }`}
-          /> */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              type: "tween",
-              duration: 0.2,
-            }}
-          >
+          <div className="h-10 w-10 rounded-full opacity-60 transition-all duration-150 ease-in-out">
             <Image
               src={typescript}
               alt=""
               priority={true}
-              className={`w-10 h-10 -ml-1 -mt-36 rounded-full transition-transform duration-500 ease-out ${
+              className={` -ml-1 w-full h-full -mt-36  transition-transform duration-500 ease-out -rotate-[20deg] ${
                 mounted
                   ? "translate-y-0 opacity-100"
                   : "translate-y-10 opacity-0"
               }`}
             />
-          </motion.div>
+          </div>
         </div>
 
         <div className="absolute bottom-1/2 left-1/2 w-0.25 h-1/2 origin-bottom -rotate-[56deg]">
-          <div
-            className={`w-4 h-4 -ml-1 -mt-32 bg-gradient-to-b from-[#DD734F] to-[#1A1A32] rounded-full transition-transform duration-500 ease-out ${
-              mounted ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-            }`}
-          />
+          <div className="h-10 w-10 rounded-full opacity-60 transition-all duration-150 ease-in-out">
+            <Image
+              src={mongodb}
+              alt=""
+              priority={true}
+              className={` -ml-1 w-full h-full -mt-36  transition-transform duration-500 ease-out rotate-[20deg] ${
+                mounted
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-10 opacity-0"
+              }`}
+            />
+          </div>
         </div>
 
         <div className="absolute bottom-1/2 left-1/2 w-0.25 h-1/2 origin-bottom rotate-[54deg]">
-          <div
-            className={`hidden w-4 h-4 -ml-1 mt-[12.9rem] bg-gradient-to-b from-[#B9AEDF] to-[#1A1A32] rounded-full xl:block transit transition-transform duration-500 ease-out ${
-              mounted ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-            }`}
-          />
+          <div className="h-10 w-10 rounded-full opacity-60 transition-all duration-150 ease-in-out">
+            <Image
+              src={react}
+              alt=""
+              priority={true}
+              className={` -ml-1 w-full h-full mt-[12.9rem]  transition-transform duration-500 ease-out -rotate-[20deg] ${
+                mounted
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-10 opacity-0"
+              }`}
+            />
+          </div>
         </div>
 
         <div className="absolute bottom-1/2 left-1/2 w-0.25 h-1/2 origin-bottom -rotate-[65deg]">
-          <div
-            className={`w-3 h-3 -ml-1.5 mt-52 bg-gradient-to-b from-[#B9AEDF] to-[#1A1A32] rounded-full transition-transform duration-500 ease-out ${
-              mounted ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-            }`}
-          />
+          <div className="h-10 w-10 rounded-full opacity-60 transition-all duration-150 ease-in-out">
+            <Image
+              src={nodejs}
+              alt=""
+              priority={true}
+              className={` -ml-1 w-full h-full mt-52  transition-transform duration-500 ease-out rotate-[20deg] ${
+                mounted
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-10 opacity-0"
+              }`}
+            />
+          </div>
         </div>
 
         <div className="absolute bottom-1/2 left-1/2 w-0.25 h-1/2 origin-bottom -rotate-[85deg]">
-          <div
-            className={`w-6 h-6 -ml-3 -mt-3 bg-gradient-to-b from-[#88E5BE] to-[#1A1A32] rounded-full transition-transform duration-500 ease-out ${
-              mounted ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-            }`}
-          />
+          <div className="h-10 w-10 rounded-full opacity-60 transition-all duration-150 ease-in-out">
+            <Image
+              src={html}
+              alt=""
+              priority={true}
+              className={` -ml-3 -mt-3 w-full h-full   transition-transform duration-500 ease-out rotate-[50deg] ${
+                mounted
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-10 opacity-0"
+              }`}
+            />
+          </div>
         </div>
 
         <div className="absolute bottom-1/2 left-1/2 w-0.25 h-1/2 origin-bottom rotate-[70deg]">
-          <div
-            className={`w-6 h-6 -ml-3 -mt-3 bg-gradient-to-b from-[#88E5BE] to-[#1A1A32] rounded-full transition-transform duration-500 ease-out ${
-              mounted ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-            }`}
-          />
+          <div className="h-10 w-10 rounded-full opacity-60 transition-all duration-150 ease-in-out">
+            <Image
+              src={github}
+              alt=""
+              priority={true}
+              className={` -ml-3 -mt-3 w-full h-full   transition-transform duration-500 ease-out -rotate-[50deg] ${
+                mounted
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-10 opacity-0"
+              }`}
+            />
+          </div>
         </div>
       </MouseParallax>
     </div>
