@@ -203,7 +203,7 @@ const Skills = () => {
       ref={ref2}
     >
       <section className="mb-20 scroll-mt-28" id="skills" ref={ref}>
-        <div className="relative container flex-col items-start justify-around rounded-md py-[50px] md:pb-[100px]  bg-gradient-to-br from-[#272727] to-[#1a1a1a] padding-x padding-t pb-8">
+        <div className="relative overflow-hidden  container flex-col items-start justify-around rounded-md py-[50px] md:pb-[100px]  bg-gradient-to-br from-[#272727] to-[#1a1a1a] padding-x padding-t pb-8">
           <p className="text-2xl font-medium bg-gradient-to-br from-white to-[#000000] bg-clip-text text-transparent md:mb-16 mb-10">
             Skills & Development Tools
           </p>
@@ -260,38 +260,35 @@ const Skills = () => {
             </div>
           </div>
 
-          <div className="center-center gap-60 px-[180px]">
-            <Card />
-
-            <ul className="center-center gap-8 flex-wrap w-[50%]">
-              {hoveredIconData.map((icon, index) => (
-                <motion.li
-                  variants={fadeInAnimationVariants}
-                  initial="initial"
-                  whileInView="animate"
-                  viewport={{ once: true }}
-                  custom={index}
-                  key={icon.id}
-                  onMouseEnter={() => {
-                    setIsOpen(true);
-                    setHoveredIcon(icon.id);
-                    setSkillWindow(true);
-                  }}
-                  onMouseLeave={() => {
-                    setIsOpen(false);
-                    setHoveredIcon(null);
-                    setSkillWindow(false);
-                  }}
-                  className="md:opacity-70 hover:opacity-100 transition-all ease-in-out duration-250 hover:cursor-pointer"
-                >
-                  {icon.icon}
-                </motion.li>
-              ))}
-              <div className="absolute bottom-4 right-6 text-sm hidden md:block">
-                Hover over a skill for current proficiency
-              </div>
-            </ul>
-          </div>
+          <ul className="center-center gap-8 flex-wrap xl:px-[260px]">
+            {hoveredIconData.map((icon, index) => (
+              <motion.li
+                variants={fadeInAnimationVariants}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+                custom={index}
+                key={icon.id}
+                onMouseEnter={() => {
+                  setIsOpen(true);
+                  setHoveredIcon(icon.id);
+                  setSkillWindow(true);
+                }}
+                onMouseLeave={() => {
+                  setIsOpen(false);
+                  setHoveredIcon(null);
+                  setSkillWindow(false);
+                }}
+                className="md:opacity-70 hover:opacity-100 transition-all ease-in-out duration-250 hover:cursor-pointer"
+              >
+                {icon.icon}
+              </motion.li>
+            ))}
+            <div className="absolute bottom-4 right-6 text-sm hidden md:block">
+              Hover over a skill for current proficiency
+            </div>
+          </ul>
+          <Card />
         </div>
       </section>
     </motion.div>

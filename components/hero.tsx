@@ -14,7 +14,7 @@ import Button from "./ui/button";
 import { useSectionInView } from "@/lib/hooks";
 
 const Hero = () => {
-  const { ref } = useSectionInView("Home")
+  const { ref } = useSectionInView("Home");
 
   return (
     <section className="relative overflow-hidden" id="home" ref={ref}>
@@ -243,7 +243,7 @@ const Hero = () => {
                 {" "}
                 <Button
                   text="Download CV"
-                  bgColor="transparent"
+                  bgColor="#131313"
                   borderColor="#727272b3"
                   hoverBg="#72727233"
                   icon={<BsCloudDownloadFill size={18} />}

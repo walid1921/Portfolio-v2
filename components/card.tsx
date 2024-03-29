@@ -1,6 +1,6 @@
 "use client";
 import { useRef, useState } from "react";
-import JsIcon from "./ui/jsIcon";
+import Stars from "./ui/stars";
 
 const Card = () => {
   const cardsRef = useRef<HTMLDivElement>(null);
@@ -24,8 +24,9 @@ const Card = () => {
       onMouseEnter={() => setMouseOnCard(true)}
       onMouseLeave={() => setMouseOnCard(false)}
       onMouseMove={(event) => handleMouseMove(event)}
+      className="absolute -bottom-[45px] -left-4 -rotate-12"
     >
-      <JsIcon cursor={cursor} cardRef={cardsRef} mouseOnCard={mouseOnCard} />
+      <Stars cursor={cursor} cardRef={cardsRef} mouseOnCard={mouseOnCard} />
     </div>
   );
 };

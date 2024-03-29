@@ -2,7 +2,7 @@ import React from "react";
 
 type ButtonProps = {
   icon?: React.ReactNode;
-  bgColor: "#289061" | "transparent";
+  bgColor: "#289061" | "#131313";
   borderColor: string;
   hoverBg: string;
   text: string;
