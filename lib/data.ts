@@ -476,99 +476,103 @@ export const skillsData = [
   },
 ] as const;
 
-//! Soft Skills
-export const SoftSkills = [
-  {
-    id: "01",
-    title: "Languages : English - Arabic - French - German)",
-  },
-  {
-    id: "02",
-    title: "Design",
-  },
-  {
-    id: "03",
-    title: "Editing",
-  },
-  {
-    id: "04",
-    title: "Content Creation",
-  },
-];
-
 //! Online Courses
-export const OnlineCourses = [
-  {
-    id: "01",
-    category: "Online Courses",
 
-    title: "The Web Developer BootCamp 2022",
-    subtitle: "(64 total hours)",
-    certificateIcon: React.createElement(TbCertificate),
-    linkIcon: React.createElement(BiLinkAlt),
-    certificationPdf:
-      "https://www.udemy.com/certificate/UC-62196ef4-3625-40ea-b910-2e4685896e40",
-    linkUrl: "https://www.udemy.com/course/the-web-developer-bootcamp/",
-  },
-  {
-    id: "02",
-    title: "Advances CSS and Sass",
-    subtitle: "(28 total hours)",
-    certificateIcon: React.createElement(TbCertificate),
-    linkIcon: React.createElement(BiLinkAlt),
-    certificationPdf:
-      "https://www.udemy.com/certificate/UC-d5ff2f1a-21db-46d9-bdb8-ae6cc61e5282/",
-
-    linkUrl: "https://www.udemy.com/course/advanced-css-and-sass/",
-  },
-  {
-    id: "03",
-    title: "The Complete JavaScript Course 2023: From Zero to Expert!",
-    subtitle: "(69 total hours)",
-    certificateIcon: React.createElement(TbCertificate),
-    linkIcon: React.createElement(BiLinkAlt),
-    certificationPdf:
-      "https://www.udemy.com/certificate/UC-cd978779-734d-4368-bc59-169c6a0f7e71",
-    linkUrl: "https://www.udemy.com/course/the-complete-javascript-course/",
-  },
-  {
-    id: "04",
-    title: "The HTML & CSS Bootcamp 2023 Edition",
-    subtitle: "(37 total hours)",
-    certificateIcon: React.createElement(TbCertificate),
-    certificationPdf:
-      "https://www.udemy.com/certificate/UC-f617e13e-86b4-498e-a389-7a3e5c92d246",
-    linkUrl: "https://www.udemy.com/course/html-and-css-bootcamp/",
-  },
-  {
-    id: "05",
-    title: "Google Digital Garage",
-    subtitle: "(The Fundamentals of Digital Marketing)",
-    linkIcon: React.createElement(BiLinkAlt),
-    certificationPdf: "https://learndigital.withgoogle.com/link/1qsdpcedm9s",
-    linkUrl:
-      "https://learndigital-staging.withgoogle.com/digitalgarage/course/digital-marketing",
-  },
-];
-
-//! Education
+type EducationData = {
+  id: number;
+  category: string;
+  content: {
+    title: string;
+    subtitle: string;
+    certificationPdf?: string;
+    linkUrl: string;
+  }[];
+};
 export const EducationData = [
   {
-    id: "1",
-    title: "Web & App Development Bootcamp",
-    subtitle: "(wbs coding school - Berlin)",
-    linkUrl: "https://www.wbscodingschool.com/",
+    id: 1,
+    category: "Certifications",
+    content: [
+      {
+        title: "Web & App Development Bootcamp",
+        subtitle: "(wbs coding school - Berlin)",
+        linkUrl: "https://www.wbscodingschool.com/",
+      },
+      {
+        title: "Master : Environmental Process Engineering",
+        subtitle: "(2021)",
+        linkUrl: "https://www.wbscodingschool.com/",
+      },
+      {
+        title: "Bachelor : Process Engineering",
+        subtitle: "(2018)",
+        linkUrl: "https://www.wbscodingschool.com/",
+      },
+    ],
   },
   {
-    id: "2",
-    title: "Master : Environmental Process Engineering",
-    subtitle: "(2021)",
-    linkUrl: "https://www.wbscodingschool.com/",
+    id: 2,
+    category: "Online Courses",
+
+    content: [
+      {
+        title: "The Web Developer BootCamp 2022",
+        subtitle: "(64 total hours)",
+        certificationPdf:
+          "https://www.udemy.com/certificate/UC-62196ef4-3625-40ea-b910-2e4685896e40",
+        linkUrl: "https://www.udemy.com/course/the-web-developer-bootcamp/",
+      },
+      {
+        title: "Advances CSS and Sass",
+        subtitle: "(28 total hours)",
+        certificationPdf:
+          "https://www.udemy.com/certificate/UC-d5ff2f1a-21db-46d9-bdb8-ae6cc61e5282/",
+        linkUrl: "https://www.udemy.com/course/advanced-css-and-sass/",
+      },
+      {
+        title: "The Complete JavaScript Course 2023: From Zero to Expert!",
+        subtitle: "(69 total hours)",
+        certificationPdf:
+          "https://www.udemy.com/certificate/UC-cd978779-734d-4368-bc59-169c6a0f7e71",
+        linkUrl: "https://www.udemy.com/course/the-complete-javascript-course/",
+      },
+      {
+        title: "The HTML & CSS Bootcamp 2023 Edition",
+        subtitle: "(37 total hours)",
+        certificationPdf:
+          "https://www.udemy.com/certificate/UC-f617e13e-86b4-498e-a389-7a3e5c92d246",
+        linkUrl: "https://www.udemy.com/course/html-and-css-bootcamp/",
+      },
+      {
+        title: "Google Digital Garage",
+        subtitle: "(The Fundamentals of Digital Marketing)",
+        certificationPdf:
+          "https://learndigital.withgoogle.com/link/1qsdpcedm9s",
+        linkUrl:
+          "https://learndigital-staging.withgoogle.com/digitalgarage/course/digital-marketing",
+      },
+    ],
   },
   {
-    id: "3",
-    title: "Bachelor : Process Engineering",
-    subtitle: "(2018)",
-    linkUrl: "https://www.wbscodingschool.com/",
+    id: 3,
+    category: "Soft Skills",
+    content: [
+      {
+        title: "Languages : English - Arabic - French - German",
+        subtitle: "B2",
+      },
+      {
+        title: "Design",
+        subtitle: "B2",
+      },
+      {
+        title: "Editing",
+        subtitle: "B2",
+      },
+      {
+        title: "Content Creation",
+        subtitle: "B2",
+      },
+    ],
   },
 ];

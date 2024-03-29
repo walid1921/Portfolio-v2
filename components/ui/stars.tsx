@@ -44,12 +44,12 @@ const Stars = ({ cursor, cardRef, mouseOnCard }: JsIconProps) => {
         <radialGradient
           id="emeraldGradient"
           gradientUnits="userSpaceOnUse"
-          r="35%"
+          r="20%"
           cx={gradientCenter.cx}
           cy={gradientCenter.cy}
         >
           {mouseOnCard && <stop stopColor="#10b981" />}
-          <stop offset={1} stopColor="#404040" />
+          <stop offset={1} stopColor="#131313" />
         </radialGradient>
       </defs>
       <path
