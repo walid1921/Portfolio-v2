@@ -24,7 +24,7 @@ const Card = () => {
       onMouseEnter={() => setMouseOnCard(true)}
       onMouseLeave={() => setMouseOnCard(false)}
       onMouseMove={(event) => handleMouseMove(event)}
-      className="absolute -bottom-[45px] -left-4 -rotate-12"
+      className="absolute hidden lg:flex -bottom-[45px] -left-4 -rotate-12"
     >
       <Stars cursor={cursor} cardRef={cardsRef} mouseOnCard={mouseOnCard} />
     </div>
