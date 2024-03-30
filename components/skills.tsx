@@ -1,8 +1,14 @@
 "use client";
 import React, { useState, useRef } from "react";
-
-import figma from "@/public/figma.png";
 import reactQuery from "@/public/react-query-logo.png";
+import { ScrollParallax } from "react-just-parallax";
+import { useScroll, useTransform, motion } from "framer-motion";
+import Image from "next/image";
+
+import { skillsData } from "@/lib/data";
+import { useSectionInView } from "@/lib/hooks";
+import Popsup from "./ui/popsup";
+import figma from "@/public/figma.png";
 import styledComponents from "@/public/styledComponents.png";
 import framerMotion from "@/public/framerMotion.png";
 import postman from "@/public/postman.svg";
@@ -19,16 +25,10 @@ import {
   SiTypescript,
   SiPrisma,
 } from "react-icons/si";
-import { FaNodeJs, FaReact, FaSass } from "react-icons/fa";
+import { FaLinkedin, FaNodeJs, FaReact, FaSass } from "react-icons/fa";
 import { BsGit, BsGithub } from "react-icons/bs";
-import { skillsData } from "@/lib/data";
 import { TbBrandNextjs } from "react-icons/tb";
-import Image from "next/image";
-import { useScroll, useTransform, motion } from "framer-motion";
-import { useSectionInView } from "@/lib/hooks";
-import { once } from "events";
-import Card from "./card";
-import Section from "./section";
+import { FiInstagram } from "react-icons/fi";
 
 //! hoveredIconData
 const hoveredIconData = [
@@ -203,12 +203,12 @@ const Skills = () => {
       }}
       ref={ref2}
     >
-      <Section className=" scroll-mt-28" id="skills">
+      <div className=" z-50 scroll-mt-28" id="skills">
         <div
           ref={ref}
-          className="relative overflow-hidden  container flex-col items-start justify-around rounded-md py-[50px] md:pb-[100px]  bg-gradient-to-br from-[#272727] to-[#1a1a1a] padding-x padding-t pb-8"
+          className="relative overflow-hidden flex-col items-start justify-around rounded-md py-[50px] md:pb-[100px] pb-8 z-50"
         >
-          <p className="text-2xl font-medium bg-gradient-to-br from-white to-[#000000] bg-clip-text text-transparent md:mb-16 mb-10">
+          <p className="text-2xl text-center font-medium bg-gradient-to-br from-white to-[#000000] bg-clip-text text-transparent md:mb-16 mb-10">
             Skills & Development Tools
           </p>
 
@@ -264,7 +264,7 @@ const Skills = () => {
             </div>
           </div>
 
-          <ul className="center-center gap-8 flex-wrap xl:px-[260px]">
+          <ul className="center-center gap-8 flex-wrap xl:px-[100px] ">
             {hoveredIconData.map((icon, index) => (
               <motion.li
                 variants={fadeInAnimationVariants}
@@ -283,7 +283,7 @@ const Skills = () => {
                   setHoveredIcon(null);
                   setSkillWindow(false);
                 }}
-                className="md:opacity-70 hover:opacity-100 transition-all ease-in-out duration-250 hover:cursor-pointer"
+                className="md:opacity-70 hover:opacity-100 transition-all ease-in-out duration-250 hover:cursor-pointer mx-2 lg:mx-0"
               >
                 {icon.icon}
               </motion.li>
@@ -292,9 +292,44 @@ const Skills = () => {
               Hover over a skill for current proficiency
             </div>
           </ul>
-          <Card />
         </div>
-      </Section>
+        <div className="-z-50 hidden lg:flex">
+          <ScrollParallax isAbsolutelyPositioned>
+            <div className="absolute lg:-right-[80px] lg:bottom-[10rem] bottom-[20px]  px-1 py-1 bg-n-9/40 backdrop-blur border border-[#58ffb4] rounded-[14px] xl:flex">
+              <p className="px-4 py-1 text-[#58ffb4]">Open to work</p>
+            </div>
+          </ScrollParallax>
+          <ScrollParallax isAbsolutelyPositioned>
+            <div className="absolute -z-[50] lg:-left-[160px] lg:bottom-[4rem] bottom-[160px]  px-1 py-1 bg-n-9/40 backdrop-blur border border-n-1/10 rounded-[14px] xl:flex">
+              <div className="center-center flex-col lg:flex-row gap-5 lg:px-4 lg:py-1 px-1 py-4">
+                <Popsup
+                  content="Github"
+                  link="https://github.com/walid1921?tab=repositories"
+                  side="top"
+                  bgColor="#00000033"
+                  icon={<BsGithub size={35} />}
+                />
+
+                <Popsup
+                  content="Linkedin"
+                  link="https://www.linkedin.com/in/walid-kouider-ayad"
+                  side="top"
+                  bgColor="#00000033"
+                  icon={<FaLinkedin size={35} />}
+                />
+
+                <Popsup
+                  content="Instagram"
+                  link="https://instagram.com/dev.n.des?igshid=Y2IzZGU1MTFhOQ=="
+                  side="top"
+                  bgColor="#00000033"
+                  icon={<FiInstagram size={35} />}
+                />
+              </div>
+            </div>
+          </ScrollParallax>
+        </div>
+      </div>
     </motion.div>
   );
 };

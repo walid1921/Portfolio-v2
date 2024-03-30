@@ -3,6 +3,7 @@ import { useScroll, motion, useTransform } from "framer-motion";
 import React, { useRef } from "react";
 import { useSectionInView } from "@/lib/hooks";
 import Section from "./section";
+import Card from "./card";
 
 const About = () => {
   const { ref } = useSectionInView("About");
@@ -22,17 +23,20 @@ const About = () => {
         scale: scaleProgress,
         opacity: opacityProgress,
       }}
-      className=" scroll-mt-28"
+      className=" scroll-mt-28 "
       ref={ref2}
     >
-      <Section id="about" className=" text-[#bbbbbb]">
-        <div className="container" ref={ref}>
+      <Section id="about" className=" text-[#bbbbbb] ">
+        <div
+          className="container relative bg-gradient-to-br from-[#272727] to-[#1a1a1a] rounded-md py-[50px] "
+          ref={ref}
+        >
           <p className="text-2xl font-medium bg-gradient-to-br from-white to-[#000000] bg-clip-text text-transparent md:mb-10 mb-10">
             About
           </p>
 
           <div className="flex flex-col gap-8">
-            <p className="text-justify leading-8 ">
+            <p className="text-justify leading-8 text-lg z-50">
               I'm a 25-year-old Developer based in Germany, blending my
               background in Environmental Process Engineering with a passion for
               full-stack development. My journey began when I discovered the joy
@@ -43,6 +47,7 @@ const About = () => {
               feats.
             </p>
           </div>
+          <Card />
         </div>
       </Section>
     </motion.div>

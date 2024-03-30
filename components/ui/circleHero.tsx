@@ -1,7 +1,8 @@
+
 import { useEffect, useState } from "react";
 import { MouseParallax } from "react-just-parallax";
 
-import github from "../../public/github.png";
+import tailwind from "../../public/tailwind.png";
 import html from "../../public/html.png";
 import typescript from "../../public/typescript.png";
 import mongodb from "../../public/mongo-db.png";
@@ -23,11 +24,11 @@ export const Gradient = () => {
 export const BottomLine = () => {
   return (
     <>
-      <div className="hidden absolute top-[55.25rem] left-10 right-10 h-0.25 bg-n-6 pointer-events-none xl:block" />
+      <div className="hidden absolute top-[1005px] left-10 right-10 h-0.25 bg-n-6 pointer-events-none xl:block" />
 
-      <PlusSvg className="hidden absolute top-[54.9375rem] left-[2.1875rem] z-2 pointer-events-none xl:block" />
+      <PlusSvg className="hidden absolute  top-[1000px] left-[2.1875rem] z-2 pointer-events-none xl:block" />
 
-      <PlusSvg className="hidden absolute top-[54.9375rem] right-[2.1875rem] z-2 pointer-events-none xl:block" />
+      <PlusSvg className="hidden absolute  top-[1000px] right-[2.1875rem] z-2 pointer-events-none xl:block" />
     </>
   );
 };
@@ -55,7 +56,7 @@ export const BackgroundCircles = ({ parallaxRef }: BackgroundCirclesProps) => {
   }, []);
 
   return (
-    <div className="absolute hidden lg:flex -top-[42.375rem] left-1/2 w-[78rem] aspect-square border border-n-2/5 rounded-full -translate-x-1/2 md:-top-[38.5rem] xl:-top-[32rem]">
+    <div className="absolute hidden lg:flex top-[500px] left-1/2 w-[78rem] aspect-square border border-n-2/5 rounded-full -translate-x-1/2 md:-top-[38.5rem] xl:-top-[150px] -z-50">
       <Rings />
 
       {/* Moving background colored circle balls */}
@@ -76,7 +77,7 @@ export const BackgroundCircles = ({ parallaxRef }: BackgroundCirclesProps) => {
         </div>
 
         <div className="absolute bottom-1/2 left-1/2 w-0.25 h-1/2 origin-bottom -rotate-[56deg]">
-          <div className="h-10 w-10 rounded-full opacity-60 transition-all duration-150 ease-in-out">
+          <div className="h-[60px] w-[60px] rounded-full opacity-60 transition-all duration-150 ease-in-out">
             <Image
               src={mongodb}
               alt=""
@@ -136,9 +137,9 @@ export const BackgroundCircles = ({ parallaxRef }: BackgroundCirclesProps) => {
         </div>
 
         <div className="absolute bottom-1/2 left-1/2 w-0.25 h-1/2 origin-bottom rotate-[70deg]">
-          <div className="h-10 w-10 rounded-full opacity-60 transition-all duration-150 ease-in-out">
+          <div className="h-[60px] w-[60px] rounded-full opacity-60 transition-all duration-150 ease-in-out">
             <Image
-              src={github}
+              src={tailwind}
               alt=""
               priority={true}
               className={` -ml-3 -mt-3 w-full h-full   transition-transform duration-500 ease-out -rotate-[50deg] ${
