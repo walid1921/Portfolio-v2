@@ -31,7 +31,7 @@ export const BottomLine = () => {
       <PlusSvg className="hidden absolute  top-[1000px] right-[2.1875rem] z-2 pointer-events-none xl:block" />
     </>
   );
-};
+}; 
 
 const Rings = () => {
   return (

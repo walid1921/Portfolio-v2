@@ -30,29 +30,31 @@ const Popsup = ({
   return (
     <TooltipProvider delayDuration={100} skipDelayDuration={100}>
       <Tooltip>
-        <TooltipTrigger className="z-30 rounded-full hover:cursor-pointer transition-all ease-in-out duration-300 hover:text-white hover:scale-110">
+        <TooltipTrigger
+          className={`z-50 rounded-full hover:cursor-pointer transition-all ease-in-out duration-300 hover:text-white`}
+        >
           {link && (
             <Link href={link} target="_blank" rel="noopener noreferrer">
               {icon}
             </Link>
           )}
           {!link && (
-            <button
-              className="hover:text-[#bbb] cursor-pointer transition-all ease-in duration-150 hover:scale-105 active:scale-100"
+            <div
+              className="hover:text-[#bbb] cursor-pointer transition-all ease-in duration-150 hover:scale-105 active:scale-100 p-0 m-0"
               onClick={onClick}
             >
               {icon}
-            </button>
+            </div>
           )}
         </TooltipTrigger>
 
         <TooltipContent
-          className=" border  rounded-md px-2 py-1  backdrop-blur-md text-xs"
+          className=" border rounded-md px-2 py-1  backdrop-blur-md text-xs"
           style={{
             borderColor: borderColor,
             backgroundColor: bgColor,
           }}
-          sideOffset={10}
+          sideOffset={15}
           align="center"
           side={side}
         >

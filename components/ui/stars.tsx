@@ -30,8 +30,8 @@ const Stars = ({ cursor, cardRef, mouseOnCard }: JsIconProps) => {
 
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="250"
-      height="250"
+      width="200"
+      height="200"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -49,7 +49,7 @@ const Stars = ({ cursor, cardRef, mouseOnCard }: JsIconProps) => {
           cy={gradientCenter.cy}
         >
           {mouseOnCard && <stop stopColor="#10b981" />}
-          <stop offset={1} stopColor="#131313" />
+          <stop offset={1} stopColor="#1a1a1a" /> 
         </radialGradient>
       </defs>
       <path

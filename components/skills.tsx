@@ -1,6 +1,5 @@
 "use client";
 import React, { useState, useRef } from "react";
-import reactQuery from "@/public/react-query-logo.png";
 import { ScrollParallax } from "react-just-parallax";
 import { useScroll, useTransform, motion } from "framer-motion";
 import Image from "next/image";
@@ -12,6 +11,7 @@ import figma from "@/public/figma.png";
 import styledComponents from "@/public/styledComponents.png";
 import framerMotion from "@/public/framerMotion.png";
 import postman from "@/public/postman.svg";
+import reactQuery from "@/public/react-query-logo.png";
 import {
   SiHtml5,
   SiCss3,
@@ -203,7 +203,7 @@ const Skills = () => {
       }}
       ref={ref2}
     >
-      <div className=" z-50 scroll-mt-28" id="skills">
+      <section className=" z-50 scroll-mt-28 " id="skills">
         <div
           ref={ref}
           className="relative overflow-hidden flex-col items-start justify-around rounded-md py-[50px] md:pb-[100px] pb-8 z-50"
@@ -329,7 +329,7 @@ const Skills = () => {
             </div>
           </ScrollParallax>
         </div>
-      </div>
+      </section>
     </motion.div>
   );
 };

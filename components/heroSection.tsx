@@ -25,7 +25,7 @@ const HeroSection = () => {
 
   return (
     <Section
-      className="lg:pt-[12rem] pt-[120px] -mt-[5.25rem]"
+      className="lg:pt-[12rem] pt-[120px] -mt-[5.25rem] "
       crosses
       crossesOffset="lg:translate-y-[5.25rem]"
       id="home"
@@ -151,7 +151,6 @@ const HeroSection = () => {
                 ease: "easeInOut",
               }}
             >
-              {" "}
               <Button
                 text="Download CV"
                 bgColor="#131313"

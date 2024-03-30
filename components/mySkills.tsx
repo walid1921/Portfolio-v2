@@ -1,3 +1,4 @@
+import About from "./about";
 import Skills from "./skills";
 import { Gradient } from "./ui/circleHero";
 
@@ -7,7 +8,7 @@ const MySkills = () => {
       <div className="relative  p-0.5 rounded-[14px] bg-conic-gradient z-1">
         <div className="relative bg-n-8 rounded-[14px] z-2">
           <div className="aspect-[33/40] rounded-[14px] z-3  md:aspect-[688/490] lg:aspect-[1024/300]">
-            <Skills />
+            <About />
           </div>
         </div>
         <Gradient />
