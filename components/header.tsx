@@ -99,7 +99,7 @@ export default function Header() {
         }`}
         onClick={toggleMenu}
       >
-        <ul className="center-center flex-col h-full gap-20 bg-[rgba(12,12,12,0.35)]  backdrop-blur-sm border-l-[1px] border-neutral-700 border-bg-white/20 md:text-lg text-md">
+        <ul className="center-center flex-col h-full gap-20 bg-[rgba(12,12,12,0.35)]  backdrop-blur-md border-l-[1px] border-neutral-700 border-bg-white/20 md:text-lg text-md">
           {links.map((link) => (
             <motion.li
               key={link.hash}
