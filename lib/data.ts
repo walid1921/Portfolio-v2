@@ -492,6 +492,8 @@ export const EducationData = [
   {
     id: 1,
     category: "Certifications",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.  ",
+    colorful: true,
     content: [
       {
         title: "Web & App Development Bootcamp",
@@ -513,10 +515,12 @@ export const EducationData = [
   {
     id: 2,
     category: "Online Courses",
-
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.  ",
+    colorful: false,
     content: [
       {
         title: "The Web Developer BootCamp 2022",
+        status: "Done",
         subtitle: "(64 total hours)",
         certificationPdf:
           "https://www.udemy.com/certificate/UC-62196ef4-3625-40ea-b910-2e4685896e40",
@@ -524,6 +528,7 @@ export const EducationData = [
       },
       {
         title: "Advances CSS and Sass",
+        status: "Done",
         subtitle: "(28 total hours)",
         certificationPdf:
           "https://www.udemy.com/certificate/UC-d5ff2f1a-21db-46d9-bdb8-ae6cc61e5282/",
@@ -531,6 +536,7 @@ export const EducationData = [
       },
       {
         title: "The Complete JavaScript Course 2023: From Zero to Expert!",
+        status: "Done",
         subtitle: "(69 total hours)",
         certificationPdf:
           "https://www.udemy.com/certificate/UC-cd978779-734d-4368-bc59-169c6a0f7e71",
@@ -538,6 +544,7 @@ export const EducationData = [
       },
       {
         title: "The HTML & CSS Bootcamp 2023 Edition",
+        status: "Done",
         subtitle: "(37 total hours)",
         certificationPdf:
           "https://www.udemy.com/certificate/UC-f617e13e-86b4-498e-a389-7a3e5c92d246",
@@ -545,6 +552,7 @@ export const EducationData = [
       },
       {
         title: "Google Digital Garage",
+        status: "In Progress",
         subtitle: "(The Fundamentals of Digital Marketing)",
         certificationPdf:
           "https://learndigital.withgoogle.com/link/1qsdpcedm9s",
@@ -556,6 +564,8 @@ export const EducationData = [
   {
     id: 3,
     category: "Soft Skills",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.  ",
+    colorful: false,
     content: [
       {
         title: "Languages : English - Arabic - French - German",
