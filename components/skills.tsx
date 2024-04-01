@@ -270,7 +270,7 @@ const Skills = () => {
 
                           // rotate: idx * 45 + 360, // Rotate continuously in a circle
                           transition: {
-                            delay: 0.5,
+                            delay: 0.8,
                             duration: 2, // Duration of each rotation
                             loop: Infinity, // Infinite loop
                             ease: "linear", // Linear easing
