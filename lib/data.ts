@@ -550,15 +550,6 @@ export const EducationData = [
           "https://www.udemy.com/certificate/UC-f617e13e-86b4-498e-a389-7a3e5c92d246",
         linkUrl: "https://www.udemy.com/course/html-and-css-bootcamp/",
       },
-      {
-        title: "Google Digital Garage",
-        status: "In Progress",
-        subtitle: "(The Fundamentals of Digital Marketing)",
-        certificationPdf:
-          "https://learndigital.withgoogle.com/link/1qsdpcedm9s",
-        linkUrl:
-          "https://learndigital-staging.withgoogle.com/digitalgarage/course/digital-marketing",
-      },
     ],
   },
   {

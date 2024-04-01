@@ -1,22 +1,16 @@
 "use client";
-import React, { useState, useRef } from "react";
-import { ScrollParallax } from "react-just-parallax";
-import { useScroll, useTransform, motion } from "framer-motion";
 import Image from "next/image";
-
-import { skillsData } from "@/lib/data";
-import { useSectionInView } from "@/lib/hooks";
-import Popsup from "./ui/popsup";
+import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
 import figma from "@/public/figma.png";
 import styledComponents from "@/public/styledComponents.png";
 import framerMotion from "@/public/framerMotion.png";
-import postman from "@/public/postman.svg";
 import reactQuery from "@/public/react-query-logo.png";
+import postman from "@/public/postman.svg";
 import {
   SiHtml5,
   SiCss3,
   SiJavascript,
-  SiBootstrap,
   SiTailwindcss,
   SiMongodb,
   SiExpress,
@@ -25,55 +19,53 @@ import {
   SiTypescript,
   SiPrisma,
 } from "react-icons/si";
-import { FaLinkedin, FaNodeJs, FaReact, FaSass } from "react-icons/fa";
+import { FaNodeJs, FaReact, FaSass } from "react-icons/fa";
 import { BsGit, BsGithub } from "react-icons/bs";
 import { TbBrandNextjs } from "react-icons/tb";
-import { FiInstagram } from "react-icons/fi";
+import { LeftCurve, RightCurve } from "./ui/skillsLine";
+import Section from "./section";
+import Popsup from "./ui/popsup";
+import { useSectionInView } from "@/lib/hooks";
+import Card from "./star";
 
 //! hoveredIconData
-const hoveredIconData = [
+const hoveredIconData1 = [
   {
-    id: "html",
+    id: "HTML",
     icon: <SiHtml5 size={32} color="#FF4320" />,
   },
   {
-    id: "css",
+    id: "CSS",
     icon: <SiCss3 size={32} color="#1E90FF" />,
   },
   {
-    id: "js",
+    id: "Javascript",
     icon: <SiJavascript size={32} color="#F7DF1E" />,
   },
   {
-    id: "git",
+    id: "Git",
     icon: <BsGit size={32} color="#FF9900" />,
   },
   {
-    id: "github",
+    id: "Github",
     icon: <BsGithub size={32} color="#fff" />,
   },
   {
-    id: "react",
-    icon: <FaReact size={32} color="#61DAFB" />,
-  },
-  {
-    id: "typescript",
+    id: "Typescript",
     icon: <SiTypescript size={32} color="#007ACC" />,
   },
   {
-    id: "sass",
+    id: "Sass",
     icon: <FaSass size={32} color="#CD6799" />,
   },
   {
-    id: "bootstrap",
-    icon: <SiBootstrap size={32} color="#6f42c1" />,
-  },
-  {
-    id: "tailwind",
+    id: "Tailwind",
     icon: <SiTailwindcss size={32} color="#3490dc" />,
   },
+];
+const hoveredIconData2 = [
   {
-    id: "figma",
+    id: "Figma",
     icon: (
       <div className="h-[35px] w-[35px]">
         <Image
@@ -85,11 +77,11 @@ const hoveredIconData = [
     ),
   },
   {
-    id: "reactQuery",
+    id: "React Query",
     icon: (
       <div className="h-[35px] w-[35px]">
         <Image
-          className=" h-full w-full object-cover object-center"
+          className=" h-full w-full object-cover object-center "
           src={reactQuery}
           alt=""
         />
@@ -97,7 +89,7 @@ const hoveredIconData = [
     ),
   },
   {
-    id: "styledComponents",
+    id: "Styled Components",
     icon: (
       <div className="h-[35px] w-[35px]">
         <Image
@@ -109,7 +101,7 @@ const hoveredIconData = [
     ),
   },
   {
-    id: "framerMotion",
+    id: "Framer Motion",
     icon: (
       <div className="h-[35px] w-[35px]">
         <Image
@@ -121,7 +113,7 @@ const hoveredIconData = [
     ),
   },
   {
-    id: "postman",
+    id: "Postman",
     icon: (
       <div className="h-[35px] w-[35px]">
         <Image
@@ -133,204 +125,173 @@ const hoveredIconData = [
     ),
   },
   {
-    id: "supabase",
+    id: "Supabase",
     icon: <SiSupabase size={32} color="#3FA037" />,
   },
   {
-    id: "mongodb",
+    id: "Mongodb",
     icon: <SiMongodb size={32} color="#3FA037" />,
   },
   {
-    id: "express",
+    id: "Express.js",
     icon: <SiExpress size={32} color="#fff" />,
   },
   {
-    id: "node",
+    id: "Node.js",
     icon: <FaNodeJs size={32} color="#8CC84B" />,
   },
   {
-    id: "sql",
+    id: "Mysql",
     icon: <SiPostgresql size={32} color="#3490dc" />,
   },
   {
-    id: "prisma",
+    id: "Prisma",
     icon: <SiPrisma size={32} color="#fff" />,
   },
   {
-    id: "next",
+    id: "Next.js",
     icon: <TbBrandNextjs size={32} color="#fff" />,
   },
 ];
 
-const fadeInAnimationVariants = {
-  initial: {
-    opacity: 0,
-    y: 30,
-  },
-  animate: (index: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 0.05 * index,
-      ease: "easeInOut",
-      type: "tween",
-    },
-  }),
-};
-
 const Skills = () => {
-  const ref2 = useRef<HTMLDivElement>(null);
+  const [angles, setAngles] = useState([]); // State to store angles for positioning icons
+  const { ref, inView } = useSectionInView("Skills");
 
-  const { scrollYProgress } = useScroll({
-    target: ref2,
-    offset: ["0 1", "1.33 1"],
-  });
-  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
-  const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+  useEffect(() => {
+    // Function to calculate angles for positioning icons in a circle
+    const calculateAngles = (numIcons: number) => {
+      const angleStep = (2 * Math.PI) / numIcons; // Calculate angle step
+      const initialAngle = 0; // Initial angle (starts from top)
+      const anglesArray = []; // Array to store angles
+      for (let i = 0; i < numIcons; i++) {
+        anglesArray.push(initialAngle + i * angleStep); // Push calculated angles into the array
+      }
+      return anglesArray; // Return array of angles
+    };
 
-  const [isOpen, setIsOpen] = useState(false);
-  const [hoveredIcon, setHoveredIcon] = useState<string | null>(null);
-  const [skillWindow, setSkillWindow] = useState(false);
-  const tooltipRef = useRef<HTMLDivElement>(null);
-
-  const { ref } = useSectionInView("Skills");
+    setAngles(calculateAngles(hoveredIconData2.length));
+    // Set angles using the calculated angles
+  }, []);
 
   return (
-    <motion.div
-      style={{
-        scale: scaleProgress,
-        opacity: opacityProgress,
-      }}
-      ref={ref2}
-    >
-      <section className=" z-50 scroll-mt-28 " id="skills">
-        <div
-          ref={ref}
-          className="relative overflow-hidden flex-col items-start justify-around rounded-md py-[50px] md:pb-[100px] pb-8 z-50"
-        >
-          <p className="text-2xl text-center font-medium bg-gradient-to-br from-white to-[#000000] bg-clip-text text-transparent md:mb-16 mb-10">
-            Skills & Development Tools
-          </p>
-
-          <div>
-            <div
-              ref={tooltipRef}
-              className={`absolute hidden md:block top-0  sm:top-[10px] sm:right-[10px] bg-white/10  w-auto rounded-lg ease-in-out duration-300 ${
-                skillWindow ? "scale-100" : "scale-0"
-              }`}
-              style={{
-                transformOrigin: "center-center",
-                opacity: skillWindow ? 1 : 0,
-              }}
-            >
-              {skillsData.map(
-                (data) =>
-                  data.id === hoveredIcon && (
-                    <div
-                      key={data.id}
-                      className="flex  items-center px-2  sm:px-2  border rounded-lg border-gray-300 "
-                      style={{ borderColor: `${data.borderColor}` }}
-                    >
-                      <div
-                        className="mr-1 bg-cover"
-                        style={{ color: `${data.color}` }}
-                      >
-                        {data.icon}
-                      </div>
-
-                      <p className="fira-font text-[12px] ml-2 font-medium">
-                        {data.name}
-                      </p>
-
-                      <div className="w-[110px] h-2 m-5">
-                        <div className="relative w-full h-full  rounded-lg bg-slate-200  flex justify-end">
-                          <div
-                            className={`absolute left-0  border rounded-full h-full 
-                          `}
-                            style={{
-                              width: `${data.value}%`,
-                              backgroundColor: `${data.bgColor}`,
-                            }}
-                          ></div>
-                        </div>
-                      </div>
-
-                      <span className="fira-font text-[12px] font-medium">
-                        {data.percentage}
-                      </span>
-                    </div>
-                  )
-              )}
-            </div>
-          </div>
-
-          <ul className="center-center gap-8 flex-wrap xl:px-[100px] ">
-            {hoveredIconData.map((icon, index) => (
-              <motion.li
-                variants={fadeInAnimationVariants}
-                initial="initial"
-                whileInView="animate"
-                viewport={{ once: true }}
-                custom={index}
-                key={icon.id}
-                onMouseEnter={() => {
-                  setIsOpen(true);
-                  setHoveredIcon(icon.id);
-                  setSkillWindow(true);
-                }}
-                onMouseLeave={() => {
-                  setIsOpen(false);
-                  setHoveredIcon(null);
-                  setSkillWindow(false);
-                }}
-                className="md:opacity-70 hover:opacity-100 transition-all ease-in-out duration-250 hover:cursor-pointer mx-2 lg:mx-0"
+    <Section id="skills">
+      <div className="container  center-center flex-col">
+        <p className="lg:text-3xl text-2xl text-start font-medium bg-gradient-to-br from-white to-[#000000] bg-clip-text text-transparent my-24 ">
+          Skills & Development Tools
+        </p>
+        <div className="relative  flex md:w-[34rem] w-[20rem] aspect-square border border-n-6 rounded-full scale-100  hover:border-[#58ffb4] transition-all ease-in-out duration-300">
+          <div className="relative flex md:w-[20rem] w-[12rem] aspect-square m-auto border border-n-6  rounded-full hover:border-[#58ffb4] transition-all ease-in-out duration-300">
+            <div className="w-[6rem] aspect-square m-auto p-[0.2rem] bg-conic-gradient rounded-full">
+              <div
+                className="center-center w-full h-full bg-n-8 opacity-90 rounded-full "
+                ref={ref}
               >
-                {icon.icon}
-              </motion.li>
-            ))}
-            <div className="absolute bottom-4 right-6 text-sm hidden md:block">
-              Hover over a skill for current proficiency
-            </div>
-          </ul>
-        </div>
-        <div className="-z-50 hidden lg:flex">
-          <ScrollParallax isAbsolutelyPositioned>
-            <div className="absolute lg:-right-[80px] lg:bottom-[10rem] bottom-[20px]  px-1 py-1 bg-n-9/40 backdrop-blur border border-[#58ffb4] rounded-[14px] xl:flex">
-              <p className="px-4 py-1 text-[#58ffb4]">Open to work</p>
-            </div>
-          </ScrollParallax>
-          <ScrollParallax isAbsolutelyPositioned>
-            <div className="absolute -z-[50] lg:-left-[160px] lg:bottom-[4rem] bottom-[160px]  px-1 py-1 bg-n-9/40 backdrop-blur border border-n-1/10 rounded-[14px] xl:flex">
-              <div className="center-center flex-col lg:flex-row gap-5 lg:px-4 lg:py-1 px-1 py-4">
-                <Popsup
-                  content="Github"
-                  link="https://github.com/walid1921?tab=repositories"
-                  side="top"
-                  bgColor="#00000033"
-                  icon={<BsGithub size={35} />}
-                />
-
-                <Popsup
-                  content="Linkedin"
-                  link="https://www.linkedin.com/in/walid-kouider-ayad"
-                  side="top"
-                  bgColor="#00000033"
-                  icon={<FaLinkedin size={35} />}
-                />
-
-                <Popsup
-                  content="Instagram"
-                  link="https://instagram.com/dev.n.des?igshid=Y2IzZGU1MTFhOQ=="
-                  side="top"
-                  bgColor="#00000033"
-                  icon={<FiInstagram size={35} />}
-                />
+                <motion.div
+                  className="z-50 center-center"
+                  viewport={{ once: true }}
+                  initial={{ opacity: 0 }}
+                  animate={
+                    inView
+                      ? {
+                          opacity: 1,
+                          rotate: 360, // Rotate continuously in a circle
+                          transition: {
+                            duration: 0.8, // Duration of each rotation
+                            loop: Infinity, // Infinite loop
+                            ease: "linear", // Linear easing
+                          },
+                        }
+                      : { opacity: 1 }
+                  }
+                >
+                  <Popsup
+                    icon={<FaReact size={40} color="#61DAFB" />}
+                    content="React"
+                    side="top"
+                  />
+                </motion.div>
               </div>
             </div>
-          </ScrollParallax>
+
+            <ul>
+              {hoveredIconData1.map((skill, idx) => (
+                <motion.li
+                  key={idx}
+                  className={`absolute z-30 top-0 left-1/2 h-1/2 -ml-[1.6rem] origin-bottom rotate-${
+                    idx * 45
+                  }`}
+                  whileInView="animate"
+                  viewport={{ once: true }}
+                  initial={{ opacity: 0 }}
+                  animate={
+                    inView
+                      ? {
+                          opacity: 1,
+
+                          // rotate: idx * 45 + 360, // Rotate continuously in a circle
+                          transition: {
+                            delay: 0.5,
+                            duration: 1, // Duration of each rotation
+                            loop: Infinity, // Infinite loop
+                            ease: "linear", // Linear easing
+                          },
+                        }
+                      : { opacity: 0 }
+                  }
+                >
+                  <span
+                    className={`md:h-14  md:w-14 h-12 w-12 relative -top-[1.6rem] bg-n-7 border border-n-1/15 hover:border-[#58ffb4] transition-all ease-in-out duration-300 center-center rounded-xl -rotate-${
+                      idx * 45
+                    }`}
+                  >
+                    <Popsup icon={skill.icon} content={skill.id} side="top" />
+                  </span>
+                </motion.li>
+              ))}
+            </ul>
+          </div>
+
+          <ul>
+            {hoveredIconData2.map((skill, idx) => (
+              <li
+                key={idx}
+                className={`absolute top-0 left-1/2 h-1/2 -ml-[1.6rem] origin-bottom`}
+                style={{ transform: `rotate(${angles[idx]}rad)` }} // Set rotation angle for each icon
+              >
+                <motion.span
+                  className={`md:h-14 md:w-14 h-12 w-12 relative -top-[1.6rem] bg-n-7 border border-n-1/15 hover:border-[#58ffb4] transition-all ease-in-out duration-300 center-center rounded-xl `}
+                  style={{ transform: `rotate(-${angles[idx]}rad)` }} // Apply reverse rotation
+                  initial={{ opacity: 0 }}
+                  animate={
+                    inView
+                      ? {
+                          opacity: 1,
+
+                          // rotate: idx * 45 + 360, // Rotate continuously in a circle
+                          transition: {
+                            delay: 0.5,
+                            duration: 2, // Duration of each rotation
+                            loop: Infinity, // Infinite loop
+                            ease: "linear", // Linear easing
+                          },
+                        }
+                      : { opacity: 0 }
+                  }
+                  whileInView="animate"
+                  viewport={{ once: true }}
+                >
+                  <Popsup icon={skill.icon} content={skill.id} side="top" />
+                </motion.span>
+              </li>
+            ))}
+          </ul>
+          <Card />
+          <LeftCurve />
+          <RightCurve />
         </div>
-      </section>
-    </motion.div>
+      </div>
+    </Section>
   );
 };
 

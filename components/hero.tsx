@@ -8,7 +8,7 @@ import { useRef } from "react";
 import Button from "./ui/button";
 import { BsCloudDownloadFill, BsFillSendFill } from "react-icons/bs";
 import { useSectionInView } from "@/lib/hooks";
-import MySkills from "./mySkills";
+import MySkills from "./about";
 
 const Hero = () => {
   const parallaxRef = useRef(null);

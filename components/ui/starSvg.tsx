@@ -7,7 +7,7 @@ type JsIconProps = {
   mouseOnCard: boolean;
 };
 
-const Stars = ({ cursor, cardRef, mouseOnCard }: JsIconProps) => {
+const StarSvg = ({ cursor, cardRef, mouseOnCard }: JsIconProps) => {
   const [gradientCenter, setGradientCenter] = useState({
     cx: "50%",
     cy: "50%",
@@ -64,5 +64,5 @@ const Stars = ({ cursor, cardRef, mouseOnCard }: JsIconProps) => {
   );
 };
 
-export default Stars;
+export default StarSvg;
 

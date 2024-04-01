@@ -59,7 +59,7 @@ const Projects = () => {
     <Section id="projects" className="flex justify-center scroll-mt-28">
       <div className="max-w-[1300px] z-1" ref={ref}>
         <div className="flex flex-col md:flex-row md:items-center md:justify-between ">
-          <p className="text-2xl pl-[20px] font-medium bg-gradient-to-br from-white to-[#4d4d4d] bg-clip-text text-transparent mb-10">
+          <p className="lg:text-3xl text-2xl pl-[20px] font-medium bg-gradient-to-br from-white to-[#4d4d4d] bg-clip-text text-transparent mb-10">
             Projects <span className="text-sm">({project.length})</span>
           </p>
 

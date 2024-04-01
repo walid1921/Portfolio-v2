@@ -1,8 +1,8 @@
 "use client";
 import { useRef, useState } from "react";
-import Stars from "./ui/stars";
+import StarSvg from "./ui/starSvg";
 
-const Card = () => {
+const Star = () => {
   const cardsRef = useRef<HTMLDivElement>(null);
   const [cursor, setCursor] = useState({ x: 0, y: 0 });
   const [mouseOnCard, setMouseOnCard] = useState(false);
@@ -26,9 +26,9 @@ const Card = () => {
       onMouseMove={(event) => handleMouseMove(event)}
       className="absolute hidden xl:flex -top-[150px] -right-[500px] -rotate-12"
     >
-      <Stars cursor={cursor} cardRef={cardsRef} mouseOnCard={mouseOnCard} />
+      <StarSvg cursor={cursor} cardRef={cardsRef} mouseOnCard={mouseOnCard} />
     </div>
   );
 };
 
-export default Card;
+export default Star;
