@@ -16,6 +16,7 @@ type PopsupProps = {
   borderColor?: string;
   bgColor?: string;
   onClick?: () => void;
+  children?: React.ReactNode;
 };
 
 const Popsup = ({
@@ -26,6 +27,7 @@ const Popsup = ({
   borderColor = "#fff",
   bgColor,
   onClick,
+  children,
 }: PopsupProps) => {
   return (
     <TooltipProvider delayDuration={100} skipDelayDuration={100}>
@@ -33,6 +35,7 @@ const Popsup = ({
         <TooltipTrigger
           className={`z-50 rounded-full hover:cursor-pointer transition-all ease-in-out duration-300 hover:text-white`}
         >
+          {children}
           {link && (
             <Link href={link} target="_blank" rel="noopener noreferrer">
               {icon}

@@ -478,49 +478,51 @@ export const skillsData = [
 
 //! Online Courses
 
-type EducationData = {
+type EducationDataProps = {
   id: number;
   category: string;
+  colorful: boolean;
   content: {
     title: string;
-    subtitle: string;
+    subtitle?: string;
+    linkUrl?: string;
     certificationPdf?: string;
-    linkUrl: string;
+    status?: string;
   }[];
 };
-export const EducationData = [
+
+export const EducationData: EducationDataProps[] = [
   {
     id: 1,
     category: "Certifications",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.  ",
     colorful: true,
     content: [
       {
         title: "Web & App Development Bootcamp",
         subtitle: "(wbs coding school - Berlin)",
         linkUrl: "https://www.wbscodingschool.com/",
+        status: "completed",
       },
       {
         title: "Master : Environmental Process Engineering",
         subtitle: "(2021)",
-        linkUrl: "https://www.wbscodingschool.com/",
+        status: "completed",
       },
       {
         title: "Bachelor : Process Engineering",
         subtitle: "(2018)",
-        linkUrl: "https://www.wbscodingschool.com/",
+        status: "completed",
       },
     ],
   },
   {
     id: 2,
     category: "Online Courses",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.  ",
     colorful: false,
     content: [
       {
         title: "The Web Developer BootCamp 2022",
-        status: "Done",
+        status: "completed",
         subtitle: "(64 total hours)",
         certificationPdf:
           "https://www.udemy.com/certificate/UC-62196ef4-3625-40ea-b910-2e4685896e40",
@@ -528,7 +530,7 @@ export const EducationData = [
       },
       {
         title: "Advances CSS and Sass",
-        status: "Done",
+        status: "completed",
         subtitle: "(28 total hours)",
         certificationPdf:
           "https://www.udemy.com/certificate/UC-d5ff2f1a-21db-46d9-bdb8-ae6cc61e5282/",
@@ -536,7 +538,7 @@ export const EducationData = [
       },
       {
         title: "The Complete JavaScript Course 2023: From Zero to Expert!",
-        status: "Done",
+        status: "completed",
         subtitle: "(69 total hours)",
         certificationPdf:
           "https://www.udemy.com/certificate/UC-cd978779-734d-4368-bc59-169c6a0f7e71",
@@ -544,35 +546,37 @@ export const EducationData = [
       },
       {
         title: "The HTML & CSS Bootcamp 2023 Edition",
-        status: "Done",
+        status: "completed",
         subtitle: "(37 total hours)",
         certificationPdf:
           "https://www.udemy.com/certificate/UC-f617e13e-86b4-498e-a389-7a3e5c92d246",
         linkUrl: "https://www.udemy.com/course/html-and-css-bootcamp/",
+      },
+      {
+        title: "The Ultimate React Course 2024",
+        status: "studying",
+        subtitle: "(67 total hours)",
+        certificationPdf: "",
+        linkUrl: "https://www.udemy.com/course/the-ultimate-react-course/",
       },
     ],
   },
   {
     id: 3,
     category: "Soft Skills",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.  ",
     colorful: false,
     content: [
       {
         title: "Languages : English - Arabic - French - German",
-        subtitle: "B2",
       },
       {
         title: "Design",
-        subtitle: "B2",
       },
       {
         title: "Editing",
-        subtitle: "B2",
       },
       {
         title: "Content Creation",
-        subtitle: "B2",
       },
     ],
   },
