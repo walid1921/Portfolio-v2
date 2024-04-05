@@ -1,8 +1,10 @@
 import PlusSvg from "./plusSvg";
 
+interface SectionSvgProps {
+  crossesOffset?: string; // Define the type of crossesOffset prop
+}
 
-
-const SectionSvg = ({ crossesOffset }) => {
+const SectionSvg = ({ crossesOffset }: SectionSvgProps) => { // Use SectionSvgProps interface to define the type of the prop
   return (
     <>
       <PlusSvg

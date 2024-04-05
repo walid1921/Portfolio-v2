@@ -5,15 +5,6 @@ import { motion, Variants } from "framer-motion";
 import { links } from "@/lib/data";
 import Link from "next/link";
 import Hamburger from "hamburger-react";
-import { BsGithub } from "react-icons/bs";
-import { FiInstagram } from "react-icons/fi";
-import { FaLinkedin } from "react-icons/fa";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 import { useActiveSection } from "@/context/activeSectionContext";
 
