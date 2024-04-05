@@ -155,7 +155,7 @@ const hoveredIconData2 = [
 ];
 
 const Skills = () => {
-  const [angles, setAngles] = useState([]); // State to store angles for positioning icons
+  const [angles, setAngles] = useState<number[]>([]); // State to store angles for positioning icons
   const { ref, inView } = useSectionInView("Skills");
 
   useEffect(() => {
