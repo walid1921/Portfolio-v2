@@ -10,8 +10,9 @@ import portfolioImg08 from "@/public/portfolio8.png";
 import portfolioImg09 from "@/public/portfolio9.png";
 import { SiPrisma } from "react-icons/si";
 import { CgWorkAlt } from "react-icons/cg";
-import { FaReact } from "react-icons/fa";
+import { FaLinkedin, FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
+import { MdEmail } from 'react-icons/md'
 import corpcommentImg from "@/public/corpcomment.png";
 import rmtdevImg from "@/public/rmtdev.png";
 import wordanalyticsImg from "@/public/wordanalytics.png";
@@ -38,9 +39,10 @@ import {
   TbBrandNextjs,
   TbBrandVscode,
 } from "react-icons/tb";
-import { BsGithub, BsGit } from "react-icons/bs";
+import { BsGithub, BsGit, BsFillTelephoneFill } from "react-icons/bs";
 import { DiNpm } from "react-icons/di";
 import { StaticImageData } from "next/image";
+import { FiInstagram } from "react-icons/fi";
 
 //! Navbar links
 export const links = [

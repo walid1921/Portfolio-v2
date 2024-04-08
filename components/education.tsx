@@ -7,25 +7,25 @@ import grid from "@/public/grid.png";
 import Gradient from "./ui/gradient";
 import { FiLoader } from "react-icons/fi";
 import { HiCheck } from "react-icons/hi";
-import { AiOutlineLink } from "react-icons/ai";
+import { AiOutlineLink, AiOutlineSafetyCertificate } from "react-icons/ai";
 import Popsup from "@/components/ui/popsup";
 
 const Education = () => {
   return (
-    <Section className="overflow-hidden" id="education">
+    <Section crosses  id="education">
       <div className="container md:pb-10">
         <p className="lg:text-3xl text-2xl text-start font-medium bg-gradient-to-br from-white to-[#000000] bg-clip-text text-transparent mb-24 ">
           Education
         </p>
-        <div className="relative grid gap-6 md:grid-cols-2 md:gap-4 md:pb-[7rem]">
+        <div className="relative grid gap-6 md:grid-cols-2 md:gap-4 ">
           {EducationData.map((data) => (
             <div
-              className={`md:flex even:md:translate-y-[15rem]  p-0.25 rounded-[2.5rem] ${
+              className={`md:flex even:md:translate-y-[15rem]  p-0.25 rounded-[6px] ${
                 data.colorful ? "bg-conic-gradient" : "bg-n-6"
               }`}
               key={data.id}
             >
-              <div className="relative p-8 bg-n-8 rounded-[2.5rem] h-full w-full overflow-hidden xl:pt-15 xl:px-15">
+              <div className="relative p-8 bg-[#181818] rounded-[6px] h-full w-full overflow-hidden xl:pt-15 xl:px-15">
                 <div className="absolute top-0 left-0 w-full">
                   <Image src={grid} alt="grid" />
                 </div>
@@ -51,9 +51,10 @@ const Education = () => {
                           <div className="md:flex gap-4 hidden items-center ">
                             {content.status === "completed" ? (
                               <Popsup
-                                content="Completed"
-                                icon={<HiCheck size={25} />}
+                                content="See Certificate"
+                                icon={<AiOutlineSafetyCertificate size={25} />}
                                 side="top"
+                                link={content.certificationPdf}
                               />
                             ) : (
                               <Popsup
@@ -63,10 +64,10 @@ const Education = () => {
                               />
                             )}
                             <Popsup
-                              content="See certificate"
+                              content="Visit Course"
                               icon={<AiOutlineLink size={25} />}
                               side="top"
-                              link={content.certificationPdf}
+                              link={content.linkUrl}
                             />{" "}
                           </div>
                         )}

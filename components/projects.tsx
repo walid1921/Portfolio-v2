@@ -204,7 +204,7 @@ const Projects = () => {
           )}
         </div>
       </div>
-      <BottomLine />
+      {/* <BottomLine /> */}
     </Section>
   );
 };

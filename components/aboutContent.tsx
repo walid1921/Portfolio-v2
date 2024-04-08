@@ -11,7 +11,7 @@ import { useSectionInView } from "@/lib/hooks";
 import Popsup from "./ui/popsup";
 
 const AboutContent = () => {
-  const { ref } = useSectionInView("About");
+  const { ref } = useSectionInView("About", 0.5);
 
   const ref2 = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -29,11 +29,10 @@ const AboutContent = () => {
         scale: scaleProgress,
         opacity: opacityProgress,
       }}
-      className=" scroll-mt-28 "
       ref={ref2}
     >
-      <section id="about">
-        <div className="container relative rounded-md py-[50px]" ref={ref}>
+      <section id="about" ref={ref} >
+        <div className="container relative rounded-md py-[50px]">
           <h2 className="lg:text-3xl text-2xl text-center font-medium bg-gradient-to-br from-white to-[#000000] bg-clip-text text-transparent md:mb-10 mb-10">
             About Me
           </h2>

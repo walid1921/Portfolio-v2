@@ -9,10 +9,12 @@ import Button from "./ui/button";
 import { BsCloudDownloadFill, BsFillSendFill } from "react-icons/bs";
 import { useSectionInView } from "@/lib/hooks";
 import MySkills from "./about";
+import { useActiveSection } from "@/context/activeSectionContext";
 
 const Hero = () => {
   const parallaxRef = useRef(null);
   const { ref } = useSectionInView("Home");
+  const { setTimeOfLastClick, setActiveSection } = useActiveSection();
 
   return (
     <Section
@@ -125,6 +127,11 @@ const Hero = () => {
               }}
             >
               <Button
+                onClick={() => {
+                  setActiveSection("Contact");
+                  setTimeOfLastClick(Date.now());
+                }}
+                link="#contact"
                 text="Let's talk"
                 bgColor="#289061"
                 borderColor="#289061"
