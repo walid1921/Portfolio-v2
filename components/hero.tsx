@@ -155,6 +155,7 @@ const Hero = () => {
                 bgColor="#131313"
                 borderColor="#727272b3"
                 hoverBg="#72727233"
+                link="/walidCv.pdf"
                 icon={<BsCloudDownloadFill size={18} />}
               />
             </motion.div>
