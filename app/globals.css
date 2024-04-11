@@ -138,7 +138,7 @@
   }
 
   .inputForm {
-    @apply text-sm w-full p-3 focus:outline-none rounded-md border bg-[#171717] border-gray-500 focus:border-gray-300
+    @apply text-sm w-full p-3 focus:outline-none rounded-md border bg-[#171717] focus:border-gray-300
      transition-all ease-in-out duration-100;
   }
 }

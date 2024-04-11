@@ -2,77 +2,78 @@
 
 import React, { useRef, useState, FormEvent } from "react";
 import Section from "./section";
-import Button from "./ui/button";
-import { BsFillSendFill } from "react-icons/bs";
 import Image from "next/image";
 import grid from "@/public/grid.png";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
 import { sendEmail } from "@/actions/sendEmail";
+import SubmitBtn from "./ui/submitBtn";
+import toast from "react-hot-toast";
 
 type Errors = {
-  name: string;
   email?: string;
   subject?: string;
   message?: string;
 };
 
 const Contact = () => {
+  const { ref } = useSectionInView("Contact", 0.5);
   const formRef = useRef<HTMLFormElement>(null);
 
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [errors, setErrors] = useState<Errors>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const { ref } = useSectionInView("Contact", 0.5);
+  const validateForm = () => {
+    const newErrors: Errors = {};
 
-  const handelSubmit = (e: FormEvent<HTMLFormElement>) => {
+    if (!email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/@/.test(email)) {
+      newErrors.email = "Invalid email format";
+    }
+
+    if (!subject.trim()) {
+      newErrors.subject = "Subject is required";
+    }
+
+    if (!message.trim()) {
+      newErrors.message = "Message is required";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const errors: Errors = {};
+    if (validateForm()) {
+      setIsSubmitting(true);
+      const formData = new FormData(e.currentTarget);
+      const { data, error } = await sendEmail(formData);
 
-    if (!email) {
-      errors.email = "Email is required";
-    } else if (!/@/.test(email)) {
-      errors.email = "Invalid email format";
-    }
+      console.log(data, error);
 
-    if (!subject) {
-      errors.subject = "Subject is required";
-    }
+      if (error) {
+        toast.error("Something went wrong");
+        return;
+      }
 
-    if (!message) {
-      errors.message = "Message is required";
-    }
-
-    setErrors(errors);
-
-    if (Object.keys(errors).length === 0) {
-      // Uncomment the emailjs code here once you integrate it
-      // emailjs
-      //   .sendForm(
-      //     "service_75azj3m",
-      //     "template_lzm7tak",
-      //     formRef.current,
-      //     "-EZm67h-WYQsh0NsQ"
-      //   )
-      //   .then(
-      //     (result) => {
-      //       console.log(result.text);
-      //       toast.success("Message sent successfully");
-      //       resetForm(); // Reset the input fields
-      //     },
-      //     (error) => {
-      //       console.log(error.text);
-      //       toast.error("Something went wrong");
-      //     }
-      // );
+      toast.success("Message sent successfully");
+      console.log(data);
+      // Reset form fields after successful submission
+      setEmail("");
+      setSubject("");
+      setMessage("");
+      setIsSubmitting(false);
     }
   };
 
   return (
-    <Section id="contact" className="scroll-mt-28 ">
+    <Section id="contact" crosses className="scroll-mt-28 ">
       <motion.div
         ref={ref}
         initial={{ opacity: 0 }}
@@ -81,24 +82,20 @@ const Contact = () => {
         viewport={{ once: true }}
         className="container md:pb-10 "
       >
-        <p className="lg:text-3xl text-2xl pl-[20px] font-medium bg-gradient-to-br from-white to-[#4d4d4d] bg-clip-text text-transparent mb-10">
-          Contact
-        </p>
-
         <div className="md:flex p-0.25 rounded-[6px] bg-conic-gradient w-full">
           <div className="relative p-8 bg-[#181818] rounded-[6px] h-full w-full overflow-hidden xl:pt-15 xl:px-15">
+            <p className="lg:text-3xl text-2xl pl-[20px] font-medium bg-gradient-to-br from-white to-[#4d4d4d] bg-clip-text text-transparent mb-10">
+              Contact
+            </p>
             <div className="absolute top-0 left-0  w-full z-2">
               <Image src={grid} alt="grid" className="w-full" />
             </div>
             <div className="flex flex-col h-full ">
               <form
                 ref={formRef}
-                action={async (formData) => {
-                  await sendEmail(formData);
-                }}
+                onSubmit={handleSubmit}
                 className="w-[min(100%,38rem)] flex flex-col gap-5 mx-auto z-2"
               >
-
                 <div className="mb-5">
                   <input
                     type="email"
@@ -107,8 +104,8 @@ const Contact = () => {
                     maxLength={50}
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className={`inputForm ${
-                      errors.email ? "border-red-500" : ""
+                    className={`inputForm  ${
+                      errors.email ? "border-red-500" : "border-gray-500"
                     }`}
                   />
 
@@ -127,8 +124,8 @@ const Contact = () => {
                     maxLength={50}
                     value={subject}
                     onChange={(e) => setSubject(e.target.value)}
-                    className={`inputForm ${
-                      errors.subject ? "border-red-500" : ""
+                    className={`inputForm  ${
+                      errors.subject ? "border-red-500" : "border-gray-500"
                     }`}
                   />
 
@@ -147,8 +144,8 @@ const Contact = () => {
                     placeholder="Write your message"
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    className={`inputForm resize-none ${
-                      errors.message ? "border-red-500" : ""
+                    className={`inputForm  resize-none ${
+                      errors.message ? "border-red-500" : "border-gray-500"
                     }`}
                   />
 
@@ -159,14 +156,9 @@ const Contact = () => {
                   )}
                 </div>
 
-                <Button
-                  type="submit"
-                  text="Send"
-                  bgColor="#289061"
-                  borderColor="#289061"
-                  hoverBg="#4b9876"
-                  icon={<BsFillSendFill size={18} />}
-                />
+                <div className="flex justify-center">
+                  <SubmitBtn isSubmitting={isSubmitting} />
+                </div>
               </form>
             </div>
           </div>

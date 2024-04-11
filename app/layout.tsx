@@ -2,6 +2,7 @@ import Header from "@/components/header";
 import "./globals.css";
 import { Nunito } from "next/font/google";
 import { ActiveSectionContextProvider } from "@/context/activeSectionContext";
+import { Toaster } from "react-hot-toast";
 
 const font = Nunito({ subsets: ["latin"] });
 
@@ -25,6 +26,23 @@ export default function RootLayout({
         <ActiveSectionContextProvider>
           <Header />
           {children}
+
+          <Toaster
+            position="top-right"
+            gutter={12}
+            containerStyle={{ margin: "8px" }}
+            toastOptions={{
+              success: { duration: 3000 },
+              error: { duration: 5000 },
+              style: {
+                fontSize: "14px",
+                maxWidth: "400px",
+                padding: "14px 20px",
+                backgroundColor: "#10121b92",
+                color: "#fff",
+              },
+            }}
+          />
         </ActiveSectionContextProvider>
       </body>
     </html>

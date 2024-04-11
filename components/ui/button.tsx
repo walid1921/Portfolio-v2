@@ -28,7 +28,7 @@ const Button = ({
       <button
         type={type ? type : "button"}
         className={`gap-[8px] flex items-center font-semibold border rounded-full  px-[20px] py-[8px] md:px-[25px] md:py-[12px] text-sm 
-      transition-all ease-in-out duration-150 hover:text-white hover:bg-${hoverBg}`}
+      transition-all ease-in-out duration-150 hover:text-white disabled:bg:opacity-65 hover:bg-${hoverBg}`}
         style={{ borderColor: `${borderColor}`, backgroundColor: `${bgColor}` }}
         onClick={onClick}
       >
