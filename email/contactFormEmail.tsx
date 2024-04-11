@@ -23,7 +23,7 @@ const ContactFormEmail = ({ message, senderEmail }: contactFormEmailProps) => {
   return (
     <Html>
       <Head />
-      <Preview>❗️ Walid's Portfolio</Preview>
+      <Preview>❗️ Walid your portfolio</Preview>
       <Tailwind>
         <Body className="bg-gray-100 text-black">
           <Container>
