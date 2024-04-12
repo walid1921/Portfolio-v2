@@ -8,11 +8,8 @@ I'm a 25-year-old Full-Stack Web Developer based in Germany, with a unique backg
 
 # 📦 Technologies & Tools Used 🛠️
 
-**Design:** **`Figma`**
-**Frontend Development:** **`Next.js`** **`React`** **`TypeScript`** **`ShadcnUI`** **`Framer-Motion`**
-**UI state management:** **`Context API`**
-**Email management:** **`React.Email`** **`Resend`**
-**Others:** **`React-icons`** **`tailwind-merge`** **`React hot toast`** **`react-intersection-observer`** **`Vercel`**
+**`Figma`** **`Next.js`** **`React`** **`Context API`** **`TypeScript`** **`ShadcnUI`** **`Framer-Motion`**
+**Email management:** **`React.Email`** **`Resend`** **`React-icons`** **`tailwind-merge`** **`React hot toast`** **`react-intersection-observer`** **`Vercel`**
 
 # 📫 Contact
 

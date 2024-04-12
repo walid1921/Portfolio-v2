@@ -500,6 +500,11 @@ export const EducationData: EducationDataProps[] = [
     colorful: true,
     content: [
       {
+        title: "B2 German Certificate",
+        subtitle: "(2024 - Paritätisches Bildungswerk - Bremen)",
+        status: "completed",
+      },
+      {
         title: "Web & App Development Bootcamp",
         subtitle: "(wbs coding school - Berlin)",
         linkUrl: "https://www.wbscodingschool.com/",
