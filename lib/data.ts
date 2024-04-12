@@ -12,7 +12,7 @@ import { SiPrisma } from "react-icons/si";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaLinkedin, FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
-import { MdEmail } from 'react-icons/md'
+import { MdEmail } from "react-icons/md";
 import corpcommentImg from "@/public/corpcomment.png";
 import rmtdevImg from "@/public/rmtdev.png";
 import wordanalyticsImg from "@/public/wordanalytics.png";
@@ -503,6 +503,7 @@ export const EducationData: EducationDataProps[] = [
         title: "Web & App Development Bootcamp",
         subtitle: "(wbs coding school - Berlin)",
         linkUrl: "https://www.wbscodingschool.com/",
+        certificationPdf: "/wbsCertificate.pdf",
         status: "completed",
       },
       {

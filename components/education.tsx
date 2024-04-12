@@ -12,7 +12,7 @@ import Popsup from "@/components/ui/popsup";
 
 const Education = () => {
   return (
-    <Section crosses  id="education">
+    <Section crosses id="education">
       <div className="container md:pb-10">
         <p className="lg:text-3xl text-2xl text-start font-medium bg-gradient-to-br from-white to-[#000000] bg-clip-text text-transparent mb-24 ">
           Education
@@ -47,28 +47,30 @@ const Education = () => {
                           </h4>
                           <p className="text-n-4">{content.subtitle}</p>
                         </div>
-                        {content.linkUrl && (
+                        {content.status && (
                           <div className="md:flex gap-4 hidden items-center ">
                             {content.status === "completed" ? (
                               <Popsup
                                 content="See Certificate"
-                                icon={<AiOutlineSafetyCertificate size={25} />}
+                                icon={<AiOutlineSafetyCertificate size={25} color="#5fcf6562" />}
                                 side="top"
                                 link={content.certificationPdf}
                               />
                             ) : (
                               <Popsup
                                 content="Currently studying"
-                                icon={<FiLoader size={25} />}
+                                icon={<FiLoader size={25} color="#f7b50097" />}
                                 side="top"
                               />
                             )}
-                            <Popsup
-                              content="Visit Course"
-                              icon={<AiOutlineLink size={25} />}
-                              side="top"
-                              link={content.linkUrl}
-                            />{" "}
+                            {content.linkUrl && (
+                              <Popsup
+                                content="Visit Course"
+                                icon={<AiOutlineLink size={25} />}
+                                side="top"
+                                link={content.linkUrl}
+                              />
+                            )}
                           </div>
                         )}
                       </div>
