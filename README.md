@@ -6,9 +6,9 @@ I'm a 25-year-old Full-Stack Web Developer based in Germany, with a unique backg
 
 - Check it out here [Portfolio](https://www.walidka-portfolio.com/), to learn more about me.
 
-# 📦 Technologies & Tools Used 🛠️
+# 📦 Main Technologies 🛠️
 
-**`Figma`** **`Next.js`** **`React`** **`Context API`** **`TypeScript`** **`ShadcnUI`** **`Framer-Motion`** **`React.Email`** **`Resend`** **`React-icons`** **`tailwind-merge`** **`React hot toast`** **`react-intersection-observer`** **`Vercel`**
+**`Figma`** **`Next.js`** **`React`** **`TypeScript`** **`Framer-Motion`** **`React.Email`** **`Resend`** **`React hot toast`** 
 
 # 📫 Contact
 
