@@ -1,4 +1,4 @@
-# 👋🏼 My Portfolio 
+# My Portfolio 
 
 It's a Modern UI/UX website, developed using Next.js and Tailwind CSS, exemplifies modern UI/UX principles. Its sleek design, seamless animations using Framer-motion.
 
