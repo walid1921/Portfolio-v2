@@ -10,9 +10,7 @@ export default function Home() {
   return (
     <main>
       <Hero />
-      {/* <About /> */}
       <Skills />
-      {/* <Skills /> */}
       <Projects />
       <Education />
       <Contact />

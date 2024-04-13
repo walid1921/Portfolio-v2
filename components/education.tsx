@@ -6,7 +6,6 @@ import Image from "next/image";
 import grid from "@/public/grid.png";
 import Gradient from "./ui/gradient";
 import { FiLoader } from "react-icons/fi";
-import { HiCheck } from "react-icons/hi";
 import { AiOutlineLink, AiOutlineSafetyCertificate } from "react-icons/ai";
 import Popsup from "@/components/ui/popsup";
 

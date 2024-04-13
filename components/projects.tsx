@@ -7,7 +7,6 @@ import Image from "next/image";
 import { useSectionInView } from "@/lib/hooks";
 import { CircleArrowDown } from "lucide-react";
 import Popsup from "./ui/popsup";
-import { BottomLine } from "./ui/circleHero";
 import Section from "./section";
 
 const Projects = () => {
@@ -117,16 +116,6 @@ const Projects = () => {
               />
 
               <div className="h-full w-full absolute inset-0 hover:backdrop-blur-sm transition-all ease-in duration-300 flex justify-center items-start opacity-0 hover:opacity-100">
-                {/* <motion.a
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  className="bg-[#000000] bg-opacity-50 text-white text-lg font-semibold px-4 py-2 rounded-md z-10 select-none"
-                >
-                  View Github
-                </motion.a> */}
 
                 <div className="relative center-center flex-col  gap-5 mt-12 md:mt-32 w-full  transition-all ease-in duration-300">
                   {" "}
@@ -189,12 +178,6 @@ const Projects = () => {
         </div>
         <div className="center-center mt-16 ">
           {nextItems < projectsData.length && projectsData.length > 4 && (
-            // <button
-            //   onClick={loadHandler}
-            //   className="text-[#bbb] text-sm font-semibold tracking-wide bg-gradient-to-br from-[#404040] to-[#232323] rounded py-2 px-4 cursor-pointer transition-all ease-in duration-150 hover:opacity-75 center gap-2 z-10"
-            // >
-            //   <CircleArrowDown size={50} />
-            // </button>
             <Popsup
               onClick={loadHandler}
               content="Load More"
@@ -204,7 +187,6 @@ const Projects = () => {
           )}
         </div>
       </div>
-      {/* <BottomLine /> */}
     </Section>
   );
 };
