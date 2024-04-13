@@ -109,7 +109,7 @@ export const projectsData: Project[] = [
     tag: "Real Project",
     title: "Küchen Trend",
     description:
-      "A responsive landing page. The outcome is a refined, user-friendly interface that seamlessly adapts to diverse screen sizes. This design guarantees a smooth and accessible user experience across all devices, emphasizing its responsiveness and accessibility.",
+      "A responsive landing page for a kitchen design and installation company, showcasing their services and products, and providing a contact form for inquiries. The outcome is a refined, user-friendly interface that seamlessly adapts to diverse screen sizes.",
     technologies: ["React", "Tailwindcss"],
     githubUrl: "https://github.com/walid1921/kuchen.git",
     liveUrl: "https://www.kuechentrend-kayu.de/",
