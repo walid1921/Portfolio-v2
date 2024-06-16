@@ -19,7 +19,7 @@ const Hero = () => {
 
   return (
     <Section
-      className="lg:pt-[12rem] -mt-[5.25rem] relative"
+      className="lg:pt-[12rem] -mt-[5.25rem]"
       crosses
       crossesOffset="lg:translate-y-[5.25rem]"
       id="home"
