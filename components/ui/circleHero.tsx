@@ -56,7 +56,7 @@ export const BackgroundCircles = ({ parallaxRef }: BackgroundCirclesProps) => {
   }, []);
 
   return (
-    <div className="absolute hidden lg:flex top-[500px] left-1/2 w-[78rem] aspect-square border border-n-2/5 rounded-full -translate-x-1/2 md:-top-[38.5rem] xl:-top-[150px] -z-50">
+    <div className="absolute hidden lg:flex top-[500px] left-1/2 w-[78rem] aspect-square border border-n-2/5 rounded-full -translate-x-1/2 md:-top-[38.5rem] xl:-top-[150px] z-20">
       <Rings />
 
       {/* Moving background colored circle balls */}

@@ -10,6 +10,7 @@ import { BsCloudDownloadFill, BsFillSendFill } from "react-icons/bs";
 import { useSectionInView } from "@/lib/hooks";
 import MySkills from "./about";
 import { useActiveSection } from "@/context/activeSectionContext";
+import gradient from "@/public/gradient.png";
 
 const Hero = () => {
   const parallaxRef = useRef(null);
@@ -18,7 +19,7 @@ const Hero = () => {
 
   return (
     <Section
-      className="lg:pt-[12rem] -mt-[5.25rem]"
+      className="lg:pt-[12rem] -mt-[5.25rem] relative"
       crosses
       crossesOffset="lg:translate-y-[5.25rem]"
       id="home"
@@ -166,6 +167,15 @@ const Hero = () => {
       </div>
       <BottomLine />
       <MySkills />
+      <div className="absolute top-0 sm:top-[18.25rem] sm:-right-[300px] opacity-60 mix-blend-color-dodge -z-50">
+        <Image
+          className="w-full"
+          src={gradient}
+          width={942}
+          height={942}
+          alt="Gradient"
+        />
+      </div>
     </Section>
   );
 };

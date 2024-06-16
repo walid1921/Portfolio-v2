@@ -39,7 +39,7 @@ const AboutContent = () => {
 
           <div className="flex flex-col gap-8">
             <p className="text-justify leading-8 text-md">
-              I'm a 25-year-old Developer based in Germany, blending my
+              I'm a 26-year-old Developer based in Germany, blending my
               background in Environmental Process Engineering with a passion for
               full-stack development. My journey began when I discovered the joy
               of using creativity to build captivating web experiences. Through

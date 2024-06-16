@@ -509,6 +509,7 @@ export const EducationData: EducationDataProps[] = [
       {
         title: "B2 German Certificate",
         subtitle: "(2024 - Paritätisches Bildungswerk - Bremen)",
+        linkUrl: "https://www.wbscodingschool.com/",
         status: "completed",
       },
       {
@@ -561,9 +562,9 @@ export const EducationData: EducationDataProps[] = [
         linkUrl: "https://www.udemy.com/course/html-and-css-bootcamp/",
       },
       {
-        title: "The Ultimate React Course 2024",
+        title: "The Ultimate React Course: React, Next.js, Redux & More",
         status: "studying",
-        subtitle: "(67 total hours)",
+        subtitle: "(84 total hours)",
         certificationPdf: "",
         linkUrl: "https://www.udemy.com/course/the-ultimate-react-course/",
       },
@@ -575,16 +576,10 @@ export const EducationData: EducationDataProps[] = [
     colorful: false,
     content: [
       {
-        title: "Languages : English - Arabic - French - German",
+        title: "Languages : English - German - Arabic - French",
       },
       {
-        title: "Design",
-      },
-      {
-        title: "Editing",
-      },
-      {
-        title: "Content Creation",
+        title: "Design - Picture & Video Editing - Content Creation",
       },
     ],
   },
