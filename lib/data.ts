@@ -2,12 +2,14 @@ import React from "react";
 import portfolioImg1 from "@/public/portfolio1.png";
 import portfolioImg02 from "@/public/portfolio2.png";
 import portfolioImg03 from "@/public/portfolio3.png";
-import portfolioImg04 from "@/public/portfolio4.png";
+import portfolioImg10 from "@/public/portfolio10.png";
 import portfolioImg05 from "@/public/portfolio5.png";
 import portfolioImg06 from "@/public/portfolio6.png";
 import portfolioImg07 from "@/public/portfolio7.png";
 import portfolioImg08 from "@/public/portfolio8.png";
 import portfolioImg09 from "@/public/portfolio9.png";
+import portfolioImg12 from "@/public/portfolio12.png";
+import portfolioImg11 from "@/public/portfolio11.png";
 import { SiPrisma } from "react-icons/si";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaLinkedin, FaReact } from "react-icons/fa";
@@ -114,17 +116,29 @@ export const projectsData: Project[] = [
     githubUrl: "https://github.com/walid1921/kuchen.git",
     liveUrl: "https://www.kuechentrend-kayu.de/",
   },
+  // {
+  //   id: 2,
+  //   imgUrl: portfolioImg04,
+  //   category: "App",
+  //   tag: "Real Project",
+  //   title: "ResoNex",
+  //   description:
+  //     "A Full-Stack task management application. ResoNex is designed to simplify task management by providing a user-friendly interface for creating, deleting, and sorting tasks. It calculates the percentage of tasks completed and ensures a smooth task management experience.",
+  //   technologies: ["React", "Tailwindcss", "Node.js", "Express.js", "MongoDB"],
+  //   githubUrl: "https://github.com/walid1921/ResoNex.git",
+  //   liveUrl: "https://reso-nex.vercel.app/",
+  // },
   {
     id: 2,
-    imgUrl: portfolioImg04,
-    category: "App",
+    imgUrl: portfolioImg10,
+    category: "Landing Page",
     tag: "Real Project",
-    title: "ResoNex",
+    title: "Nike",
     description:
-      "A Full-Stack task management application. ResoNex is designed to simplify task management by providing a user-friendly interface for creating, deleting, and sorting tasks. It calculates the percentage of tasks completed and ensures a smooth task management experience.",
-    technologies: ["React", "Tailwindcss", "Node.js", "Express.js", "MongoDB"],
+      "A responsive landing page for Nike company, showcasing their services and products, and providing a contact form for inquiries. The outcome is a refined, user-friendly interface that seamlessly adapts to diverse screen sizes.",
+    technologies: ["React", "Tailwindcss"],
     githubUrl: "https://github.com/walid1921/ResoNex.git",
-    liveUrl: "https://reso-nex.vercel.app/",
+    liveUrl: "https://nike-walid.netlify.app/",
   },
 
   {
@@ -164,17 +178,29 @@ export const projectsData: Project[] = [
     githubUrl: "https://github.com/walid1921/Swipe.git",
     liveUrl: "https://swipe-walid.netlify.app/",
   },
+  // {
+  //   id: 6,
+  //   imgUrl: portfolioImg03,
+  //   category: "App",
+  //   tag: "Side Project",
+  //   title: "My Travel List",
+  //   description:
+  //     "A Full-Stack travel planning application. It's designed to simplify trip planning by providing a user-friendly interface for creating, deleting, and sorting items. It calculates the percentage of items packed and ensures a smooth travel preparation experience.",
+  //   technologies: ["React", "CSS", "Node.js", "Express.js", "MongoDB"],
+  //   githubUrl: "https://github.com/walid1921/My-Travel-List.git",
+  //   liveUrl: "https://my-travellist.netlify.app/",
+  // },
   {
     id: 6,
-    imgUrl: portfolioImg03,
-    category: "App",
+    imgUrl: portfolioImg12,
+    category: "Landing Page",
     tag: "Side Project",
-    title: "My Travel List",
+    title: "Natours",
     description:
-      "A Full-Stack travel planning application. It's designed to simplify trip planning by providing a user-friendly interface for creating, deleting, and sorting items. It calculates the percentage of items packed and ensures a smooth travel preparation experience.",
+      "A Responsive landing page using HTML and SASS, demonstrating proficiency in cross-device compatibility. The result is a polished, user-friendly interface that adapts seamlessly to various screen sizes.",
     technologies: ["React", "CSS", "Node.js", "Express.js", "MongoDB"],
     githubUrl: "https://github.com/walid1921/My-Travel-List.git",
-    liveUrl: "https://my-travellist.netlify.app/",
+    liveUrl: "https://natours-walid.netlify.app",
   },
   {
     id: 7,
@@ -188,17 +214,29 @@ export const projectsData: Project[] = [
     githubUrl: "https://github.com/walid1921/Mapty-App.git",
     liveUrl: "https://mapty-walid.netlify.app/",
   },
+  // {
+  //   id: 8,
+  //   imgUrl: portfolioImg05,
+  //   category: "App",
+  //   tag: "Side Project",
+  //   title: "Bankist",
+  //   description:
+  //     "A dynamic banking application using HTML, SASS, and Vanilla JAVASCRIPT. This user-friendly platform enables secure login, hassle-free money transfers between users, loan requests from the bank, and smooth account closure. Additionally, a timed logout feature enhances security. Explore this intuitive banking solution, showcasing the power of modern web technologies. (Account 1: (owner: js, pin: 1111) / Account 2: (owner: jd, pin: 2222)) ",
+  //   technologies: ["HTML", "SASS", "JavaScript"],
+  //   githubUrl: "https://github.com/walid1921/Bank-web.git",
+  //   liveUrl: "https://bankist-walid.netlify.app/",
+  // },
   {
     id: 8,
-    imgUrl: portfolioImg05,
+    imgUrl: portfolioImg11,
     category: "App",
     tag: "Side Project",
-    title: "Bankist",
+    title: "Trillo",
     description:
-      "A dynamic banking application using HTML, SASS, and Vanilla JAVASCRIPT. This user-friendly platform enables secure login, hassle-free money transfers between users, loan requests from the bank, and smooth account closure. Additionally, a timed logout feature enhances security. Explore this intuitive banking solution, showcasing the power of modern web technologies. (Account 1: (owner: js, pin: 1111) / Account 2: (owner: jd, pin: 2222)) ",
-    technologies: ["HTML", "SASS", "JavaScript"],
+    "A Responsive landing page using HTML and SASS, demonstrating proficiency in cross-device compatibility. The result is a polished, user-friendly interface that adapts seamlessly to various screen sizes.",
+    technologies: ["HTML", "SASS"],
     githubUrl: "https://github.com/walid1921/Bank-web.git",
-    liveUrl: "https://bankist-walid.netlify.app/",
+    liveUrl: "https://trillo-walid.netlify.app",
   },
 ];
 
