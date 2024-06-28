@@ -120,13 +120,13 @@ const Projects = () => {
                 <div className="relative center-center flex-col  gap-5 mt-12 md:mt-32 w-full  transition-all ease-in duration-300">
                   {" "}
                   <div className="flex gap-10 items-center ">
-                    <Popsup
+                    {/* <Popsup
                       content="Github"
                       link={project.githubUrl}
                       side="top"
                       bgColor="#00000033"
                       icon={<BsGithub size={40} />}
-                    />
+                    /> */}
                     <Popsup
                       content="Live"
                       link={project.liveUrl}
@@ -138,9 +138,9 @@ const Projects = () => {
                       }
                     />
                   </div>
-                  <p className="text-sm text-white">
+                  {/* <p className="text-sm text-white">
                     Visit Github for Project's documentation
-                  </p>
+                  </p> */}
                 </div>
               </div>
               <div className="absolute  bottom-0 left-0 md:px-4 px-2 py-1 md:py-4 right-3 z-1 bg-black/20 backdrop-blur-md w-full ">
