@@ -72,26 +72,6 @@ export const links = [
   },
 ] as const;
 
-//! Experience
-export const experiencesData = [
-  {
-    title: "Graduated bootcamp",
-    location: "Berlin, Germany",
-    description:
-      "I graduated after 6 months of studying. I immediately found a job as a front-end developer.",
-    icon: React.createElement(LuGraduationCap),
-    date: "2024",
-  },
-  {
-    title: "Full-Stack Developer",
-    location: "Houston, TX",
-    description:
-      "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
-    icon: React.createElement(FaReact),
-    date: "2023 - present",
-  },
-] as const;
-
 //! Projects
 type Project = {
   id: number;
@@ -187,17 +167,29 @@ export const projectsData: Project[] = [
     githubUrl: "https://github.com/walid1921/Swipe.git",
     liveUrl: "https://swipe-walid.netlify.app/",
   },
-  {
+  // {
+  //   id: 6,
+  //   imgUrl: portfolioImg03,
+  //   category: "App",
+  //   tag: "Side Project",
+  //   title: "My Travel List",
+  //   description:
+  //     "A Full-Stack travel planning application. It's designed to simplify trip planning by providing a user-friendly interface for creating, deleting, and sorting items. It calculates the percentage of items packed and ensures a smooth travel preparation experience.",
+  //   technologies: ["React", "CSS", "Node.js", "Express.js", "MongoDB"],
+  //   githubUrl: "https://github.com/walid1921/My-Travel-List.git",
+  //   liveUrl: "https://my-travellist.netlify.app/",
+  // },
+    {
     id: 6,
-    imgUrl: portfolioImg03,
+    imgUrl: portfolioImg04,
     category: "App",
     tag: "Side Project",
-    title: "My Travel List",
+    title: "ResoNex",
     description:
-      "A Full-Stack travel planning application. It's designed to simplify trip planning by providing a user-friendly interface for creating, deleting, and sorting items. It calculates the percentage of items packed and ensures a smooth travel preparation experience.",
-    technologies: ["React", "CSS", "Node.js", "Express.js", "MongoDB"],
-    githubUrl: "https://github.com/walid1921/My-Travel-List.git",
-    liveUrl: "https://my-travellist.netlify.app/",
+      "A Full-Stack task management application. ResoNex is designed to simplify task management by providing a user-friendly interface for creating, deleting, and sorting tasks. It calculates the percentage of tasks completed and ensures a smooth task management experience.",
+    technologies: ["React", "Tailwindcss", "Node.js", "Express.js", "MongoDB"],
+    githubUrl: "https://github.com/walid1921/ResoNex.git",
+    liveUrl: "https://reso-nex.vercel.app/",
   },
 
   {
@@ -212,18 +204,18 @@ export const projectsData: Project[] = [
     githubUrl: "https://github.com/walid1921/Mapty-App.git",
     liveUrl: "https://mapty-walid.netlify.app/",
   },
-  {
-    id: 8,
-    imgUrl: portfolioImg05,
-    category: "App",
-    tag: "Side Project",
-    title: "Bankist",
-    description:
-      "A dynamic banking application using HTML, SASS, and Vanilla JAVASCRIPT. This user-friendly platform enables secure login, hassle-free money transfers between users, loan requests from the bank, and smooth account closure. Additionally, a timed logout feature enhances security. Explore this intuitive banking solution, showcasing the power of modern web technologies. (Account 1: (owner: js, pin: 1111) / Account 2: (owner: jd, pin: 2222)) ",
-    technologies: ["HTML", "SASS", "JavaScript"],
-    githubUrl: "https://github.com/walid1921/Bank-web.git",
-    liveUrl: "https://bankist-walid.netlify.app/",
-  },
+  // {
+  //   id: 8,
+  //   imgUrl: portfolioImg05,
+  //   category: "App",
+  //   tag: "Side Project",
+  //   title: "Bankist",
+  //   description:
+  //     "A dynamic banking application using HTML, SASS, and Vanilla JAVASCRIPT. This user-friendly platform enables secure login, hassle-free money transfers between users, loan requests from the bank, and smooth account closure. Additionally, a timed logout feature enhances security. Explore this intuitive banking solution, showcasing the power of modern web technologies. (Account 1: (owner: js, pin: 1111) / Account 2: (owner: jd, pin: 2222)) ",
+  //   technologies: ["HTML", "SASS", "JavaScript"],
+  //   githubUrl: "https://github.com/walid1921/Bank-web.git",
+  //   liveUrl: "https://bankist-walid.netlify.app/",
+  // },
 ];
 
 //! Skills
