@@ -129,19 +129,17 @@ export const projectsData: Project[] = [
     githubUrl: "https://github.com/walid1921/GroomGrid.git",
     liveUrl: "https://www.groomgrid.de",
   },
-
   {
     id: 3,
-    imgUrl: portfolioImg08,
+    imgUrl: portfolioImg04,
     category: "App",
     tag: "Side Project",
-
-    title: "CookSaver",
+    title: "ResoNex",
     description:
-      "A Recipe app with API integration with robust handling of loading and error states. It empowers users to effortlessly search and view recipes, contribute their own creations, and bookmark their favorites. The app boasts a user-friendly interface tailored for food enthusiasts!",
-    technologies: ["React", "Tailwindcss"],
-    githubUrl: "https://github.com/walid1921/CookSaver.git",
-    liveUrl: "https://cook-saver-walid.netlify.app/",
+      "A Full-Stack task management application. ResoNex is designed to simplify task management by providing a user-friendly interface for creating, deleting, and sorting tasks. It calculates the percentage of tasks completed and ensures a smooth task management experience.",
+    technologies: ["React", "Tailwindcss", "Node.js", "Express.js", "MongoDB"],
+    githubUrl: "https://github.com/walid1921/ResoNex.git",
+    liveUrl: "https://reso-nex.vercel.app/",
   },
   {
     id: 4,
@@ -179,17 +177,18 @@ export const projectsData: Project[] = [
   //   githubUrl: "https://github.com/walid1921/My-Travel-List.git",
   //   liveUrl: "https://my-travellist.netlify.app/",
   // },
-    {
+  {
     id: 6,
-    imgUrl: portfolioImg04,
+    imgUrl: portfolioImg08,
     category: "App",
     tag: "Side Project",
-    title: "ResoNex",
+
+    title: "CookSaver",
     description:
-      "A Full-Stack task management application. ResoNex is designed to simplify task management by providing a user-friendly interface for creating, deleting, and sorting tasks. It calculates the percentage of tasks completed and ensures a smooth task management experience.",
-    technologies: ["React", "Tailwindcss", "Node.js", "Express.js", "MongoDB"],
-    githubUrl: "https://github.com/walid1921/ResoNex.git",
-    liveUrl: "https://reso-nex.vercel.app/",
+      "A Recipe app with API integration with robust handling of loading and error states. It empowers users to effortlessly search and view recipes, contribute their own creations, and bookmark their favorites. The app boasts a user-friendly interface tailored for food enthusiasts!",
+    technologies: ["React", "Tailwindcss"],
+    githubUrl: "https://github.com/walid1921/CookSaver.git",
+    liveUrl: "https://cook-saver-walid.netlify.app/",
   },
 
   {
