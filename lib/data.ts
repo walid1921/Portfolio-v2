@@ -2,6 +2,7 @@ import React from "react";
 import portfolioImg1 from "@/public/portfolio1.png";
 import portfolioImg02 from "@/public/portfolio2.png";
 import portfolioImg03 from "@/public/portfolio3.png";
+import portfolioImg04 from "@/public/portfolio4.png";
 import portfolioImg10 from "@/public/portfolio10.png";
 import portfolioImg05 from "@/public/portfolio5.png";
 import portfolioImg06 from "@/public/portfolio6.png";
@@ -10,6 +11,7 @@ import portfolioImg08 from "@/public/portfolio8.png";
 import portfolioImg09 from "@/public/portfolio9.png";
 import portfolioImg12 from "@/public/portfolio12.png";
 import portfolioImg11 from "@/public/portfolio11.png";
+import portfolioImg13 from "@/public/portfolio13.jpeg";
 import { SiPrisma } from "react-icons/si";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaLinkedin, FaReact } from "react-icons/fa";
@@ -130,15 +132,22 @@ export const projectsData: Project[] = [
   // },
   {
     id: 2,
-    imgUrl: portfolioImg10,
-    category: "Landing Page",
+    imgUrl: portfolioImg13,
+    category: "App",
     tag: "Real Project",
-    title: "Nike",
+    title: "GroomGrid",
     description:
-      "A responsive landing page for Nike company, showcasing their services and products, and providing a contact form for inquiries. The outcome is a refined, user-friendly interface that seamlessly adapts to diverse screen sizes.",
-    technologies: ["React", "Tailwindcss"],
-    githubUrl: "https://github.com/walid1921/ResoNex.git",
-    liveUrl: "https://nike-walid.netlify.app/",
+      "Its an Internal task management Application to manage everything in the Barbershop : bookings,  clients (check clients as they arrive)",
+    technologies: [
+      "React",
+      "React Query",
+      "Typescript",
+      "Supabase",
+      "Tailwindcss",
+      "Zod",
+    ],
+    githubUrl: "https://github.com/walid1921/GroomGrid.git",
+    liveUrl: "https://www.groomgrid.de",
   },
 
   {
@@ -178,30 +187,19 @@ export const projectsData: Project[] = [
     githubUrl: "https://github.com/walid1921/Swipe.git",
     liveUrl: "https://swipe-walid.netlify.app/",
   },
-  // {
-  //   id: 6,
-  //   imgUrl: portfolioImg03,
-  //   category: "App",
-  //   tag: "Side Project",
-  //   title: "My Travel List",
-  //   description:
-  //     "A Full-Stack travel planning application. It's designed to simplify trip planning by providing a user-friendly interface for creating, deleting, and sorting items. It calculates the percentage of items packed and ensures a smooth travel preparation experience.",
-  //   technologies: ["React", "CSS", "Node.js", "Express.js", "MongoDB"],
-  //   githubUrl: "https://github.com/walid1921/My-Travel-List.git",
-  //   liveUrl: "https://my-travellist.netlify.app/",
-  // },
   {
     id: 6,
-    imgUrl: portfolioImg12,
-    category: "Landing Page",
+    imgUrl: portfolioImg03,
+    category: "App",
     tag: "Side Project",
-    title: "Natours",
+    title: "My Travel List",
     description:
-      "A Responsive landing page using HTML and SASS, demonstrating proficiency in cross-device compatibility. The result is a polished, user-friendly interface that adapts seamlessly to various screen sizes.",
+      "A Full-Stack travel planning application. It's designed to simplify trip planning by providing a user-friendly interface for creating, deleting, and sorting items. It calculates the percentage of items packed and ensures a smooth travel preparation experience.",
     technologies: ["React", "CSS", "Node.js", "Express.js", "MongoDB"],
     githubUrl: "https://github.com/walid1921/My-Travel-List.git",
-    liveUrl: "https://natours-walid.netlify.app",
+    liveUrl: "https://my-travellist.netlify.app/",
   },
+
   {
     id: 7,
     imgUrl: portfolioImg07,
@@ -214,29 +212,17 @@ export const projectsData: Project[] = [
     githubUrl: "https://github.com/walid1921/Mapty-App.git",
     liveUrl: "https://mapty-walid.netlify.app/",
   },
-  // {
-  //   id: 8,
-  //   imgUrl: portfolioImg05,
-  //   category: "App",
-  //   tag: "Side Project",
-  //   title: "Bankist",
-  //   description:
-  //     "A dynamic banking application using HTML, SASS, and Vanilla JAVASCRIPT. This user-friendly platform enables secure login, hassle-free money transfers between users, loan requests from the bank, and smooth account closure. Additionally, a timed logout feature enhances security. Explore this intuitive banking solution, showcasing the power of modern web technologies. (Account 1: (owner: js, pin: 1111) / Account 2: (owner: jd, pin: 2222)) ",
-  //   technologies: ["HTML", "SASS", "JavaScript"],
-  //   githubUrl: "https://github.com/walid1921/Bank-web.git",
-  //   liveUrl: "https://bankist-walid.netlify.app/",
-  // },
   {
     id: 8,
-    imgUrl: portfolioImg11,
+    imgUrl: portfolioImg05,
     category: "App",
     tag: "Side Project",
-    title: "Trillo",
+    title: "Bankist",
     description:
-    "A Responsive landing page using HTML and SASS, demonstrating proficiency in cross-device compatibility. The result is a polished, user-friendly interface that adapts seamlessly to various screen sizes.",
-    technologies: ["HTML", "SASS"],
+      "A dynamic banking application using HTML, SASS, and Vanilla JAVASCRIPT. This user-friendly platform enables secure login, hassle-free money transfers between users, loan requests from the bank, and smooth account closure. Additionally, a timed logout feature enhances security. Explore this intuitive banking solution, showcasing the power of modern web technologies. (Account 1: (owner: js, pin: 1111) / Account 2: (owner: jd, pin: 2222)) ",
+    technologies: ["HTML", "SASS", "JavaScript"],
     githubUrl: "https://github.com/walid1921/Bank-web.git",
-    liveUrl: "https://trillo-walid.netlify.app",
+    liveUrl: "https://bankist-walid.netlify.app/",
   },
 ];
 
