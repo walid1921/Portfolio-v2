@@ -1,5 +1,4 @@
 import React from "react";
-import { useFormStatus } from "react-dom";
 import { BsFillSendFill } from "react-icons/bs";
 
 type SubmitBtnProps = {
@@ -10,8 +9,8 @@ const SubmitBtn = ({ isSubmitting }: SubmitBtnProps) => {
   return (
     <button
       type="submit"
-      className={`gap-[8px] flex items-center font-semibold border rounded-full  px-[20px] py-[8px] md:px-[25px] md:py-[12px] text-sm 
-  transition-all ease-in-out duration-150 hover:text-white disabled:bg-opacity-50 bg-[#289061] border-[#289061] hover:bg-[#4b9876]`}
+      className={`gap-[8px] flex items-center font-semibold border rounded-full px-[20px] py-[8px] md:px-[25px] md:py-[10px] text-md 
+      transition-all ease-in-out duration-300 text-white hover:bg-[#4b9876] bg-[#289061] border-[#289061]`}
       disabled={isSubmitting}
     >
       {isSubmitting === true ? (

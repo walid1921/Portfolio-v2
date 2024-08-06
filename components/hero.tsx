@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { BackgroundCircles, BottomLine } from "@/components/ui/circleHero";
 import { useRef } from "react";
 import Button from "./ui/button";
-import { BsCloudDownloadFill, BsFillSendFill } from "react-icons/bs";
+import { BsFillSendFill } from "react-icons/bs";
 import { useSectionInView } from "@/lib/hooks";
 import MySkills from "./about";
 import { useActiveSection } from "@/context/activeSectionContext";
@@ -134,9 +134,6 @@ const Hero = () => {
                 }}
                 link="#contact"
                 text="Let's talk"
-                bgColor="#289061"
-                borderColor="#289061"
-                hoverBg="#4b9876"
                 icon={<BsFillSendFill size={18} />}
               />
             </motion.div>
@@ -149,17 +146,7 @@ const Hero = () => {
                 type: "tween",
                 ease: "easeInOut",
               }}
-            >
-              {" "}
-              <Button
-                text="Download CV"
-                bgColor="#131313"
-                borderColor="#727272b3"
-                hoverBg="#72727233"
-                link="/CV German.pdf"
-                icon={<BsCloudDownloadFill size={18} />}
-              />
-            </motion.div>
+            ></motion.div>
           </div>
         </div>
 

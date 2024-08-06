@@ -3,9 +3,6 @@ import React from "react";
 
 type ButtonProps = {
   icon?: React.ReactNode;
-  bgColor: "#289061" | "#131313";
-  borderColor: string;
-  hoverBg: string;
   text: string;
   link: string;
   onClick?: () => void;
@@ -13,19 +10,16 @@ type ButtonProps = {
 
 const Button = ({
   icon,
-  bgColor,
-  hoverBg,
   text,
-  borderColor,
   onClick,
   link,
 }: ButtonProps) => {
   return (
     <Link href={link}>
       <span
-        className={`gap-[8px] flex items-center font-semibold border rounded-full px-[20px] py-[8px] md:px-[25px] md:py-[12px] text-sm 
-      transition-all ease-in-out duration-150 hover:text-white hover:bg-${hoverBg}`}
-        style={{ borderColor: `${borderColor}`, backgroundColor: `${bgColor}` }}
+        className={`gap-[8px] flex items-center font-semibold border rounded-full px-[20px] py-[8px] md:px-[25px] md:py-[10px] text-md 
+      transition-all ease-in-out duration-300 text-white hover:bg-[#4b9876] bg-[#289061] border-[#289061]`}
+        
         onClick={onClick}
       >
         {text}
