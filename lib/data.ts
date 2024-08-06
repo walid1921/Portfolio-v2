@@ -517,14 +517,12 @@ export const EducationData: EducationDataProps[] = [
       {
         title: "Web & App Development Bootcamp",
         subtitle: "(2024 - WBS coding school - Berlin)",
-        linkUrl: "https://www.wbscodingschool.com/",
         certificationPdf: "/wbsCertificate.pdf",
         status: "completed",
       },
       {
         title: "B2 German Certificate",
         subtitle: "(2024 - Paritätisches Bildungswerk - Bremen)",
-        linkUrl: "https://www.wbscodingschool.com/",
         status: "completed",
       },
       {

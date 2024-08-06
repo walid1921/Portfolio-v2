@@ -31,12 +31,6 @@ export const socials = [
   },
   {
     id: "4",
-    title: "Phone",
-    icon: <BsFillTelephoneFill size={28} />,
-    url: "tel:015118559079",
-  },
-  {
-    id: "5",
     title: "Mail",
     icon: <MdEmail size={28} />,
     url: "mailto:kouiderayadwalid@gmail.com",
