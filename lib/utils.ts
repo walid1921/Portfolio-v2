@@ -2,7 +2,7 @@ import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
+  return twMerge(clsx(inputs));
 }
 
 export const validateString = (value: unknown) => {
@@ -11,6 +11,7 @@ export const validateString = (value: unknown) => {
   }
   return true;
 };
+
 export const getErrorMessage = (error: unknown): string => {
   let message: string;
   if (error instanceof Error) {
@@ -23,4 +24,16 @@ export const getErrorMessage = (error: unknown): string => {
     message = "Something went wrong";
   }
   return message;
+};
+
+/**
+ * Returns the current date in DD/MM/YYYY format.
+ * @returns {string} The current date (e.g., "03/12/2024").
+ */
+export const getCurrentDate = (): string => {
+  const today = new Date();
+  const day = String(today.getDate()).padStart(2, "0"); // Ensures 2-digit day
+  const month = String(today.getMonth() + 1).padStart(2, "0"); // Months are 0-indexed
+  const year = today.getFullYear();
+  return `${day}/${month}/${year}`;
 };

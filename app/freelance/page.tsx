@@ -14,7 +14,7 @@ import PrimaryBtn from "@/components/ui/primaryBtn";
 const FreelancePage = () => {
   return (
     <section
-      className="relative lg:pt-[12rem] -mt-[5.25rem] h-screen"
+      className="relative md:pt-[12rem] pt-[8rem] h-screen "
       id="home"
     >
       {/* Background */}
@@ -28,7 +28,7 @@ const FreelancePage = () => {
       </div>
 
       {/* Foreground Content */}
-      <div className="relative z-[999] flex flex-col items-center">
+      <div className="relative z-40 flex flex-col items-center">
         <motion.h2
           className="lg:text-6xl text-4xl bg-gradient-to-r from-white to-[#a5a5a5] cursor-pointer bg-clip-text text-transparent text-center"
           initial={{ opacity: 0, y: -50 }}

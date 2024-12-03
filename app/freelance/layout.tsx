@@ -14,7 +14,7 @@ export default function FreelanceLayout({
     <SidebarProvider>
       <AppSidebar />
       <SidebarInset>
-        <div className="flex h-16 shrink-0 items-center gap-2 px-4 z-50">
+        <div className="flex h-16 shrink-0 md:hidden items-center gap-2 px-4 z-30 ">
           <SidebarTrigger className="-ml-1" />
         </div>
         <div className="flex flex-1 flex-col gap-4">

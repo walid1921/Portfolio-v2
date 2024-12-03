@@ -9,6 +9,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarRail,
+  SidebarTrigger,
 } from "@/components/ui/sidebar";
 import { FiHome } from "react-icons/fi";
 import {
@@ -28,6 +29,8 @@ import { BsFillSendFill } from "react-icons/bs";
 import Image from "next/image";
 import grid from "@/public/grid.png";
 import Popsup from "../ui/popsup";
+import Logo from "../ui/Logo";
+import { getCurrentDate } from "@/lib/utils";
 
 const data = {
   navMain: [
@@ -95,6 +98,10 @@ const data = {
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar {...props}>
+      <Logo />
+      <div className=" absolute  top-[20px] -right-[40px] ">
+        <SidebarTrigger />
+      </div>
       <SidebarContent>
         {/* We create a SidebarGroup for each parent. */}
         {data.navMain.map((item) => (
@@ -149,8 +156,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             className="rounded-md"
           />
           <div className="  flex items-start flex-col justify-start gap-2 rounded-md py-2 px-4">
-            <p className="text-lg font-bold">03/12/2024</p>
-            <p>Bremen, Germany</p>
+            <p className="text-lg font-bold">{getCurrentDate()}</p>
+            <p className="text-sm">Bremen, Germany</p>
           </div>
 
           <PrimaryBtn>
