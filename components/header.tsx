@@ -7,6 +7,7 @@ import Link from "next/link";
 import Hamburger from "hamburger-react";
 import { cn } from "@/lib/utils";
 import { useActiveSection } from "@/context/activeSectionContext";
+import SwitchBtn from "./ui/SwitchBtn";
 
 const itemVariants: Variants = {
   closed: { opacity: 0, transition: { duration: 0.2 }, x: 100 },
@@ -27,7 +28,8 @@ export default function Header() {
   };
 
   return (
-    <header className="z-[999] relative">
+    <header className="z-[999] relative flex items-center">
+      
       <motion.nav
         className="hidden lg:flex justify-center items-center fixed top-3 w-full z-[999]"
         initial={{ y: -100, opacity: 0 }}
@@ -38,6 +40,7 @@ export default function Header() {
           ease: "easeInOut",
         }}
       >
+        
         <ul className="hidden lg:center-center gap-8 text-sm  z-10 py-3 mt-2 px-8 md:text-[16px] md:gap-12 md:py-4 border-b-[0.1px] transition-all ease-in-out duration-500 rounded-full bg-[rgba(114,114,114,.2)] backdrop-blur-md   border-[rgba(114,114,114,.4)]">
           {links.map((link) => (
             <motion.li
@@ -72,6 +75,7 @@ export default function Header() {
             </motion.li>
           ))}
         </ul>
+
       </motion.nav>
 
       <div className="flex justify-end fixed top-3 w-full z-[999]">

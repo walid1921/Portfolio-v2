@@ -19,10 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="!scroll-smooth">
       <body
-        className={`${font.className} bg-[#131313] text-[#bbb] relative h-[5000px]`}
+        className={`${font.className} bg-[#131313] text-[#bbb] relative`}
       >
         <ActiveSectionContextProvider>
-          <Header />
+          
           {children}
 
           <Toaster

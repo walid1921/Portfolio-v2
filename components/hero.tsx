@@ -5,12 +5,12 @@ import curve from "@/public/curve.png";
 import { motion } from "framer-motion";
 import { BackgroundCircles, BottomLine } from "@/components/ui/circleHero";
 import { useRef } from "react";
-import Button from "./ui/button";
 import { BsFillSendFill } from "react-icons/bs";
 import { useSectionInView } from "@/lib/hooks";
 import MySkills from "./about";
 import { useActiveSection } from "@/context/activeSectionContext";
 import gradient from "@/public/gradient.png";
+import ButtonJob from "./ui/buttonJob";
 
 const Hero = () => {
   const parallaxRef = useRef(null);
@@ -127,7 +127,7 @@ const Hero = () => {
                 ease: "easeInOut",
               }}
             >
-              <Button
+              <ButtonJob
                 onClick={() => {
                   setActiveSection("Contact");
                   setTimeOfLastClick(Date.now());
