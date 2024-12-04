@@ -2,7 +2,7 @@ const Logo = () => {
   return (
     <div className="flex pl-[32px] my-7">
       <div className="w-[170px]">
-        <img src="/logo.svg" alt="logo" />
+        <img src="/logoMain.png" alt="logo" />
       </div>
     </div>
   );

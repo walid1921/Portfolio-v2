@@ -85,12 +85,12 @@ const data = {
     {
       title: "Mail",
       icon: <Mail size={20} />,
-      url: "mailto:",
+      url: "mailto:kouiderayadwalid@gmail.com",
     },
     {
       title: "Phone",
       icon: <Phone size={20} />,
-      url: "tel:",
+      url: "tel:015118559079",
     },
   ],
 };
@@ -99,7 +99,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar {...props}>
       <Logo />
-      <div className=" absolute  top-[20px] -right-[40px] ">
+      <div className=" absolute  top-[20px] -right-[40px] z-50 ">
         <SidebarTrigger />
       </div>
       <SidebarContent>
@@ -127,45 +127,40 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           </SidebarGroup>
         ))}
 
-        <div className="px-[1rem]">
-          <p
-            className="
-          text-muted-foreground
-          "
-          >
-            Contact
-          </p>
-          <ul className="flex items-center justify-center gap-8 pt-4">
-            {data.contact.map((item) => (
-              <Popsup
-                key={item.title}
-                side="top"
-                link={item.url}
-                icon={item.icon}
-                content={item.title}
-              />
-            ))}
-          </ul>
-        </div>
-        <div className="flex flex-col gap-6 relative border-t border-dashed px-[1rem] pb-5 pt-3">
-          <Image
-            src={grid}
-            alt="grid"
-            layout="fill"
-            objectFit="cover"
-            className="rounded-md"
-          />
-          <div className="  flex items-start flex-col justify-start gap-2 rounded-md py-2 px-4">
-            <p className="text-lg font-bold">{getCurrentDate()}</p>
-            <p className="text-sm">Bremen, Germany</p>
+        <div className="flex flex-col gap-5">
+          <div className="px-[1rem]">
+            <ul className="flex items-center justify-center gap-8 pt-4">
+              {data.contact.map((item) => (
+                <Popsup
+                  key={item.title}
+                  side="top"
+                  link={item.url}
+                  icon={item.icon}
+                  content={item.title}
+                />
+              ))}
+            </ul>
           </div>
+          <div className="flex flex-col gap-6 relative border-t border-dashed px-[1rem] pb-5 pt-3">
+            <Image
+              src={grid}
+              alt="grid"
+              layout="fill"
+              objectFit="cover"
+              className="rounded-md"
+            />
+            <div className="  flex items-start flex-col justify-start gap-2 rounded-md py-2 px-4">
+              <p className="text-lg font-bold">{getCurrentDate()}</p>
+              <p className="text-sm">Bremen, Germany</p>
+            </div>
 
-          <PrimaryBtn>
-            <Link href="/" className="flex items-center justify-center gap-4">
-              {" "}
-              Let's Talk <BsFillSendFill size={16} />{" "}
-            </Link>
-          </PrimaryBtn>
+            <PrimaryBtn>
+              <Link href="/" className="flex items-center justify-center gap-4">
+                {" "}
+                Let's Talk <BsFillSendFill size={16} />{" "}
+              </Link>
+            </PrimaryBtn>
+          </div>
         </div>
       </SidebarContent>
       <SidebarRail />

@@ -70,6 +70,10 @@ export const links = [
     name: "Contact",
     hash: "#contact",
   },
+  {
+    name: "Freelance",
+    hash: "/freelance",
+  },
 ] as const;
 
 //! Projects

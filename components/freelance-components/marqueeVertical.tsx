@@ -3,36 +3,45 @@ import Marquee from "../ui/marquee";
 
 const randomData = [
   {
+    id: 1,
     img: "/portfolio1.png",
   },
   {
+    id: 2,
     img: "/portfolio2.jpeg",
   },
   {
+    id: 3,
     img: "/portfolio3.png",
   },
 ];
 
 const Kuchentrend = [
   {
+    id: 1,
     img: "/portfolio1.png",
   },
   {
+    id: 2,
     img: "/portfolio1.jpeg",
   },
   {
+    id: 3,
     img: "/portfolio1.png",
   },
 ];
 
 const MagicClean = [
   {
+    id: 1,
     img: "/portfolio1.png",
   },
   {
+    id: 2,
     img: "/portfolio2.jpeg",
   },
   {
+    id: 3,
     img: "/portfolio3.png",
   },
 ];
@@ -52,7 +61,7 @@ export function MarqueeVertical() {
       <div className="block md:hidden w-full h-full">
         <Marquee vertical className="[--duration:35s]">
           {randomData.map((random) => (
-            <ReviewCard key={random.img} {...random} />
+            <ReviewCard key={random.id} {...random} />
           ))}
         </Marquee>
       </div>
@@ -61,17 +70,17 @@ export function MarqueeVertical() {
       <div className="hidden md:flex h-full w-full">
         <Marquee reverse vertical className="[--duration:35s]">
           {randomData.map((random) => (
-            <ReviewCard key={random.img} {...random} />
+            <ReviewCard key={random.id} {...random} />
           ))}
         </Marquee>
         <Marquee vertical className="[--duration:35s]">
           {MagicClean.map((magic) => (
-            <ReviewCard key={magic.img} {...magic} />
+            <ReviewCard key={magic.id} {...magic} />
           ))}
         </Marquee>
         <Marquee reverse vertical className="[--duration:35s]">
           {Kuchentrend.map((kuchen) => (
-            <ReviewCard key={kuchen.img} {...kuchen} />
+            <ReviewCard key={kuchen.id} {...kuchen} />
           ))}
         </Marquee>
       </div>

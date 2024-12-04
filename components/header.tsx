@@ -7,7 +7,6 @@ import Link from "next/link";
 import Hamburger from "hamburger-react";
 import { cn } from "@/lib/utils";
 import { useActiveSection } from "@/context/activeSectionContext";
-import SwitchBtn from "./ui/SwitchBtn";
 
 const itemVariants: Variants = {
   closed: { opacity: 0, transition: { duration: 0.2 }, x: 100 },

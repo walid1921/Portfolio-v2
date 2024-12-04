@@ -6,7 +6,6 @@ import Header from "@/components/header";
 import Hero from "@/components/hero";
 import Projects from "@/components/projects";
 import Skills from "@/components/skills";
-import SwitchBtn from "@/components/ui/SwitchBtn";
 
 export default function Home() {
   return (
@@ -18,10 +17,6 @@ export default function Home() {
       <Education />
       <Contact />
       <Footer />
-
-      <div className="fixed  bottom-8 left-4">
-        <SwitchBtn />
-      </div>
     </main>
   );
 }
