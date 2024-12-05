@@ -1,46 +1,78 @@
 "use client";
 import React from "react";
-import { ScrollParallax } from "react-just-parallax";
 import Founder from "./founder";
+import Image from "next/image";
+import BlurFade from "../ui/blur-fade";
+import walid from "@/public/walid.jpg";
 import Link from "next/link";
-import { ChevronRight } from "lucide-react";
 
 const AboutFreelance = () => {
   return (
-    <section id="about" className="relative mt-10">
-      <div className="container  relative rounded-md py-[50px] ">
-        <h2 className="lg:text-3xl text-2xl text-center font-medium bg-gradient-to-br from-white to-[#000000] bg-clip-text text-transparent md:mb-10 mb-10">
+    <section className="relative h-screen w-full pt-36 container">
+      <BlurFade delay={0.4} inView>
+        <h2 className="lg:text-4xl text-2xl font-medium bg-gradient-to-br from-white to-[#000000] bg-clip-text text-transparent md:mb-10 mb-10">
           About Me
         </h2>
-
-        <div className="flex justify-center  items-center gap-8">
-          <p className="text-justify leading-8 text-md w-[80%] z-10">
-            I'm a 26-year-old Developer based in Germany, blending my background
-            in Environmental Process Engineering with a passion for full-stack
-            development. My journey began when I discovered the joy of using
-            creativity to build captivating web experiences. Through persistence
-            and self-discipline, I honed my skills to become a full-stack
-            developer. Beyond coding, I indulge in side projects, exploring new
-            realms of creativity and accomplishing exciting feats.
-            <Link
-              href="/freelance/about"
-              className=" inline-flex items-center gap-2 hover:underline hover:text-white ease-in-out transition-all duration-200 text-[#58ffb4] cursor-pointer ml-4 "
-            >
-              Read more <ChevronRight size={16} />
-            </Link>
-          </p>
-        </div>
-      </div>
-      <div className=" hidden lg:flex">
-        <ScrollParallax isAbsolutelyPositioned>
-          <div className="absolute lg:right-[80px] lg:bottom-[10rem] bottom-[20px]  px-4 py-2 bg-n-9/40 backdrop-blur border border-[#58ffb4] rounded-[14px] xl:flex">
-            <Founder
-              url={"https://i.pravatar.cc/150?u=a042581f4e29026024d"}
-              name={"Walid Kouider Ayad"}
-              subtitle={"Available for freelance work"}
-            />
+      </BlurFade>
+      <div className="flex flex-col gap-28 md:grid md:grid-cols-2 md:grid-rows-1 items-start w-full">
+        <div className="flex items-start gap-8 sticky top-[120px]">
+          <Image
+            src={walid}
+            height={90}
+            width={90}
+            quality={80}
+            className="object-cover z-20 grid-span-1  rounded-full"
+            alt="Family sitting around a fire pit in front of cabin"
+            loading="lazy"
+          />
+          <div>
+            <p className="text-2xl">
+              I’m Walid - an experienced freelance web developer crafting
+              Digital experiences from Bremen
+            </p>
+            <div className=" mt-10 relative">
+              <Founder
+                name={"Walid Kouider Ayad"}
+                signature={"/public/signature1.png"}
+                subtitle={"Full Stack Developer"}
+                className="p-1 border-2 border-primary object-cover "
+              />
+            </div>
           </div>
-        </ScrollParallax>
+        </div>
+
+        <div className="flex flex-col gap-6">
+          <BlurFade delay={0.6} inView>
+            <div className=" leading-7 text-justify">
+              <p className="mb-[1rem]">
+                Hey there! I'm Walid, a freelance web developer based in Bremen.
+                With over 2 years of experience, I specialize in crafting
+                dynamic websites that leave a lasting impression. My skills span
+                HTML, CSS, JavaScript, and more, allowing me to bring your
+                digital vision to life with precision and creativity.
+              </p>
+              <p className="mb-[1rem]">
+                From sleek landing pages to robust e-commerce platforms, I've
+                got you covered. I thrive on exceeding client expectations,
+                whether it's building responsive designs or optimizing for SEO.
+                I take the time to understand your goals, ensuring the end
+                product meets your needs.{" "}
+              </p>
+              <p className="mb-[1rem]">
+                Located in Bremen, I draw inspiration from the city's diverse
+                culture and innovative spirit. Let's collaborate and turn your
+                ideas into captivating online experiences!{" "}
+                <span
+                  className="
+                  text-primary hover:text-secondary transition-colors duration-300 ease-in-out ml-4
+                  "
+                >
+                  <Link href="#"> Read more</Link>
+                </span>
+              </p>
+            </div>
+          </BlurFade>
+        </div>
       </div>
     </section>
   );

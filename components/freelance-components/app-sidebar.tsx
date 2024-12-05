@@ -31,6 +31,7 @@ import grid from "@/public/grid.png";
 import Popsup from "../ui/popsup";
 import Logo from "../ui/Logo";
 import { getCurrentDate } from "@/lib/utils";
+import Founder from "./founder";
 
 const data = {
   navMain: [
@@ -141,7 +142,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               ))}
             </ul>
           </div>
-          <div className="flex flex-col gap-6 relative border-t border-dashed px-[1rem] pb-5 pt-3">
+          <div className="flex flex-col gap-6 relative border-t border-dashed px-[1rem] pb-12 pt-12">
             <Image
               src={grid}
               alt="grid"
@@ -149,10 +150,12 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               objectFit="cover"
               className="rounded-md"
             />
-            <div className="  flex items-start flex-col justify-start gap-2 rounded-md py-2 px-4">
-              <p className="text-lg font-bold">{getCurrentDate()}</p>
-              <p className="text-sm">Bremen, Germany</p>
-            </div>
+
+            <Founder
+              url={"https://i.pravatar.cc/150?u=a042581f4e29026024d"}
+              name={"Walid Kouider Ayad"}
+              subtitle={"Available for freelance work"}
+            />
 
             <PrimaryBtn>
               <Link href="/" className="flex items-center justify-center gap-4">

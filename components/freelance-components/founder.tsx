@@ -3,19 +3,27 @@ import Image, { StaticImageData } from "next/image";
 import Avatar from "./avatar";
 
 type FounderProps = {
-  url: string;
+  url?: string;
   name: string;
   signature?: StaticImageData | string;
   subtitle?: string;
   className?: string;
 };
 
-const Founder = ({ url, name, signature, subtitle, className }: FounderProps) => {
+const Founder = ({
+  url,
+  name,
+  signature,
+  subtitle,
+  className,
+}: FounderProps) => {
   return (
-    <div className="flex items-center space-x-4 ">
-      <div className={`flex  rounded-full ${className}`}>
-        <Avatar url={url} />
-      </div>
+    <div className="flex items-center space-x-3 ">
+      {url && (
+        <div className={`flex  rounded-full ${className}`}>
+          <Avatar url={url} />
+        </div>
+      )}
 
       <div className="relative flex flex-col">
         <strong className="z-10">{name}</strong>

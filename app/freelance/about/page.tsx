@@ -17,15 +17,27 @@ const page = () => {
               </h2>
             </BlurFade>
             <BlurFade delay={0.6} inView>
-              <div className="font-normal  text-[17px] leading-6 mb-8 ">
-                I'm a 26-year-old Developer based in Germany, blending my
-                background in Environmental Process Engineering with a passion
-                for full-stack development. My journey began when I discovered
-                the joy of using creativity to build captivating web
-                experiences. Through persistence and self-discipline, I honed my
-                skills to become a full-stack developer. Beyond coding, I
-                indulge in side projects, exploring new realms of creativity and
-                accomplishing exciting feats.
+              <div className=" leading-7 text-justify">
+                <p className="mb-[1rem]">
+                  Hey there! I'm Walid, a freelance web developer based in
+                  Bremen. With over 2 years of experience, I specialize in
+                  crafting dynamic websites that leave a lasting impression. My
+                  skills span HTML, CSS, JavaScript, and more, allowing me to
+                  bring your digital vision to life with precision and
+                  creativity.
+                </p>
+                <p className="mb-[1rem]">
+                  From sleek landing pages to robust e-commerce platforms, I've
+                  got you covered. I thrive on exceeding client expectations,
+                  whether it's building responsive designs or optimizing for
+                  SEO. I take the time to understand your goals, ensuring the
+                  end product meets your needs.
+                </p>
+                <p className="mb-[1rem]">
+                  Located in Bremen, I draw inspiration from the city's diverse
+                  culture and innovative spirit. Let's collaborate and turn your
+                  ideas into captivating online experiences!
+                </p>
               </div>
             </BlurFade>
           </section>
