@@ -1,16 +1,15 @@
 import Image from "next/image";
 import curve from "@/public/curve.png";
 import { motion } from "framer-motion";
-import { BsFillSendFill } from "react-icons/bs";
-import ButtonJob from "@/components/ui/buttonJob";
 import { MarqueeVertical } from "@/components/freelance-components/marqueeVertical";
 import { TextGradient } from "@/components/freelance-components/textGradient";
 import Reviews from "@/components/freelance-components/reviews";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import PrimaryBtn from "@/components/ui/primaryBtn";
+import { CalendarDays } from "lucide-react";
 
-const HeroFreelance = () => {
+const FreelanceHero = () => {
   return (
     <section className="relative md:pt-[12rem] pt-[8rem] h-screen " id="home">
       {/* Background */}
@@ -53,7 +52,7 @@ const HeroFreelance = () => {
             ease: "easeInOut",
           }}
         >
-          {"A Full-Stack Web Developer".split("").map((child, idx) => (
+          {"A Freelancer Web Developer".split("").map((child, idx) => (
             <span className="hoverText" key={idx}>
               {child}
             </span>
@@ -134,7 +133,7 @@ const HeroFreelance = () => {
                 className="flex items-center justify-center gap-4"
               >
                 {" "}
-                Let's Talk <BsFillSendFill size={16} />
+                Get Started <CalendarDays size={16} />
               </Link>{" "}
             </PrimaryBtn>
           </motion.div>
@@ -171,4 +170,4 @@ const HeroFreelance = () => {
   );
 };
 
-export default HeroFreelance;
+export default FreelanceHero;

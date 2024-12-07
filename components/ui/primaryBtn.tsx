@@ -41,12 +41,12 @@ const PrimaryBtn = ({ children, className, ...props }: ShinyButtonProps) => {
       {...animationProps}
       {...props}
       className={cn(
-        "relative bg-primary text-primary-foreground text-md  border border-[#289061] rounded-md py-2 px-6 md:py-2 md:px-6 font-medium backdrop-blur-xl  transition-all ease-in-out duration-300 hover:bg-[#4b9876] ",
+        "relative bg-primary text-primary-foreground  border border-[#289061] rounded-md py-2 px-6 md:py-2 md:px-6  backdrop-blur-xl  transition-all ease-in-out duration-300 hover:bg-[#4b9876] ",
         className
       )}
     >
       <span
-        className="relative block text-md z-50 "
+        className="relative block z-50 "
         style={{
           maskImage:
             "linear-gradient(-75deg,hsl(var(--primary)) calc(var(--x) + 20%),transparent calc(var(--x) + 30%),hsl(var(--primary)) calc(var(--x) + 100%))",

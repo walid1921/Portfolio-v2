@@ -1,9 +1,15 @@
+"use client";
+
 import Founder from "@/components/freelance-components/founder";
 import BlurFade from "@/components/ui/blur-fade";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import walid from "@/public/walid.jpg";
 import SectionTowCol from "@/components/freelance-components/sectionTowCol";
+import signature from "@/public/signature.png";
+import PrimaryBtn from "@/components/ui/primaryBtn";
+import Link from "next/link";
+import { CalendarDays } from "lucide-react";
+import { motion } from "framer-motion";
 
 const page = () => {
   return (
@@ -42,24 +48,59 @@ const page = () => {
             </BlurFade>
           </section>
 
-          <div className=" mt-10 relative">
+          <motion.div
+            className="mt-10 relative"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              delay: 0.8,
+              duration: 0.3,
+              scale: {
+                type: "spring",
+                damping: 5,
+                stiffness: 100,
+                restDelta: 0.001,
+              },
+            }}
+          >
             <Founder
-              url={"https://i.pravatar.cc/150?u=a042581f4e29026024d"}
+              url={"/walid.jpg"}
               name={"Walid Kouider Ayad"}
-              signature={"/public/signature1.png"}
+              signature={signature}
               subtitle={"Full Stack Developer"}
               className="p-1 border-2 border-primary object-cover "
             />
-          </div>
-          <div className="mt-10">
-            <Button size={"lg"} className="text-white">
-              Read more
-            </Button>
-          </div>
+          </motion.div>
+          <motion.div
+            className="mt-10"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              delay: 1,
+              duration: 0.3,
+              scale: {
+                type: "spring",
+                damping: 5,
+                stiffness: 100,
+                restDelta: 0.001,
+              },
+            }}
+          >
+            <PrimaryBtn>
+              {" "}
+              <Link
+                href="/contact"
+                className="flex items-center justify-center gap-4"
+              >
+                {" "}
+                Get Started <CalendarDays size={16} />
+              </Link>{" "}
+            </PrimaryBtn>
+          </motion.div>
         </div>
       </div>
 
-      <div className="relative">
+      <div className="relative rounded-lg p-1 bg-conic-gradient w-[500px]">
         <Image
           src={walid}
           height={500}

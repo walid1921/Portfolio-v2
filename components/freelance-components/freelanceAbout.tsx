@@ -5,13 +5,14 @@ import Image from "next/image";
 import BlurFade from "../ui/blur-fade";
 import walid from "@/public/walid.jpg";
 import Link from "next/link";
+import signature from "@/public/signature.png"; 
 
-const AboutFreelance = () => {
+const FreelanceAbout = () => {
   return (
-    <section className="relative h-screen w-full pt-36 container">
+    <section className="relative w-full pt-36 container">
       <BlurFade delay={0.4} inView>
-        <h2 className="lg:text-4xl text-2xl font-medium bg-gradient-to-br from-white to-[#000000] bg-clip-text text-transparent md:mb-10 mb-10">
-          About Me
+        <h2 className="lg:text-4xl text-2xl font-semibold bg-gradient-to-br from-white to-[#000000] bg-clip-text text-transparent md:mb-10 mb-10">
+          About
         </h2>
       </BlurFade>
       <div className="flex flex-col gap-28 md:grid md:grid-cols-2 md:grid-rows-1 items-start w-full">
@@ -33,8 +34,8 @@ const AboutFreelance = () => {
             <div className=" mt-10 relative">
               <Founder
                 name={"Walid Kouider Ayad"}
-                signature={"/public/signature1.png"}
-                subtitle={"Full Stack Developer"}
+                signature={signature}
+                subtitle={"Web Developer"}
                 className="p-1 border-2 border-primary object-cover "
               />
             </div>
@@ -78,4 +79,4 @@ const AboutFreelance = () => {
   );
 };
 
-export default AboutFreelance;
+export default FreelanceAbout;

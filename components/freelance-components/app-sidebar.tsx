@@ -152,7 +152,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             />
 
             <Founder
-              url={"https://i.pravatar.cc/150?u=a042581f4e29026024d"}
+              url={"/walid.jpg"}
               name={"Walid Kouider Ayad"}
               subtitle={"Available for freelance work"}
             />

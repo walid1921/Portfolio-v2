@@ -21,14 +21,16 @@ const Founder = ({
     <div className="flex items-center space-x-3 ">
       {url && (
         <div className={`flex  rounded-full ${className}`}>
-          <Avatar url={url} />
+          <Avatar url={url} height={50} width={50} />
         </div>
       )}
 
       <div className="relative flex flex-col">
         <strong className="z-10">{name}</strong>
         <div className="flex items-center space-x-2 z-10">
-          <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+          {!signature && (
+            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+          )}
           <span className="text-[12px] text-primary">{subtitle}</span>
         </div>
         {signature && (
@@ -37,7 +39,7 @@ const Founder = ({
             alt="The Founder"
             height={120}
             width={120}
-            className="absolute -top-1 left-0 z-2"
+            className="absolute -top-1 left-0 z-2 invert brightness-200 opacity-15"
           />
         )}
       </div>
