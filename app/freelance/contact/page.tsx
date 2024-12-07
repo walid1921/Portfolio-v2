@@ -1,15 +1,13 @@
-import Contact from "@/components/contact";
-import Footer from "@/components/footer";
+import FreelanceContact from "@/components/freelance-components/freelanceContact";
+import FreelanceFooter from "@/components/freelance-components/freelanceFooter";
 import React from "react";
 
 const page = () => {
   return (
-    <div>
-      <div>
-        sdgdsgh
-      </div>
-      <Contact />
-      <Footer />
+    <div className="flex flex-col gap-36">
+      <div>sdgdsgh</div>
+      <FreelanceContact />
+      <FreelanceFooter />
     </div>
   );
 };

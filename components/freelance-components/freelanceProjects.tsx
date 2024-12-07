@@ -5,7 +5,7 @@ import BlurFade from "../ui/blur-fade";
 import ProjectCard from "./projectCard";
 import { Button } from "../ui/button";
 import Link from "next/link";
-import Section from "../section";
+import { Folder } from "lucide-react";
 
 const projectsData = [
   {
@@ -36,7 +36,7 @@ const projectsData = [
 
 const FreelanceProjects = () => {
   return (
-    <Section crosses className="relative w-full pt-36 ">
+    <section className="relative w-full ">
       <div className="flex flex-col gap-10 container">
         <BlurFade delay={0.4} inView>
           <h2 className="lg:text-4xl text-2xl font-semibold bg-gradient-to-br from-white to-[#000000] bg-clip-text text-transparent md:mb-10 mb-10">
@@ -50,11 +50,18 @@ const FreelanceProjects = () => {
           ))}
         </div>
 
-        <Button className="inline-flex justify-center items-center w-full">
-          <Link href="/freelance/projects">See More</Link>
-        </Button>
+        <div>
+          <Button>
+            <Link
+              href="/freelance/projects"
+              className="flex gap-3 items-center justify-center"
+            >
+              See More Projects <Folder size={25} />
+            </Link>
+          </Button>
+        </div>
       </div>
-    </Section>
+    </section>
   );
 };
 

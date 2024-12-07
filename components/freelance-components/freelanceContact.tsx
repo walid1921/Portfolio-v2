@@ -1,15 +1,16 @@
 "use client";
 
 import React, { useRef, useState, FormEvent } from "react";
-import Section from "./section";
 import Image from "next/image";
 import grid from "@/public/grid.png";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
 import { sendEmail } from "@/actions/sendEmail";
-import SubmitBtn from "./ui/submitBtn";
+
 import toast from "react-hot-toast";
-import Globe from "./ui/globe";
+import SubmitBtn from "../ui/submitBtn";
+
+
 
 type Errors = {
   email?: string;
@@ -17,7 +18,7 @@ type Errors = {
   message?: string;
 };
 
-const Contact = () => {
+const FreelanceContact = () => {
   const { ref } = useSectionInView("Contact", 0.5);
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -74,14 +75,14 @@ const Contact = () => {
   };
 
   return (
-    <Section crosses id="contact" className="scroll-mt-28">
+    <section  id="contact" >
       <motion.div
         ref={ref}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1 }}
         viewport={{ once: true }}
-        className="container md:pb-10 "
+        className="container"
       >
         <div className="md:flex p-0.25 rounded-[6px] bg-conic-gradient w-full">
           <div className="relative p-8 bg-[#181818] rounded-[6px] h-full w-full overflow-hidden xl:pt-15 xl:px-15">
@@ -166,14 +167,9 @@ const Contact = () => {
         </div>
       </motion.div>
 
-      <div className="relative mt-20 w-full flex  items-center justify-center overflow-hidden py-8 md:pb-60 ">
-        <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-background to-[#2A9465] bg-clip-text text-center text-8xl font-semibold leading-none text-transparent ">
-          Dev & Des
-        </span>
-        <Globe className="top-10" />
-      </div>
-    </Section>
+     
+    </section>
   );
 };
 
-export default Contact;
+export default FreelanceContact;

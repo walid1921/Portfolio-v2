@@ -9,7 +9,7 @@ import signature from "@/public/signature.png";
 
 const FreelanceAbout = () => {
   return (
-    <section className="relative w-full pt-36 container">
+    <section className="relative w-full container">
       <BlurFade delay={0.4} inView>
         <h2 className="lg:text-4xl text-2xl font-semibold bg-gradient-to-br from-white to-[#000000] bg-clip-text text-transparent md:mb-10 mb-10">
           About
