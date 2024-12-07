@@ -14,7 +14,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
-const page = () => {
+const Page = () => {
   const [nextItems, setNextItems] = useState(4);
   const [project, setProject] = useState(projectsData);
   const [filter, setFilter] = useState("all");
@@ -265,4 +265,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
