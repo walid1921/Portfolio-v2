@@ -42,7 +42,7 @@ const numberWithinRange = ({ number, min, max }: TweenValues) =>
 const ImageSlider = () => {
   const option = {};
   const [emblaRef, emblaApi] = useEmblaCarousel(option, [Autoplay()]);
-  const [tweenValues, setTweenValues] = useState([]);
+  const [tweenValues, setTweenValues] = useState<number[]>([]);
 
   const onScroll = useCallback(() => {
     if (!emblaApi) return;
@@ -64,7 +64,7 @@ const ImageSlider = () => {
         });
       }
       const tweenValue = 1 - Math.abs(diffToTarget * TWEEN_FACTOR);
-      return numberWithinRange(tweenValue, 0, 1);
+      return numberWithinRange({ number: tweenValue, min: 0, max: 1 });
     });
     setTweenValues(styles);
   }, [emblaApi, setTweenValues]);
@@ -83,19 +83,19 @@ const ImageSlider = () => {
     <div className="embla">
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container xl:gap-[160px] gap-8">
-          {data.map((index) => (
+          {data.map((item, index) => (
             <div
-              className="embla__slide relative  "
-              key={index.id}
+              className="embla__slide relative"
+              key={item.id}
               style={{
-                ...(tweenValues.length && { opacity: tweenValues[index] }),
+                opacity: tweenValues[index] || 1,
               }}
             >
               <div className="imageFade">
                 <img
                   className="embla__slide__img hover:cursor-pointer transition-all ease-in-out duration-300 hover:scale-105"
-                  src={index.imgUrl}
-                  alt={index.category}
+                  src={item.imgUrl}
+                  alt={item.category}
                 />
               </div>
             </div>

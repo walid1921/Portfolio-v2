@@ -25,6 +25,7 @@
     "autoprefixer": "10.4.19",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "embla-carousel": "^8.5.1",
     "embla-carousel-autoplay": "^8.0.0",
     "embla-carousel-react": "^8.5.1",
     "eslint": "8.57.0",
