@@ -1,4 +1,6 @@
 "use client";
+import Contact from "@/components/contact";
+import Footer from "@/components/footer";
 import FreelanceAbout from "@/components/freelance-components/freelanceAbout";
 import FreelanceHero from "@/components/freelance-components/freelanceHero";
 import FreelanceProjects from "@/components/freelance-components/freelanceProjects";
@@ -11,6 +13,8 @@ const FreelancePage = () => {
       <FreelanceAbout />
       <FreelanceReviews />
       <FreelanceProjects />
+      <Contact />
+      <Footer />
     </main>
   );
 };

@@ -73,7 +73,7 @@ const Contact = () => {
   };
 
   return (
-    <Section id="contact" crosses className="scroll-mt-28 ">
+    <Section id="contact" crosses className="scroll-mt-28">
       <motion.div
         ref={ref}
         initial={{ opacity: 0 }}
