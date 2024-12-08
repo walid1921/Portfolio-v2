@@ -13,6 +13,8 @@ import PrimaryBtn from "@/components/ui/primaryBtn";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import DotPattern from "@/components/ui/dot-pattern";
+import { cn } from "@/lib/utils";
 
 const Page = () => {
   const [nextItems, setNextItems] = useState(4);
@@ -60,7 +62,17 @@ const Page = () => {
   }, [filter]);
 
   return (
-    <section className="flex justify-center py-36">
+    <section className="flex relative justify-center py-36">
+      <DotPattern
+        width={20}
+        height={20}
+        cx={1}
+        cy={1}
+        cr={1}
+        className={cn(
+          "[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)] "
+        )}
+      />
       <div className="px-20 z-1" ref={ref}>
         <div className=" flex flex-col pb-32  gap-20 md:grid md:grid-cols-2 md:grid-rows-1 items-center w-full ">
           <div className="flex flex-col justify-between h-full ">

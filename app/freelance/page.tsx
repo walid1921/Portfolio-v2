@@ -8,7 +8,7 @@ import FreelanceReviews from "@/components/freelance-components/freelanceReview"
 
 const FreelancePage = () => {
   return (
-    <main className="flex flex-col gap-36">
+    <main>
       <FreelanceHero />
       <FreelanceAbout />
       <FreelanceReviews />

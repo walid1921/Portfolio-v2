@@ -10,10 +10,22 @@ import PrimaryBtn from "@/components/ui/primaryBtn";
 import Link from "next/link";
 import { CalendarDays } from "lucide-react";
 import { motion } from "framer-motion";
+import AnimatedGridPattern from "@/components/ui/animated-grid-pattern";
+import { cn } from "@/lib/utils";
 
 const page = () => {
   return (
     <SectionTowCol>
+      <AnimatedGridPattern
+        numSquares={30}
+        maxOpacity={0.1}
+        duration={3}
+        repeatDelay={1}
+        className={cn(
+          "[mask-image:radial-gradient(700px_circle_at_center,white,transparent)]",
+          "inset-x-0 h-full "
+        )}
+      />
       <div className="relative flex flex-col justify-evenly h-full">
         <div className="flex flex-col items-start">
           <section className="flex flex-col gap-6">
@@ -64,7 +76,6 @@ const page = () => {
             }}
           >
             <Founder
-              url={"/walid.jpg"}
               name={"Walid Kouider Ayad"}
               signature={signature}
               subtitle={"Full Stack Developer"}
@@ -72,7 +83,7 @@ const page = () => {
             />
           </motion.div>
           <motion.div
-            className="mt-10"
+            className="mt-20"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{

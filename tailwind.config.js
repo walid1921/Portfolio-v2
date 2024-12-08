@@ -188,6 +188,19 @@ module.exports = {
   				to: {
   					backgroundPosition: 'var(--bg-size) 0'
   				}
+  			},
+  			meteor: {
+  				'0%': {
+  					transform: 'rotate(215deg) translateX(0)',
+  					opacity: '1'
+  				},
+  				'70%': {
+  					opacity: '1'
+  				},
+  				'100%': {
+  					transform: 'rotate(215deg) translateX(-500px)',
+  					opacity: '0'
+  				}
   			}
   		},
   		animation: {
@@ -197,7 +210,8 @@ module.exports = {
   			shimmer: 'shimmer 8s infinite',
   			marquee: 'marquee var(--duration) infinite linear',
   			'marquee-vertical': 'marquee-vertical var(--duration) linear infinite',
-  			gradient: 'gradient 8s linear infinite'
+  			gradient: 'gradient 8s linear infinite',
+  			meteor: 'meteor 5s linear infinite'
   		}
   	}
   },

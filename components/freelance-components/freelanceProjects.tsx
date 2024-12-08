@@ -5,7 +5,7 @@ import BlurFade from "../ui/blur-fade";
 import ProjectCard from "./projectCard";
 import { Button } from "../ui/button";
 import Link from "next/link";
-import { Folder } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 const projectsData = [
   {
@@ -36,7 +36,7 @@ const projectsData = [
 
 const FreelanceProjects = () => {
   return (
-    <section className="relative w-full ">
+    <section className="relative w-full py-32 my-2 mx-2">
       <div className="flex flex-col gap-10 container">
         <BlurFade delay={0.4} inView>
           <h2 className="lg:text-4xl text-2xl font-semibold bg-gradient-to-br from-white to-[#000000] bg-clip-text text-transparent md:mb-10 mb-10">
@@ -56,7 +56,7 @@ const FreelanceProjects = () => {
               href="/freelance/projects"
               className="flex gap-3 items-center justify-center"
             >
-              See More Projects <Folder size={25} />
+              All Projects <ArrowUpRight size={25} />
             </Link>
           </Button>
         </div>

@@ -1,16 +1,13 @@
 "use client";
 
 import React, { useRef, useState, FormEvent } from "react";
-import Image from "next/image";
-import grid from "@/public/grid.png";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
 import { sendEmail } from "@/actions/sendEmail";
-
 import toast from "react-hot-toast";
 import SubmitBtn from "../ui/submitBtn";
-
-
+import { cn } from "@/lib/utils";
+import AnimatedGridPattern from "../ui/animated-grid-pattern";
 
 type Errors = {
   email?: string;
@@ -75,7 +72,7 @@ const FreelanceContact = () => {
   };
 
   return (
-    <section  id="contact" >
+    <section id="contact">
       <motion.div
         ref={ref}
         initial={{ opacity: 0 }}
@@ -85,13 +82,21 @@ const FreelanceContact = () => {
         className="container"
       >
         <div className="md:flex p-0.25 rounded-[6px] bg-conic-gradient w-full">
-          <div className="relative p-8 bg-[#181818] rounded-[6px] h-full w-full overflow-hidden xl:pt-15 xl:px-15">
+          <div className="relative p-8 bg-background rounded-[6px] h-full w-full overflow-hidden xl:pt-15 xl:px-15">
             <p className="lg:text-3xl text-2xl pl-[20px] font-medium bg-gradient-to-br from-white to-[#4d4d4d] bg-clip-text text-transparent mb-10">
               Contact
             </p>
-            <div className="absolute top-0 left-0  w-full z-2">
-              <Image src={grid} alt="grid" className="w-full" />
-            </div>
+
+            <AnimatedGridPattern
+              numSquares={30}
+              maxOpacity={0.1}
+              duration={3}
+              repeatDelay={1}
+              className={cn(
+                "[mask-image:radial-gradient(700px_circle_at_center,white,transparent)]",
+                "inset-x-0 h-full "
+              )}
+            />
             <div className="flex flex-col h-full ">
               <form
                 ref={formRef}
@@ -107,7 +112,7 @@ const FreelanceContact = () => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     className={`inputForm  ${
-                      errors.email ? "border-red-500" : "border-gray-500"
+                      errors.email ? "border-red-500" : "border-[#ffffff32]"
                     }`}
                   />
 
@@ -127,7 +132,7 @@ const FreelanceContact = () => {
                     value={subject}
                     onChange={(e) => setSubject(e.target.value)}
                     className={`inputForm  ${
-                      errors.subject ? "border-red-500" : "border-gray-500"
+                      errors.subject ? "border-red-500" : "border-[#ffffff32]"
                     }`}
                   />
 
@@ -147,7 +152,7 @@ const FreelanceContact = () => {
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     className={`inputForm  resize-none ${
-                      errors.message ? "border-red-500" : "border-gray-500"
+                      errors.message ? "border-red-500" : "border-[#ffffff32]"
                     }`}
                   />
 
@@ -166,8 +171,6 @@ const FreelanceContact = () => {
           </div>
         </div>
       </motion.div>
-
-     
     </section>
   );
 };

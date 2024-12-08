@@ -26,12 +26,11 @@ import {
 import Link from "next/link";
 import PrimaryBtn from "../ui/primaryBtn";
 import { BsFillSendFill } from "react-icons/bs";
-import Image from "next/image";
-import grid from "@/public/grid.png";
 import Popsup from "../ui/popsup";
 import Logo from "../ui/Logo";
-import { getCurrentDate } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 import Founder from "./founder";
+import GridPattern from "../ui/grid-pattern";
 
 const data = {
   navMain: [
@@ -142,13 +141,16 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               ))}
             </ul>
           </div>
-          <div className="flex flex-col gap-6 relative border-t border-dashed px-[1rem] pb-12 pt-12">
-            <Image
-              src={grid}
-              alt="grid"
-              layout="fill"
-              objectFit="cover"
-              className="rounded-md"
+          <div className="flex flex-col gap-6 relative border-t border-dashed border-[#ffffff14] px-[1rem] pb-12 pt-12">
+
+            <GridPattern
+              width={20}
+              height={20}
+              x={-1}
+              y={-1}
+              className={cn(
+                "[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)] "
+              )}
             />
 
             <Founder

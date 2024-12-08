@@ -25,15 +25,3 @@ export const getErrorMessage = (error: unknown): string => {
   }
   return message;
 };
-
-/**
- * Returns the current date in DD/MM/YYYY format.
- * @returns {string} The current date (e.g., "03/12/2024").
- */
-export const getCurrentDate = (): string => {
-  const today = new Date();
-  const day = String(today.getDate()).padStart(2, "0"); // Ensures 2-digit day
-  const month = String(today.getMonth() + 1).padStart(2, "0"); // Months are 0-indexed
-  const year = today.getFullYear();
-  return `${day}/${month}/${year}`;
-};

@@ -7,23 +7,23 @@ const Reviews = () => {
       <div className="flex -space-x-4">
         <Avatar
           url={"https://i.pravatar.cc/150?u=a042581f4e29026024d"}
-          height={40}
-          width={40}
+          height={35}
+          width={35}
         />
         <Avatar
           url={"https://i.pravatar.cc/150?u=a04258a2462d826712d"}
-          height={40}
-          width={40}
+          height={35}
+          width={35}
         />
         <Avatar
           url={"https://i.pravatar.cc/150?u=a042581f4e29026704d"}
-          height={40}
-          width={40}
+          height={35}
+          width={35}
         />
         <Avatar
           url={"https://i.pravatar.cc/150?u=a04258114e29026302d"}
-          height={40}
-          width={40}
+          height={35}
+          width={35}
         />
       </div>
 

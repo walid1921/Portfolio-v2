@@ -6,6 +6,8 @@ import { MdEmail } from "react-icons/md";
 import { FiInstagram } from "react-icons/fi";
 import Popsup from "../ui/popsup";
 import Globe from "../ui/globe";
+import Particles from "../ui/particles";
+import Meteors from "../ui/meteors";
 
 //! socials
 export const socials = [
@@ -31,12 +33,20 @@ export const socials = [
 
 const FreelanceFooter = () => {
   return (
-    <section>
-      <div className="relative w-full flex  items-center justify-center overflow-hidden py-8 md:pb-60 ">
+    <section >
+      <div className="relative w-full flex  items-center justify-center overflow-hidden py-8 md:pb-60 pt-32">
         <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-background to-[#2A9465] bg-clip-text text-center text-8xl font-semibold leading-none text-transparent ">
           Dev & Des
         </span>
-        <Globe className="top-10" />
+        <Globe className="top-32 z-40" />
+        <Particles
+          className="absolute inset-0"
+          quantity={100}
+          ease={80}
+          color={"#5d5d5d"}
+          refresh
+        />
+        <Meteors number={10} />
       </div>
       <div className="!px-0 !py-10 w-full border-t border-[#2b2d2d]">
         <div className="container flex sm:justify-between justify-center items-center gap-10 max-sm:flex-col">

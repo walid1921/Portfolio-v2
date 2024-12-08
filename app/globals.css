@@ -3,10 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --background: 0, 0%, 9%;
-  
+  --background: 180, 7%, 6%;
+
   --servicePic: 0, 0%, 80%;
-  --backgroundMain: 0 0% 18%;
+  /* --backgroundMain: 0 0% 18%; */
+  --backgroundMain: 180, 7%, 6%;
 
   --card: 222.2 84% 4.9%;
   --card-foreground: 210 40% 98%;
@@ -212,7 +213,7 @@
   }
 
   .inputForm {
-    @apply text-sm w-full p-3 focus:outline-none rounded-md border bg-[#171717] focus:border-gray-300
+    @apply text-sm w-full p-3 focus:outline-none rounded-md border bg-background focus:border-gray-300
      transition-all ease-in-out duration-100;
   }
 }
