@@ -29,7 +29,7 @@ const FreelanceAbout = () => {
           </h2>
         </BlurFade>
         <div className="flex flex-col gap-28 md:grid md:grid-cols-2 md:grid-rows-1 items-start w-full">
-          <div className="flex items-start gap-8 sticky top-[120px]">
+          <div className="flex flex-col md:flex-row items-start gap-8 md:sticky md:top-[120px]">
             <Image
               src={walid}
               height={90}

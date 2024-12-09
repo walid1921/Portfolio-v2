@@ -8,13 +8,37 @@ import { useSectionInView } from "@/lib/hooks";
 import { CalendarDays, CircleArrowDown } from "lucide-react";
 import Popsup from "@/components/ui/popsup";
 import BlurFade from "@/components/ui/blur-fade";
-import ImageSlider from "@/components/freelance-components/imageSlider";
 import PrimaryBtn from "@/components/ui/primaryBtn";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import DotPattern from "@/components/ui/dot-pattern";
 import { cn } from "@/lib/utils";
+import MySwiper from "@/components/ui/swiper";
+import FreelanceFooter from "@/components/freelance-components/freelanceFooter";
+
+const data = [
+  {
+    id: 1,
+    imgUrl: "/portfolio1.png",
+    category: "Landing Page",
+  },
+  {
+    id: 2,
+    imgUrl: "/portfolio13.jpeg",
+    category: "App",
+  },
+  {
+    id: 3,
+    imgUrl: "/portfolio4.png",
+    category: "Real Project",
+  },
+  {
+    id: 4,
+    imgUrl: "/portfolio8.png",
+    category: "Side Project",
+  },
+];
 
 const Page = () => {
   const [nextItems, setNextItems] = useState(4);
@@ -62,7 +86,7 @@ const Page = () => {
   }, [filter]);
 
   return (
-    <section className="flex relative justify-center py-36">
+    <section className="flex flex-col relative justify-center md:pt-36 pt-20">
       <DotPattern
         width={20}
         height={20}
@@ -73,8 +97,8 @@ const Page = () => {
           "[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)] "
         )}
       />
-      <div className="px-20 z-1" ref={ref}>
-        <div className=" flex flex-col pb-32  gap-20 md:grid md:grid-cols-2 md:grid-rows-1 items-center w-full ">
+      <div className="md:px-20 z-1" ref={ref}>
+        <div className="container flex flex-col pb-32  gap-20 md:grid md:grid-cols-2 md:grid-rows-1 items-center w-full ">
           <div className="flex flex-col justify-between h-full ">
             <div className="flex flex-col justify-start h-full">
               <BlurFade delay={0.4} inView>
@@ -84,7 +108,7 @@ const Page = () => {
               </BlurFade>
 
               <BlurFade delay={0.4} inView>
-                <p className="text-3xl">
+                <p className="md:text-3xl text-xl">
                   Some of the projects We've worked on over the years.
                 </p>
               </BlurFade>
@@ -154,8 +178,9 @@ const Page = () => {
               </motion.div>
             </div>
           </div>
-
-          <ImageSlider />
+          <div className="relative">
+            <MySwiper data={data} />
+          </div>
         </div>
 
         <div className="flex flex-col md:flex-row md:items-center md:justify-end ">
@@ -163,35 +188,35 @@ const Page = () => {
             <div className="center-center border rounded z-10 bg-[#1c1c1c] border-[#72727266]">
               <button
                 onClick={() => setFilter("all")}
-                className=" hover:bg-[rgba(114,114,114,0.6)] text-[#bbb] border-[#72727266] text-sm border-r py-2 px-4 cursor-pointer transition-all ease-in duration-200 "
+                className=" hover:bg-[rgba(114,114,114,0.6)] text-[#bbb] border-[#72727266] text-[10px] md:text-sm border-r py-2 px-4 cursor-pointer transition-all ease-in duration-200 "
               >
                 All
               </button>
 
               <button
                 onClick={() => setFilter("landing-page")}
-                className=" hover:bg-[rgba(114,114,114,0.6)] text-[#bbb] border-[#72727266] text-sm border-r py-2 px-4 cursor-pointer transition-all ease-in duration-200"
+                className=" hover:bg-[rgba(114,114,114,0.6)] text-[#bbb] border-[#72727266] text-[10px] md:text-sm border-r py-2 px-4 cursor-pointer transition-all ease-in duration-200"
               >
                 Landing Page
               </button>
 
               <button
                 onClick={() => setFilter("App")}
-                className="hover:bg-[rgba(114,114,114,0.6)] text-[#bbb] border-[#72727266] text-sm border-r py-2 px-4 cursor-pointer transition-all ease-in duration-200"
+                className="hover:bg-[rgba(114,114,114,0.6)] text-[#bbb] border-[#72727266] text-[10px] md:text-sm border-r py-2 px-4 cursor-pointer transition-all ease-in duration-200"
               >
                 Web Application
               </button>
 
               <button
                 onClick={() => setFilter("realProject")}
-                className="hover:bg-[rgba(114,114,114,0.6)] text-[#bbb] border-[#72727266] text-sm border-r py-2 px-4 cursor-pointer transition-all ease-in duration-200"
+                className="hover:bg-[rgba(114,114,114,0.6)] text-[#bbb] border-[#72727266] text-[10px] md:text-sm border-r py-2 px-4 cursor-pointer transition-all ease-in duration-200"
               >
                 Real Project
               </button>
 
               <button
                 onClick={() => setFilter("sideProject")}
-                className="hover:bg-[rgba(114,114,114,0.6)] text-[#bbb] border-[#72727266] text-sm border-r py-2 px-4 cursor-pointer transition-all ease-in duration-200"
+                className="hover:bg-[rgba(114,114,114,0.6)] text-[#bbb] border-[#72727266] text-[10px] md:text-sm border-r py-2 px-4 cursor-pointer transition-all ease-in duration-200"
               >
                 Side Project
               </button>
@@ -229,35 +254,14 @@ const Page = () => {
                   </div>
                 </div>
               </div>
-              <div className="absolute  bottom-0 left-0 md:px-4 px-2 py-1 md:py-4 right-3 z-1 bg-black/20 backdrop-blur-md w-full ">
+              <div className="absolute  bottom-0 left-0 md:px-4 px-2 py-2 md:py-4 right-3 z-1 bg-black/20 backdrop-blur-md w-full ">
                 <div className="flex justify-between items-center">
                   <p className="  md:text-xl font-semibold">{project.title}</p>
-                  {project.tag === "Side Project" && (
-                    <span className="border-[#f7b50097] text-[#f7b50097] border rounded-sm md:rounded-md px-2 md:py-1 py-[2px]  bg-black/20 backdrop-blur-md text-xs">
-                      {project.tag}
-                    </span>
-                  )}
-                  {project.tag === "Real Project" && (
-                    <span className="border-[#5fcf6562] text-[#5fcf6562] border rounded-sm md:rounded-md px-2 md:py-1 py-[2px]  bg-black/20 backdrop-blur-md text-xs">
-                      {project.tag}
-                    </span>
-                  )}
                 </div>
 
-                <p className=" text-sm overflow-hidden text-ellipsis whitespace-nowrap pr-36 mb-1 md:my-2">
+                <p className=" md:text-sm text-[12px] overflow-hidden text-ellipsis whitespace-nowrap pr-36 mb-1 md:my-2">
                   {project.description}
                 </p>
-
-                <div className="flex md:gap-4 gap-1 flex-wrap ">
-                  {project.technologies.map((tech, index) => (
-                    <span
-                      key={index}
-                      className="border border-[#bab7b766] rounded-sm md:rounded-md px-2 md:py-1 py-[2px]  bg-black/20 backdrop-blur-md text-xs"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
               </div>
             </div>
           ))}
@@ -273,6 +277,7 @@ const Page = () => {
           )}
         </div>
       </div>
+      <FreelanceFooter/>
     </section>
   );
 };

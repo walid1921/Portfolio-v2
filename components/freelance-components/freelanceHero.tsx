@@ -65,7 +65,7 @@ const FreelanceHero = () => {
         </motion.h1>
 
         <motion.p
-          className="text-[#bbbbbb] text-lg md:text-2xl max-w-[700px] text-center cursor-pointer !leading-[1.5]"
+          className="text-[#bbbbbb] container text-lg md:text-2xl max-w-[700px] text-center cursor-pointer !leading-[1.5]"
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
@@ -162,7 +162,7 @@ const FreelanceHero = () => {
           </motion.div>
         </div>
       </div>
-      <div className="absolute bottom-8 right-4">
+      <div className="absolute bottom-8 right-10">
         {" "}
         <Reviews />
       </div>

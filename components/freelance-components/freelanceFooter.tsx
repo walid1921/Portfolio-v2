@@ -54,7 +54,7 @@ const FreelanceFooter = () => {
             © {new Date().getFullYear()}. All rights reserved.
           </p>
 
-          <ul className="flex gap-8 flex-wrap">
+          <ul className="flex gap-8 flex-wrap md:flex-nowrap">
             {socials.map((item) => (
               <Popsup
                 key={item.id}

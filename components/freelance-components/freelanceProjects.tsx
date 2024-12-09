@@ -10,7 +10,7 @@ import { ArrowUpRight } from "lucide-react";
 const projectsData = [
   {
     id: 1,
-    title: "Project 1",
+    title: "Kuchen Trend",
     description:
       "Evoke is a Framer Template made for digital marketing agencies and SaaS businesses. It features multiple pages, and tons of unique sections to help build your new website. It's built to help you showcase your business's services or products, your past work, and gives your users an easy way to get in touch with you through the Calendly embed.",
     role: "Designer & Frontend Developer",
@@ -22,7 +22,7 @@ const projectsData = [
   },
   {
     id: 2,
-    title: "Project 2",
+    title: "GroomGrid",
     description:
       "Evoke is a Framer Template made for digital marketing agencies and SaaS businesses. It features multiple pages, and tons of unique sections to help build your new website. It's built to help you showcase your business's services or products, your past work, and gives your users an easy way to get in touch with you through the Calendly embed.",
     role: "Designer & Frontend Developer",

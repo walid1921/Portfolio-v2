@@ -83,10 +83,6 @@ const FreelanceContact = () => {
       >
         <div className="md:flex p-0.25 rounded-[6px] bg-conic-gradient w-full">
           <div className="relative p-8 bg-background rounded-[6px] h-full w-full overflow-hidden xl:pt-15 xl:px-15">
-            <p className="lg:text-3xl text-2xl pl-[20px] font-medium bg-gradient-to-br from-white to-[#4d4d4d] bg-clip-text text-transparent mb-10">
-              Contact
-            </p>
-
             <AnimatedGridPattern
               numSquares={30}
               maxOpacity={0.1}
@@ -101,7 +97,7 @@ const FreelanceContact = () => {
               <form
                 ref={formRef}
                 onSubmit={handleSubmit}
-                className="w-[min(100%,38rem)] flex flex-col gap-5 mx-auto z-2"
+                className="w-full md:w-[min(100%,38rem)] flex flex-col gap-5 mx-auto z-2"
               >
                 <div className="mb-5">
                   <input

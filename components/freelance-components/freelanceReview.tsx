@@ -32,7 +32,7 @@ const randomData = [
 
 const FreelanceReviews = () => {
   return (
-    <section className="container">
+    <section className="w-screen">
       <BlurFade delay={0.4} inView>
         <h2 className="lg:text-4xl container text-2xl font-semibold bg-gradient-to-br from-white to-[#000000] bg-clip-text text-transparent md:mb-10 mb-10">
           What others say about us

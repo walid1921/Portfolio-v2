@@ -22,9 +22,9 @@ type ProjectCardProps = {
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
-    <div className="flex  gap-28 items-start w-full">
+    <div className="flex flex-col md:flex-row  gap-28 items-start w-full">
       {/* Left side */}
-      <div className="flex flex-col gap-6 w-[40%] sticky top-[70px]">
+      <div className="flex flex-col gap-6 md:w-[40%] md:sticky md:top-[70px]">
         <span className="py-1 text-sm px-3 border border-[#2b2d2d] bg-[#1d1d1d] rounded-full w-fit">
           {project.year}
         </span>
@@ -56,7 +56,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
       </div>
 
       {/* Right side  */}
-      <div className="w-[60%]">
+      <div className="md:w-[60%]">
         <BlurFade delay={0.6} inView>
           <div className="flex flex-col gap-6">
             {project.images.map((image, index) => (

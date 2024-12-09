@@ -56,7 +56,7 @@ const ReviewCard = ({ img }: { img: string }) => {
 
 export function MarqueeVertical() {
   return (
-    <div className="relative flex h-screen w-full flex-col md:flex-row items-center justify-center overflow-hidden">
+    <div className="relative flex h-screen py-2 w-full flex-col md:flex-row items-center justify-center overflow-hidden">
       {/* Single Column on Mobile */}
       <div className="block md:hidden w-full h-full">
         <Marquee vertical className="[--duration:35s]">
