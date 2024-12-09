@@ -98,11 +98,11 @@ const data = {
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar {...props}>
-      <Logo />
-      <div className=" absolute  top-[20px] -right-[40px] z-50 ">
+      <Logo width={170} />
+      <div className=" absolute  top-[20px] -right-[40px]  ">
         <SidebarTrigger />
       </div>
-      <SidebarContent>
+      <SidebarContent >
         {/* We create a SidebarGroup for each parent. */}
         {data.navMain.map((item) => (
           <SidebarGroup key={item.title}>
@@ -128,8 +128,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         ))}
 
         <div className="flex flex-col gap-5">
-          <div className="px-[1rem]">
-            <ul className="flex items-center justify-center gap-8 pt-4">
+          <div className="px-[1rem] ">
+            <ul className="hidden md:flex items-center justify-center gap-8 pt-4">
               {data.contact.map((item) => (
                 <Popsup
                   key={item.title}
@@ -141,8 +141,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               ))}
             </ul>
           </div>
-          <div className="flex flex-col gap-6 relative border-t border-dashed border-[#ffffff14] px-[1rem] pb-12 pt-12">
-
+          <div className="flex flex-col gap-6 relative border-t border-dashed border-[#ffffff14] px-[1rem] md:pb-12 pb-6 pt-12">
             <GridPattern
               width={20}
               height={20}

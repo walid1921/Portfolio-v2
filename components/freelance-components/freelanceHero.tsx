@@ -11,7 +11,7 @@ import { CalendarDays } from "lucide-react";
 
 const FreelanceHero = () => {
   return (
-    <section className="relative md:pt-[12rem] pt-[8rem] h-screen " id="home">
+    <section className="relative md:pt-[12rem] pt-[4rem] h-screen " id="home">
       {/* Background */}
       <div className="absolute inset-0">
         <MarqueeVertical />

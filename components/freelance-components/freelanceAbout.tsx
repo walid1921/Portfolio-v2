@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
 
 const FreelanceAbout = () => {
   return (
-    <section className="relative w-full py-32 my-2 mx-2">
+    <section className="relative w-full py-32 mt-2 ml-2">
       <DotPattern
         width={20}
         height={20}
@@ -24,7 +24,7 @@ const FreelanceAbout = () => {
       />
       <div className="container">
         <BlurFade delay={0.4} inView>
-          <h2 className="lg:text-4xl text-2xl font-semibold bg-gradient-to-br from-white to-[#000000] bg-clip-text text-transparent md:mb-10 mb-10">
+          <h2 className="lg:text-4xl text-2xl font-semibold bg-gradient-to-br from-white to-[#000000] bg-clip-text text-transparent mb-10">
             About
           </h2>
         </BlurFade>

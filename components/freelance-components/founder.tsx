@@ -20,8 +20,8 @@ const Founder = ({
   return (
     <div className="flex items-center space-x-3 ">
       {url && (
-        <div className={`flex  rounded-full ${className}`}>
-          <Avatar url={url} height={50} width={50} />
+        <div className={`flex rounded-full ${className}`}>
+          <Avatar url={url} height={40} width={40} />
         </div>
       )}
 

@@ -34,8 +34,8 @@ export const socials = [
 const FreelanceFooter = () => {
   return (
     <section >
-      <div className="relative w-full flex  items-center justify-center overflow-hidden py-8 md:pb-60 pt-32">
-        <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-background to-[#2A9465] bg-clip-text text-center text-8xl font-semibold leading-none text-transparent ">
+      <div className="relative w-full flex  items-center justify-center overflow-hidden md:py-8 md:pb-60 md:pt-32 py-32">
+        <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-background to-[#2A9465] bg-clip-text text-center md:text-8xl text-5xl font-semibold leading-none text-transparent ">
           Dev & Des
         </span>
         <Globe className="top-32 z-40" />

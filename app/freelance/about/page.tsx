@@ -13,11 +13,12 @@ import { motion } from "framer-motion";
 import AnimatedGridPattern from "@/components/ui/animated-grid-pattern";
 import { cn } from "@/lib/utils";
 import FreelanceReviews from "@/components/freelance-components/freelanceReview";
+import FreelanceFooter from "@/components/freelance-components/freelanceFooter";
 
 const page = () => {
   return (
-    <div className="flex flex-col">
-      <SectionTowCol>
+    <section className="flex relative flex-col pt-20">
+      <div className="container md:pb-32 pb-20 flex flex-col  gap-28 md:grid md:grid-cols-2 md:grid-rows-1 items-center h-full w-full">
         <AnimatedGridPattern
           numSquares={30}
           maxOpacity={0.1}
@@ -28,7 +29,7 @@ const page = () => {
             "inset-x-0 h-full "
           )}
         />
-        <div className="relative flex flex-col justify-evenly h-full">
+        <div className="relative flex flex-col justify-between ">
           <div className="flex flex-col items-start">
             <section className="flex flex-col gap-6">
               <BlurFade delay={0.4} inView>
@@ -126,11 +127,13 @@ const page = () => {
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
-      </SectionTowCol>
-      <div className="w-full">
-        <FreelanceReviews />
       </div>
-    </div>
+
+      <div className="flex flex-col">
+        <FreelanceReviews /> 
+        <FreelanceFooter />
+      </div>
+    </section>
   );
 };
 

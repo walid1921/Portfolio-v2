@@ -1,4 +1,5 @@
 import { AppSidebar } from "@/components/freelance-components/app-sidebar";
+import Logo from "@/components/ui/Logo";
 import {
   SidebarInset,
   SidebarProvider,
@@ -6,20 +7,19 @@ import {
 } from "@/components/ui/sidebar";
 
 export default function FreelanceLayout({
-  children, 
+  children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <SidebarProvider>
+    <SidebarProvider className="relative">
       <AppSidebar />
       <SidebarInset>
-        <div className="flex h-16 shrink-0 md:hidden items-center gap-2 px-4 z-30 ">
+        <div className="flex sticky top-0 py-3  justify-between h-16 shrink-0 md:hidden items-center gap-2 px-4 z-50 bg-background ">
           <SidebarTrigger className="-ml-1" />
+          <Logo width={100} />
         </div>
-        <div className="flex flex-1 flex-col gap-4">
-          {children}
-        </div>
+        <div className="flex flex-1 flex-col gap-4">{children}</div>
       </SidebarInset>
     </SidebarProvider>
   );

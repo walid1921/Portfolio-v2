@@ -181,7 +181,7 @@ const Sidebar = React.forwardRef<
       return (
         <div
           className={cn(
-            "flex h-full w-[--sidebar-width] flex-col  text-sidebar-foreground",
+            "flex h-full w-[--sidebar-width] flex-col z-[999]  text-sidebar-foreground",
             className
           )}
           ref={ref}
@@ -404,7 +404,7 @@ const SidebarContent = React.forwardRef<
       ref={ref}
       data-sidebar="content"
       className={cn(
-        "flex justify-between  min-h-0 flex-1 flex-col overflow-auto group-data-[collapsible=icon]:overflow-hidden",
+        "flex justify-between z-[999]  min-h-0 flex-1 flex-col overflow-auto group-data-[collapsible=icon]:overflow-hidden",
         className
       )}
       {...props}

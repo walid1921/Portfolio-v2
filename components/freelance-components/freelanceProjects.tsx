@@ -36,10 +36,10 @@ const projectsData = [
 
 const FreelanceProjects = () => {
   return (
-    <section className="relative w-full py-32 my-2 mx-2">
-      <div className="flex flex-col gap-10 container">
+    <section className="relative w-full py-32 ">
+      <div className="flex flex-col container">
         <BlurFade delay={0.4} inView>
-          <h2 className="lg:text-4xl text-2xl font-semibold bg-gradient-to-br from-white to-[#000000] bg-clip-text text-transparent md:mb-10 mb-10">
+          <h2 className="lg:text-4xl text-2xl font-semibold bg-gradient-to-br from-white to-[#000000] bg-clip-text text-transparent mb-10">
             Recent Projects
           </h2>
         </BlurFade>
@@ -50,11 +50,11 @@ const FreelanceProjects = () => {
           ))}
         </div>
 
-        <div>
+        <div className="mt-10">
           <Button>
             <Link
               href="/freelance/projects"
-              className="flex gap-3 items-center justify-center"
+              className="flex gap-3 items-center justify-center "
             >
               All Projects <ArrowUpRight size={25} />
             </Link>
