@@ -24,7 +24,7 @@ const FreelanceAbout = () => {
       />
       <div className="container">
         <BlurFade delay={0.4} inView>
-          <h2 className="lg:text-4xl text-2xl font-semibold bg-gradient-to-br from-white to-[#000000] bg-clip-text text-transparent mb-10">
+          <h2 className="lg:text-4xl text-3xl font-semibold bg-gradient-to-br from-white to-[#000000] bg-clip-text text-transparent mb-10">
             About
           </h2>
         </BlurFade>

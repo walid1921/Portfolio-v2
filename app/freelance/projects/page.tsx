@@ -102,7 +102,7 @@ const Page = () => {
           <div className="flex flex-col justify-between h-full ">
             <div className="flex flex-col justify-start h-full">
               <BlurFade delay={0.4} inView>
-                <h2 className="lg:text-4xl text-2xl font-medium bg-gradient-to-br from-white to-[#000000] bg-clip-text text-transparent md:mb-10 mb-10">
+                <h2 className="lg:text-4xl text-3xl font-medium bg-gradient-to-br from-white to-[#000000] bg-clip-text text-transparent md:mb-10 mb-10">
                   Projects
                 </h2>
               </BlurFade>

@@ -1,5 +1,4 @@
 import { useId } from "react";
-
 import { cn } from "@/lib/utils";
 
 interface DotPatternProps {
@@ -10,9 +9,11 @@ interface DotPatternProps {
   cx?: any;
   cy?: any;
   cr?: any;
+  reverse?: boolean;
   className?: string;
   [key: string]: any;
 }
+
 export function DotPattern({
   width = 16,
   height = 16,
@@ -21,6 +22,7 @@ export function DotPattern({
   cx = 1,
   cy = 1,
   cr = 1,
+  reverse = false,
   className,
   ...props
 }: DotPatternProps) {
@@ -32,6 +34,7 @@ export function DotPattern({
       className={cn(
         "pointer-events-none absolute inset-0 h-full w-full fill-neutral-400/25",
         className,
+        reverse && "transform scale-x-[-1]" // Flip horizontally when reversed
       )}
       {...props}
     >

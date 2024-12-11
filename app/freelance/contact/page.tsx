@@ -44,7 +44,7 @@ const page = () => {
       />
       <div className="container md:pb-32 pb-20">
         <BlurFade delay={0.4} inView>
-          <h2 className="text-2xl md:text-4xl font-medium bg-gradient-to-br from-white to-[#000000] bg-clip-text text-transparent md:mb-10 mb-10">
+          <h2 className="text-3xl md:text-4xl font-medium bg-gradient-to-br from-white to-[#000000] bg-clip-text text-transparent md:mb-10 mb-10">
             Contact
           </h2>
         </BlurFade>

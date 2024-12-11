@@ -44,7 +44,7 @@ const FreelanceQst = () => {
   return (
     <section className="relative w-full pt-32 flex flex-col ">
       <BlurFade delay={0.4} inView>
-        <h2 className="lg:text-4xl text-2xl font-semibold bg-gradient-to-br from-white to-[#000000] bg-clip-text text-transparent mb-8">
+        <h2 className="lg:text-4xl text-3xl font-semibold bg-gradient-to-br from-white to-[#000000] bg-clip-text text-transparent mb-8">
           Frequently Asked Questions
         </h2>
       </BlurFade>

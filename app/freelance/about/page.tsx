@@ -12,8 +12,8 @@ import { CalendarDays } from "lucide-react";
 import { motion } from "framer-motion";
 import AnimatedGridPattern from "@/components/ui/animated-grid-pattern";
 import { cn } from "@/lib/utils";
-import FreelanceReviews from "@/components/freelance-components/freelanceReview";
 import FreelanceFooter from "@/components/freelance-components/freelanceFooter";
+import FreelanceReviews from "@/components/freelance-components/freelanceReview";
 
 const page = () => {
   return (
@@ -33,7 +33,7 @@ const page = () => {
           <div className="flex flex-col items-start">
             <section className="flex flex-col gap-6">
               <BlurFade delay={0.4} inView>
-                <h2 className="lg:text-4xl text-2xl font-medium bg-gradient-to-br from-white to-[#000000] bg-clip-text text-transparent md:mb-10 mb-10">
+                <h2 className="lg:text-4xl text-3xl font-medium bg-gradient-to-br from-white to-[#000000] bg-clip-text text-transparent md:mb-10 mb-10">
                   About Us
                 </h2>
               </BlurFade>
