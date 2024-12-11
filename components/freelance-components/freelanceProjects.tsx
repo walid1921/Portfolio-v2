@@ -17,7 +17,7 @@ const projectsData = [
     Deliverables: "Web Design, Development, SEO",
     images: ["/portfolio1.png", "/portfolio4.png", "/portfolio11.png"],
     url: "/project1",
-    year: "2023",
+    year: "2024",
     timeSpent: "2 Weeks",
     challenges:
       "Redesigning the site without disrupting existing SEO rankings.",

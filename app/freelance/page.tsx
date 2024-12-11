@@ -5,6 +5,7 @@ import FreelanceFooter from "@/components/freelance-components/freelanceFooter";
 import FreelanceHero from "@/components/freelance-components/freelanceHero";
 import FreelanceProjects from "@/components/freelance-components/freelanceProjects";
 import FreelanceReviews from "@/components/freelance-components/freelanceReview";
+import FreelanceServices from "@/components/freelance-components/freelanceServices";
 
 const FreelancePage = () => {
   return (
@@ -13,6 +14,7 @@ const FreelancePage = () => {
       <FreelanceAbout />
       <FreelanceReviews />
       <FreelanceProjects />
+      <FreelanceServices />
       <FreelanceContact />
       <FreelanceFooter />
     </main>

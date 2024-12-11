@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { projectsData } from "@/lib/data";
-import { BsGithub } from "react-icons/bs";
 import { HiOutlineStatusOnline } from "react-icons/hi";
 import Image from "next/image";
 import { useSectionInView } from "@/lib/hooks";

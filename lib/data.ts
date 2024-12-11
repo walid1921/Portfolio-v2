@@ -601,3 +601,36 @@ export const EducationData: EducationDataProps[] = [
     ],
   },
 ];
+
+// Freelance Page
+
+export const cardData = [
+  {
+    title: "Professional Grade Disinfectant",
+    description:
+      "Reduce cleaning time by about 25% while ensuring a spotless, disinfected environment.",
+    longDescription:
+      "lLorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis rem facilis, eveniet culpa veniam voluptas accusantium expedita tenetur fugiat provident magnam",
+  },
+  {
+    title: "Healthy Teams And Social Distance",
+    description:
+      "Our experts thoroughly trained and use proprietary cleaning and disinfecting systems.",
+    longDescription:
+      "lLorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis rem facilis, eveniet culpa veniam voluptas accusantium expedita tenetur fugiat provident magnam",
+  },
+  {
+    title: "Sterilized & Disinfected Cleaning Tools",
+    description:
+      "We'll familiarize ourselves with your facility and then create a customized cleaning.",
+    longDescription:
+      "lLorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis rem facilis, eveniet culpa veniam voluptas accusantium expedita tenetur fugiat provident magnam",
+  },
+  {
+    title: "100% Satisfaction Guarantee",
+    description:
+      "We offers a wide variety of services that can customized to fit your environment.",
+    longDescription:
+      "lLorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis rem facilis, eveniet culpa veniam voluptas accusantium expedita tenetur fugiat provident magnam",
+  },
+];

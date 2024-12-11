@@ -4,7 +4,6 @@ import Founder from "@/components/freelance-components/founder";
 import BlurFade from "@/components/ui/blur-fade";
 import Image from "next/image";
 import walid from "@/public/walid.jpg";
-import SectionTowCol from "@/components/freelance-components/sectionTowCol";
 import signature from "@/public/signature.png";
 import PrimaryBtn from "@/components/ui/primaryBtn";
 import Link from "next/link";
@@ -17,7 +16,7 @@ import FreelanceReviews from "@/components/freelance-components/freelanceReview"
 
 const page = () => {
   return (
-    <section className="flex relative flex-col pt-20">
+    <section className="flex relative flex-col md:pt-36 pt-20">
       <div className="container md:pb-32 pb-20 flex flex-col  gap-28 md:grid md:grid-cols-2 md:grid-rows-1 items-center h-full w-full">
         <AnimatedGridPattern
           numSquares={30}
