@@ -145,7 +145,7 @@ const Page = () => {
                 <PrimaryBtn>
                   {" "}
                   <Link
-                    href="/contact"
+                    href="/freelance/contact"
                     className="flex items-center justify-center gap-4"
                   >
                     {" "}

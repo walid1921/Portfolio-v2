@@ -10,10 +10,15 @@ type Project = {
   description: string;
   role: string;
   Deliverables: string;
-  Company: string;
   images: string[];
   url: string;
   year: string;
+  timeSpent: string;
+  challenges?: string;
+  technologies?: string[];
+  results?: string;
+  clientFeedback?: string;
+  projectType?: string;
 };
 
 type ProjectCardProps = {
@@ -22,7 +27,7 @@ type ProjectCardProps = {
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
-    <div className="flex flex-col md:flex-row  gap-28 items-start w-full">
+    <div className="flex flex-col md:flex-row gap-28 items-start w-full">
       {/* Left side */}
       <div className="flex flex-col gap-6 md:w-[40%] md:sticky md:top-[70px]">
         <span className="py-1 text-sm px-3 border border-[#2b2d2d] bg-[#1d1d1d] rounded-full w-fit">
@@ -31,18 +36,54 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         <h4 className="text-2xl">{project.title}</h4>
         <p>{project.description}</p>
         <div className="flex flex-col gap-5 mt-14 w-full">
-          <div className="flex w-full justify-between border-b pb-6">
-            <p className="text-[#737373]">Role</p> <p>{project.role}</p>
+          {project.projectType && (
+            <div className="flex w-full justify-between border-b border-[#ffffff14] pb-4 gap-10">
+              <p className="text-[#737373]">Project Type</p>
+              <p className="text-sm text-right">{project.projectType}</p>
+            </div>
+          )}
+          <div className="flex w-full justify-between border-b border-[#ffffff14] pb-4 gap-10">
+            <p className="text-[#737373]">Role</p>{" "}
+            <p className="text-sm text-right">{project.role}</p>
           </div>
-          <div className="flex w-full justify-between border-b pb-6">
-            <p className="text-[#737373]">Deliverables</p>{" "}
-            <p>{project.Deliverables}</p>
+          <div className="flex w-full justify-between border-b border-[#ffffff14] pb-4 gap-10">
+            <p className="text-[#737373]">Deliverables</p>
+            <p className="text-sm text-right">{project.Deliverables}</p>
           </div>
-          <div className="flex w-full justify-between border-b pb-6">
-            <p className="text-[#737373]">Company</p> <p>{project.Company}</p>
+          <div className="flex w-full justify-between border-b border-[#ffffff14] pb-4 gap-10">
+            <p className="text-[#737373]">Time Spent</p>
+            <p className="text-sm text-right">{project.timeSpent}</p>
           </div>
-          <div className="flex w-full justify-between border-b pb-6">
-            <p className="text-[#737373]">Visit Site</p>{" "}
+          
+          {project.challenges && (
+            <div className="flex w-full justify-between border-b border-[#ffffff14] pb-4 gap-10">
+              <p className="text-[#737373]">Challenges</p>
+              <p className="text-sm text-right">{project.challenges}</p>
+            </div>
+          )}
+          {project.technologies && (
+            <div className="flex w-full justify-between border-b border-[#ffffff14] pb-4 gap-10">
+              <p className="text-[#737373]">Technologies</p>
+              <p className="text-sm text-right">
+                {project.technologies.join(", ")}
+              </p>
+            </div>
+          )}
+          {project.results && (
+            <div className="flex w-full justify-between border-b border-[#ffffff14] pb-4 gap-10">
+              <p className="text-[#737373]">Results</p>
+              <p className="text-sm text-right">{project.results}</p>
+            </div>
+          )}
+          {project.clientFeedback && (
+            <div className="flex w-full justify-between border-b border-[#ffffff14] pb-4 gap-10">
+              <p className="text-[#737373]">Client Feedback</p>
+              <p className="text-sm text-right">{project.clientFeedback}</p>
+            </div>
+          )}
+
+          <div className="flex w-full justify-between border-b border-[#ffffff14] pb-4 gap-10">
+            <p className="text-[#737373]">Visit Site</p>
             <Popsup
               content="Visit Site"
               link={project.url}
@@ -55,7 +96,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         </div>
       </div>
 
-      {/* Right side  */}
+      {/* Right side */}
       <div className="md:w-[60%]">
         <BlurFade delay={0.6} inView>
           <div className="flex flex-col gap-6">

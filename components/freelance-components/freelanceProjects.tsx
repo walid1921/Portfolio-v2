@@ -12,25 +12,40 @@ const projectsData = [
     id: 1,
     title: "Kuchen Trend",
     description:
-      "Evoke is a Framer Template made for digital marketing agencies and SaaS businesses. It features multiple pages, and tons of unique sections to help build your new website. It's built to help you showcase your business's services or products, your past work, and gives your users an easy way to get in touch with you through the Calendly embed.",
+      "Developed a modern, SEO-optimized website for Kuchen Trend, a digital marketing agency. The project involved creating a user-friendly design and optimizing for lead generation.",
     role: "Designer & Frontend Developer",
     Deliverables: "Web Design, Development, SEO",
-    Company: "Google",
     images: ["/portfolio1.png", "/portfolio4.png", "/portfolio11.png"],
     url: "/project1",
     year: "2023",
+    timeSpent: "2 Weeks",
+    challenges:
+      "Redesigning the site without disrupting existing SEO rankings.",
+    technologies: ["React", "Next.js", "TailwindCSS"],
+    results: "Boosted page load speed by 40% and improved bounce rate by 20%.",
+    clientFeedback:
+      "The team exceeded expectations, delivering a polished product ahead of schedule!",
+    projectType: "Corporate Website Redesign",
   },
   {
     id: 2,
     title: "GroomGrid",
     description:
-      "Evoke is a Framer Template made for digital marketing agencies and SaaS businesses. It features multiple pages, and tons of unique sections to help build your new website. It's built to help you showcase your business's services or products, your past work, and gives your users an easy way to get in touch with you through the Calendly embed.",
-    role: "Designer & Frontend Developer",
-    Deliverables: "Web Design, Development, SEO",
-    Company: "Google",
-    images: ["/portfolio1.png", "/portfolio13.jpeg"],
+      "Designed and developed a comprehensive platform for GroomGrid, a pet grooming SaaS solution. Focused on a responsive interface and seamless booking integration for pet care businesses.",
+    role: "UI/UX Designer & Fullstack Developer",
+    Deliverables: "UI/UX Design, Fullstack Development, API Integration",
+    images: ["/portfolio1.png", "/portfolio13.jpeg", "/portfolio11.png"],
     url: "/project2",
     year: "2023",
+    timeSpent: "4 months",
+    challenges:
+      "Implementing a custom scheduling algorithm and ensuring high scalability for the backend.",
+    technologies: ["React", "Next.js", "TailwindCSS"],
+    results:
+      "Achieved 99.9% uptime post-launch and onboarded 100+ businesses in the first quarter.",
+    clientFeedback:
+      "The platform exceeded our expectations! It's intuitive and scalable for our growing customer base.",
+    projectType: "SaaS Platform Development",
   },
 ];
 
