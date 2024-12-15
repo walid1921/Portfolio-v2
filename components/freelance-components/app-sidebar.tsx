@@ -31,6 +31,7 @@ import Logo from "../ui/Logo";
 import { cn } from "@/lib/utils";
 import Founder from "./founder";
 import GridPattern from "../ui/grid-pattern";
+import LogoText from "../ui/logoText";
 
 const data = {
   navMain: [
@@ -98,12 +99,12 @@ const data = {
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar {...props}>
-      <Logo width={170} />
+      {/* <Logo width={170} /> */}
+      <LogoText className="mt-14 mb-10"/>
       <div className=" absolute  top-[20px] -right-[40px]  ">
         <SidebarTrigger />
       </div>
       <SidebarContent >
-        {/* We create a SidebarGroup for each parent. */}
         {data.navMain.map((item) => (
           <SidebarGroup key={item.title}>
             <SidebarGroupLabel>{item.title}</SidebarGroupLabel>

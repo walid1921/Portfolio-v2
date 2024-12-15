@@ -9,14 +9,16 @@ type ComparisonTableProps = {
 
 const ComparisonTable = ({ pricingData }: ComparisonTableProps) => {
   return (
-    <div className="w-full max-w-4xl overflow-x-auto bg-[#1b1d1d] border border-[#2b2d2d] rounded-lg shadow-lg">
+    <div className="w-full  bg-[#1b1d1d] border border-[#2b2d2d] rounded-lg shadow-lg overflow-auto">
       <table className="w-full text-left border-collapse">
         <thead>
           <tr className="bg-[#2b2d2d] text-white">
             <th className="px-6 py-3 font-normal">Feature</th>
             <th className="px-6 py-3 font-normal text-center">Starter Plan</th>
             <th className="px-6 py-3 font-normal text-center">Growth Plan</th>
-            <th className="px-6 py-3 font-normal text-center">Enterprise Plan</th>
+            <th className="px-6 py-3 font-normal text-center">
+              Enterprise Plan
+            </th>
           </tr>
         </thead>
         <tbody>

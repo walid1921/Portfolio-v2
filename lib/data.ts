@@ -738,6 +738,7 @@ export const pricingData = [
   },
 ];
 
+
 // Swiper data
 
 export const swiperData = [
@@ -761,4 +762,22 @@ export const swiperData = [
     imgUrl: "/portfolio8.png",
     category: "Side Project",
   },
+];
+
+
+// footer data
+
+// Navigation Links
+export const navigationLinks = [
+  { id: "1", title: "About", href: "freelance/about" },
+  { id: "2", title: "Services", href: "freelance/services" },
+  { id: "3", title: "Pricing", href: "freelance/pricing" },
+  { id: "4", title: "Contact", href: "freelance/contact" },
+];
+
+// Footer Links
+export const footerLinks = [
+  { id: "1", title: "Terms & Conditions", href: "freelance/terms&conditions" },
+  { id: "2", title: "Privacy Policy", href: "freelance/privacy" },
+  { id: "3", title: "Contact", href: "freelance/contact" },
 ];

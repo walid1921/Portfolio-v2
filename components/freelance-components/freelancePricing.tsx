@@ -21,17 +21,11 @@ const FreelancePricing = () => {
       />
       <div className="container">
         {/* Main Content Section */}
-        <div className="flex flex-col-reverse md:flex-row md:gap-16 md:items-start">
+        <div className="flex flex-col-reverse md:flex-row md:gap-16 gap-14 md:items-start">
           {/* Left Section */}
-          <div className="relative flex flex-row items-center justify-center w-[50%]">
+          <div className="relative flex flex-row items-center justify-center ">
             <BlurFade delay={0.6} inView>
-              <div className="flex flex-col gap-6 font-normal text-lg leading-6 mb-8">
-                <p>
-                  We’ve crafted tailored solutions to meet every stage of your
-                  business growth. Whether you're just starting out or scaling
-                  to new heights, our expert team is here to support your
-                  journey.
-                </p>
+              <div className="flex flex-col md:gap-6 font-normal text-lg leading-6 mb-8">
                 <p>
                   Our pricing is transparent and reflects the unique needs of
                   your business. Factors influencing costs include:
@@ -54,12 +48,17 @@ const FreelancePricing = () => {
           </div>
 
           {/* Right Section */}
-          <div className="flex flex-col md:gap-6 mt-10 md:mt-0">
+          <div className="flex flex-col gap-10 mt-10 md:mt-0 md:w-[70%]">
             <BlurFade delay={0.4} inView>
               <h2 className="lg:text-4xl text-3xl font-semibold bg-gradient-to-br from-white to-[#000000] bg-clip-text text-transparent mb-10">
                 Good. What About the{" "}
                 <span className="text-primary">Prices</span>?
               </h2>
+              <p>
+                We’ve crafted tailored solutions to meet every stage of your
+                business growth. Whether you're just starting out or scaling to
+                new heights, our expert team is here to support your journey.
+              </p>
             </BlurFade>
 
             <BlurFade delay={0.8} inView>
@@ -76,7 +75,7 @@ const FreelancePricing = () => {
         </div>
 
         {/* Pricing Cards Section */}
-        <div className="flex items-center flex-wrap gap-6 mt-8">
+        <div className="flex items-center flex-wrap gap-6 mt-16">
           <PricingCard pricingData={pricingData} />
         </div>
       </div>

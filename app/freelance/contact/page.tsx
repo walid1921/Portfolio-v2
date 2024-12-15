@@ -79,9 +79,9 @@ const page = () => {
       </div>
 
       <FreelanceContact />
-      <div className="container">
-        <FreelanceQst />
-      </div>
+
+      <FreelanceQst />
+
       <div className="grid grid-cols-1 md:grid-cols-6 gap-4 pt-32 container">
         {/* Socials */}
         <div className="flex flex-col justify-between border border-[#ffffff14] rounded-[6px] p-4 md:row-span-3">

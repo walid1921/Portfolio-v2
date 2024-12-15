@@ -4,39 +4,52 @@ import React from "react";
 import { FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FiInstagram } from "react-icons/fi";
+import { MapPin, Phone } from "lucide-react";
 import Globe from "../ui/globe";
 import Particles from "../ui/particles";
 import Meteors from "../ui/meteors";
-import { MapPin, Phone } from "lucide-react";
+import Link from "next/link";
+import { footerLinks, navigationLinks } from "@/lib/data";
+import LogoText from "../ui/logoText";
 
-//! socials
-export const socials = [
+// Contact Information
+const contactInfo = [
   {
     id: "1",
-    title: "Instagram",
-    icon: <FiInstagram size={28} />,
-    url: "https://instagram.com/dev.n.des?igshid=Y2IzZGU1MTFhOQ==",
+    label: "Give us a call",
+    icon: <Phone size={20} />,
+    text: "+49 123 456 789",
+    href: "tel:+49123456789",
   },
   {
     id: "2",
-    title: "Linkedin",
-    icon: <FaLinkedin size={28} />,
-    url: "https://www.linkedin.com/in/walid-kouider-ayad",
+    label: "Send us an email",
+    icon: <MdEmail size={20} />,
+    text: "koud@gmail.com",
+    href: "mailto:koud@gmail.com",
   },
   {
     id: "3",
-    title: "Mail",
-    icon: <MdEmail size={28} />,
-    url: "mailto:kouiderayadwalid@gmail.com",
+    label: "Location",
+    icon: <MapPin size={20} />,
+    text: "Bremen, Germany",
+  },
+  {
+    id: "4",
+    label: "Instagram",
+    icon: <FiInstagram size={20} />,
+    text: "@dev.n.des",
+    href: "https://instagram.com/dev.n.des?igshid=Y2IzZGU1MTFhOQ==",
   },
 ];
 
 const FreelanceFooter = () => {
   return (
     <footer>
-      <div className="relative w-full flex  items-center justify-center overflow-hidden  md:pb-60 md:pt-32 py-32">
-        <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-background to-[#2A9465] bg-clip-text text-center md:text-8xl text-5xl font-semibold leading-none text-transparent ">
-          Dev & Des
+      {/* Top Section */}
+      <div className="relative w-full flex items-center justify-center overflow-hidden md:pb-60 md:pt-32 py-32">
+        <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-background to-[#2A9465] bg-clip-text text-center md:text-8xl text-5xl font-semibold leading-none text-transparent">
+          [ Dev & Des ]{" "}
         </span>
         <Globe className="top-32 z-40" />
         <Particles
@@ -49,123 +62,75 @@ const FreelanceFooter = () => {
         <Meteors number={10} />
       </div>
 
+      {/* Footer Columns */}
       <div className="!px-0 !pt-10 w-full border-t border-[#2b2d2d]">
-        <div className="container grid grid-cols-1 md:grid-cols-5 gap-20 py-10">
-          <div className="flex flex-col items-start col-span-2">
-            <h2 className="text-2xl font-semibold">[ Dev & Des ]</h2>
-            <p className="text-sm text-gray-400 mt-4">
+        <div className="container grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-20 py-10">
+          {/* Logo and Description */}
+          <div className="flex flex-col gap-8 items-center md:items-start col-span-2 text-center md:text-left">
+            <LogoText />
+            <p className="text-sm md:text-normal mt-4">
               Empowering your business with innovative solutions. Design,
               development, and support to help you thrive in the digital age.
             </p>
           </div>
 
-          {/* Navbar Links */}
+          {/* Navigation Links */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Navigation</h3>
             <ul className="space-y-2">
-              <li>
-                <a href="/about" className="hover:text-secondary">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="/services" className="hover:text-secondary">
-                  Services
-                </a>
-              </li>
-              <li>
-                <a href="/pricing" className="hover:text-secondary">
-                  Pricing
-                </a>
-              </li>
-              <li>
-                <a href="/contact" className="hover:text-secondary">
-                  Contact Us
-                </a>
-              </li>
+              {navigationLinks.map((link) => (
+                <li key={link.id}>
+                  <Link href={link.href} className="hover:text-secondary">
+                    {link.title}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
+          {/* Footer Links */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Links</h3>
             <ul className="space-y-2">
-              <li>
-                <a href="/about" className="hover:text-secondary">
-                  Terms & Conditions
-                </a>
-              </li>
-              <li>
-                <a href="/services" className="hover:text-secondary">
-                  Privacy policy
-                </a>
-              </li>
-              <li>
-                <a href="/pricing" className="hover:text-secondary">
-                  Contact
-                </a>
-              </li>
+              {footerLinks.map((link) => (
+                <li key={link.id}>
+                  <Link href={link.href} className="hover:text-secondary">
+                    {link.title}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Contact Information */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
-            <ul className="space-y-2 text-gray-400">
-              <li className="flex items-center gap-4">
-                <span className="border p-2 rounded-full">
-                  <Phone size={20} />{" "}
-                </span>
-
-                <div className="flex flex-col">
-                  <span>Give us a call</span>
-
-                  <a
-                    href="mailto:kouiderayadwalid@gmail.com"
-                    className="hover:text-secondary text-sm"
-                  >
-                    +49 123 456 789
-                  </a>
-                </div>
-              </li>
-              <li className="flex items-center gap-4">
-                <span className="border p-2 rounded-full">
-                  <MdEmail size={20} />{" "}
-                </span>
-
-                <div className="flex flex-col">
-                  <span>Send us an email</span>
-
-                  <a
-                    href="mailto:kouiderayadwalid@gmail.com"
-                    className="hover:text-secondary text-sm"
-                  >
-                    koud@gmail.com
-                  </a>
-                </div>
-              </li>
-              <li className="flex items-center gap-4">
-                <span className="border p-2 rounded-full">
-                  <MapPin size={20} />{" "}
-                </span>
-
-                <div className="flex flex-col">Bremen, Germany</div>
-              </li>
-
-              <li className="flex items-center gap-4">
-                <span className="border p-2 rounded-full">
-                  <FiInstagram size={20} />{" "}
-                </span>
-                <a
-                  href="https://instagram.com/dev.n.des?igshid=Y2IzZGU1MTFhOQ=="
-                  className="hover:text-secondary"
-                >
-                  @dev.n.des
-                </a>
-              </li>
+            <ul className="space-y-4">
+              {contactInfo.map((contact) => (
+                <li key={contact.id} className="flex items-center gap-4">
+                  <span className="border p-2 rounded-full">
+                    {contact.icon}
+                  </span>
+                  <div className="flex flex-col">
+                    <span>{contact.label}</span>
+                    {contact.href ? (
+                      <Link
+                        href={contact.href}
+                        className="hover:text-secondary text-sm"
+                      >
+                        {contact.text}
+                      </Link>
+                    ) : (
+                      <span className="text-sm">{contact.text}</span>
+                    )}
+                  </div>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
 
+        {/* Bottom Section */}
         <p className="caption text-n-4 lg:block container border-t border-[#2b2d2d] text-center py-5">
           Copyright © {new Date().getFullYear()} [Dev & Des]. All rights
           reserved.

@@ -42,14 +42,18 @@ const featuresData = [
 
 const FreelanceQst = () => {
   return (
-    <section className="relative w-full pt-32 flex flex-col ">
+    <section className="relative pt-32 flex flex-col container ">
       <BlurFade delay={0.4} inView>
         <h2 className="lg:text-4xl text-3xl font-semibold bg-gradient-to-br from-white to-[#000000] bg-clip-text text-transparent mb-8">
           Frequently Asked Questions
         </h2>
       </BlurFade>
       <div className="flex flex-col justify-center items-center md:gap-28 gap-12 md:grid md:grid-cols-2 md:grid-rows-1 w-full relative">
-        <BlurFade delay={0.6} inView className="flex justify-start items-start h-full">
+        <BlurFade
+          delay={0.6}
+          inView
+          className="flex justify-start items-start h-full"
+        >
           <p className="leading-7 text-lg ">
             Have questions? We’ve got answers. Browse our FAQs to learn more
             about how we work and the services we offer. Don’t see your

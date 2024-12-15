@@ -82,7 +82,7 @@ const FreelanceAbout = () => {
                   text-primary hover:text-secondary transition-colors duration-300 ease-in-out ml-4
                   "
                   >
-                    <Link href="#"> Read more</Link>
+                    <Link href="freelance/about"> Read more</Link>
                   </span>
                 </p>
               </div>

@@ -52,7 +52,7 @@ const FreelanceReviews = () => {
       />
       <div className="container">
         <div className="flex flex-col-reverse md:flex-row md:gap-16 md:items-start  ">
-          <div className=" relative  flex  md:h-[80vh] h-[50vh] flex-row items-center justify-center overflow-hidden  bg-background md:shadow-xl">
+          <div className=" relative  flex  md:h-[80vh] h-[50vh] flex-row items-center justify-center overflow-hidden bg-background ">
             <Marquee
               className="[--duration:20s] hidden md:flex"
               pauseOnHover

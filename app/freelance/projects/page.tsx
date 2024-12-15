@@ -74,7 +74,7 @@ const Page = () => {
         )}
       />
       <div className="md:px-20 z-4" ref={ref}>
-        <div className="container flex flex-col pb-32  gap-20 md:grid md:grid-cols-2 md:grid-rows-1 items-center w-full ">
+        <div className="container flex flex-col pb-32  gap-20 md:grid grid-cols-1 md:grid-cols-2 md:grid-rows-1 items-center w-full ">
           <div className="flex flex-col justify-between h-full ">
             <div className="flex flex-col justify-start h-full">
               <BlurFade delay={0.4} inView>
