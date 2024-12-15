@@ -25,10 +25,10 @@ const page = () => {
           repeatDelay={1}
           className={cn(
             "[mask-image:radial-gradient(700px_circle_at_center,white,transparent)]",
-            "inset-x-0 h-full "
+            "inset-x-0 h-full z-3"
           )}
         />
-        <div className="relative flex flex-col justify-between ">
+        <div className="relative flex flex-col justify-between z-5">
           <div className="flex flex-col items-start">
             <section className="flex flex-col gap-6">
               <BlurFade delay={0.4} inView>

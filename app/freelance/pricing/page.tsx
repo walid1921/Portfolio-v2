@@ -67,7 +67,7 @@ const Page = () => {
       </div>
 
       {/* Pricing Cards */}
-      <div className="flex flex-col items-center gap-8 w-full">
+      <div className="flex container flex-col items-center gap-8 w-full">
         <div className="flex items-center flex-wrap gap-6">
           <PricingCard pricingData={pricingData} />
         </div>

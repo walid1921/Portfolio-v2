@@ -159,8 +159,8 @@ const Page = () => {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row md:items-center md:justify-end ">
-          <div className="center-center">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-end  ">
+          <div className="center-center ">
             <div className="center-center border rounded z-10 bg-[#1c1c1c] border-[#72727266]">
               <button
                 onClick={() => setFilter("all")}

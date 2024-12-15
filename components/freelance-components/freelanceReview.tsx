@@ -40,7 +40,7 @@ const FreelanceReviews = () => {
   const secondRow = randomData.slice(randomData.length / 2);
 
   return (
-    <section className="relative w-full md:py-32 mt-2 ml-2 ">
+    <section className="relative w-full md:py-32 mt-2 ml-2 z-10">
       <DotPattern
         reverse
         width={20}
