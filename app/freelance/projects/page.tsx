@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { projectsData } from "@/lib/data";
+import { projectsData, swiperData } from "@/lib/data";
 import { HiOutlineStatusOnline } from "react-icons/hi";
 import Image from "next/image";
 import { useSectionInView } from "@/lib/hooks";
@@ -15,29 +15,6 @@ import DotPattern from "@/components/ui/dot-pattern";
 import { cn } from "@/lib/utils";
 import MySwiper from "@/components/ui/swiper";
 import FreelanceFooter from "@/components/freelance-components/freelanceFooter";
-
-const data = [
-  {
-    id: 1,
-    imgUrl: "/portfolio1.png",
-    category: "Landing Page",
-  },
-  {
-    id: 2,
-    imgUrl: "/portfolio13.jpeg",
-    category: "App",
-  },
-  {
-    id: 3,
-    imgUrl: "/portfolio4.png",
-    category: "Real Project",
-  },
-  {
-    id: 4,
-    imgUrl: "/portfolio8.png",
-    category: "Side Project",
-  },
-];
 
 const Page = () => {
   const [nextItems, setNextItems] = useState(4);
@@ -93,10 +70,10 @@ const Page = () => {
         cy={1}
         cr={1}
         className={cn(
-          "[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)] "
+          "[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)] z-3"
         )}
       />
-      <div className="md:px-20 z-1" ref={ref}>
+      <div className="md:px-20 z-4" ref={ref}>
         <div className="container flex flex-col pb-32  gap-20 md:grid md:grid-cols-2 md:grid-rows-1 items-center w-full ">
           <div className="flex flex-col justify-between h-full ">
             <div className="flex flex-col justify-start h-full">
@@ -178,7 +155,7 @@ const Page = () => {
             </div>
           </div>
           <div className="relative">
-            <MySwiper data={data} />
+            <MySwiper data={swiperData} />
           </div>
         </div>
 
@@ -276,7 +253,7 @@ const Page = () => {
           )}
         </div>
       </div>
-      <FreelanceFooter/>
+      <FreelanceFooter />
     </section>
   );
 };

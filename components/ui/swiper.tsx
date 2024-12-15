@@ -15,7 +15,7 @@ type ImageSliderProps = {
 
 export default function MySwiper({ data }: ImageSliderProps) {
   return (
-    <div className="w-full h-auto">
+    <div className="w-full h-auto ">
       <Swiper
       
         pagination={{
@@ -33,13 +33,13 @@ export default function MySwiper({ data }: ImageSliderProps) {
       >
         {data.map((item) => (
           <SwiperSlide key={item.id}>
-            <div className="relative w-full overflow-hidden h-full">
+            <div className="relative w-full overflow-hidden h-full rounded-lg">
               <Image
                 src={item.imgUrl}
                 alt={item.category}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="object-cover"
+                className="object-cover rounded-lg"
               />
             </div>
           </SwiperSlide>

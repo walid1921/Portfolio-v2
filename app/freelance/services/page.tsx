@@ -4,6 +4,7 @@ import DotPattern from "@/components/ui/dot-pattern";
 import { cn } from "@/lib/utils";
 import { cardData } from "@/lib/data";
 import SectionHowWeWork from "@/components/freelance-components/howWeWork";
+import FreelanceFooter from "@/components/freelance-components/freelanceFooter";
 
 const page = () => {
   return (
@@ -48,6 +49,8 @@ const page = () => {
         </div>
       </div>
       <SectionHowWeWork />
+
+      <FreelanceFooter />
     </section>
   );
 };

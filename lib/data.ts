@@ -634,3 +634,131 @@ export const cardData = [
       "lLorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis rem facilis, eveniet culpa veniam voluptas accusantium expedita tenetur fugiat provident magnam",
   },
 ];
+
+//  pricing table
+
+// export const pricingData = [
+//   {
+//     id: 1,
+//     title: "Monthly",
+//     description: "A plan that scales with your rapidly growing business.",
+//     price: "29€",
+//     billingCycle: "/month",
+//     features: [
+//       { text: "Full Design And Development", included: true },
+//       { text: "Lifetime Hosting Included", included: true },
+//       { text: "100€ fee Per Page After 5", included: true },
+//       { text: "1-hour, dedicated support response time", included: true },
+//       { text: "Unlimited Edits", included: true },
+//       { text: "Lifetime Updates", included: true },
+//       { text: "24/7 support response time", included: true },
+//     ],
+//     popular: true,
+//     buttonVariant: "default",
+//     hasGradientStyle: true,
+//   },
+//   {
+//     id: 2,
+//     title: "Lump Sum",
+//     description: "A one-time payment plan for your long-term needs.",
+//     price: "999€",
+//     billingCycle: "/one-time",
+//     features: [
+//       { text: "Full Design And Development", included: true },
+//       { text: "25€/mo Hosting", included: true },
+//       { text: "100€ fee Per Page After 5", included: true },
+//       { text: "Dedicated Support for 1 Year", included: true },
+//       { text: "Unlimited Edits for 1 Year", included: true },
+//       { text: "Lifetime Updates", included: true },
+//       { text: "24/7 support response time", included: false },
+//     ],
+//     popular: false,
+//     buttonVariant: "secondary",
+//     hasGradientStyle: false,
+//   },
+// ];
+
+export const pricingData = [
+  {
+    id: 1,
+    title: "Starter Plan",
+    description:
+      "Perfect for small businesses looking to establish an online presence.",
+    price: "49€",
+    billingCycle: "/month",
+    features: [
+      { text: "Custom Website Design (up to 5 pages)", included: true },
+      { text: "Managed Hosting Included", included: true },
+      { text: "100€ Per Additional Page", included: true },
+      { text: "2-hour Monthly Support", included: true },
+      { text: "Basic SEO Optimization", included: true },
+      { text: "1 Social Media Integration", included: true },
+      { text: "Monthly Website Analytics Report", included: true },
+    ],
+    popular: false,
+   
+    hasGradientStyle: false,
+  },
+  {
+    id: 2,
+    title: "Growth Plan",
+    description: "Ideal for growing businesses with advanced needs.",
+    price: "129€",
+    billingCycle: "/month",
+    features: [
+      { text: "Custom Website Design (up to 10 pages)", included: true },
+      { text: "Lifetime Hosting Included", included: true },
+      { text: "50€ Per Additional Page", included: true },
+      { text: "4-hour Monthly Support", included: true },
+      { text: "Advanced SEO Optimization", included: true },
+      { text: "Social Media Integration (up to 3 platforms)", included: true },
+      { text: "Weekly Website Analytics Report", included: true },
+    ],
+    popular: true,
+    
+    hasGradientStyle: true,
+  },
+  {
+    id: 3,
+    title: "Enterprise Plan",
+    description: "Comprehensive services for established businesses.",
+    price: "1,499€",
+    billingCycle: "/one-time",
+    features: [
+      { text: "Full Design And Development", included: true },
+      { text: "25€/mo Hosting After 1 Year", included: true },
+      { text: "Unlimited Pages", included: true },
+      { text: "Dedicated Support for 1 Year", included: true },
+      { text: "Unlimited Edits for 1 Year", included: true },
+      { text: "Lifetime Updates", included: true },
+      { text: "24/7 Priority Support", included: true },
+    ],
+    popular: false,
+    hasGradientStyle: false,
+  },
+];
+
+// Swiper data
+
+export const swiperData = [
+  {
+    id: 1,
+    imgUrl: "/portfolio1.png",
+    category: "Landing Page",
+  },
+  {
+    id: 2,
+    imgUrl: "/portfolio13.jpeg",
+    category: "App",
+  },
+  {
+    id: 3,
+    imgUrl: "/portfolio4.png",
+    category: "Real Project",
+  },
+  {
+    id: 4,
+    imgUrl: "/portfolio8.png",
+    category: "Side Project",
+  },
+];
