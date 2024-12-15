@@ -70,10 +70,10 @@ export const links = [
     name: "Contact",
     hash: "#contact",
   },
-  {
-    name: "Freelance",
-    hash: "/freelance",
-  },
+  // {
+  //   name: "Freelance",
+  //   hash: "/freelance",
+  // },
 ] as const;
 
 //! Projects
@@ -720,7 +720,7 @@ export const pricingData = [
   },
   {
     id: 3,
-    title: "Enterprise Plan",
+    title: "Lump sum Plan",
     description: "Comprehensive services for established businesses.",
     price: "1,499€",
     billingCycle: "/one-time",
