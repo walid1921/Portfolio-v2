@@ -9,7 +9,7 @@ type ComparisonTableProps = {
 
 const ComparisonTable = ({ pricingData }: ComparisonTableProps) => {
   return (
-    <div className="w-full  bg-[#1b1d1d] border border-[#2b2d2d] rounded-lg shadow-lg overflow-auto">
+    <div className="w-full  bg-[#1b1d1d] border border-[#2b2d2d] rounded-lg shadow-lg">
       <table className="w-full text-left border-collapse">
         <thead>
           <tr className="bg-[#2b2d2d] text-white">

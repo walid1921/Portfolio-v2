@@ -103,7 +103,7 @@ const Page = () => {
               : { opacity: 0, height: 0 }
           }
           transition={{ duration: 0.3 }}
-          className="overflow-hidden z-5 container w-full"
+          className="z-5 container"
         >
           {showComparison && <ComparisonTable pricingData={pricingData} />}
         </motion.div>
