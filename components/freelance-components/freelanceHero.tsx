@@ -34,7 +34,7 @@ const FreelanceHero = () => {
             ease: "easeInOut",
           }}
         >
-          {"Hello. I'm Walid.".split("").map((child, idx) => (
+          {"Your website".split("").map((child, idx) => (
             <span className="hoverText" key={idx}>
               {child}
             </span>
@@ -42,7 +42,7 @@ const FreelanceHero = () => {
         </motion.h2>
 
         <motion.h1
-          className="relative lg:text-[70px] text-[40px] font-medium bg-gradient-to-br from-[#58ffb4] to-[#289061] cursor-pointer bg-clip-text text-transparent mt-4 mb-14 text-center"
+          className="relative lg:text-[40px]  text-[20px] font-medium bg-gradient-to-br from-[#58ffb4] to-[#289061] cursor-pointer bg-clip-text text-transparent mt-4 mb-14 text-center"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
@@ -52,66 +52,19 @@ const FreelanceHero = () => {
             ease: "easeInOut",
           }}
         >
-          {"A Freelancer Web Developer".split("").map((child, idx) => (
+          {"is not just a page...it's your brand identity".split("").map((child, idx) => (
             <span className="hoverText" key={idx}>
               {child}
             </span>
           ))}
           <Image
             src={curve}
-            className="absolute lg:right-0 right-24 xl:-mt-2 lg:w-[320px] w-[200px]"
+            className="absolute lg:right-0 right-24 h-[7px] xl:-mt-2 lg:w-[250px] w-[200px]"
             alt="Curve"
           />
         </motion.h1>
 
-        <motion.p
-          className="text-[#bbbbbb] container text-lg md:text-2xl max-w-[700px] text-center cursor-pointer !leading-[1.5]"
-          initial={{ opacity: 0, y: 100 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 1.1,
-            delay: 1.1,
-            type: "tween",
-            ease: "easeInOut",
-          }}
-        >
-          {"Digital Craftsman deeply passionate about delivering exceptional experiences with"
-            .split("")
-            .map((child, idx) => (
-              <span className="hoverText" key={idx}>
-                {child}
-              </span>
-            ))}{" "}
-          <span className="font-bold bg-gradient-to-br from-[#58ffb4] to-[#289061] bg-clip-text text-transparent">
-            {"Passion".split("").map((child, idx) => (
-              <span className="hoverText" key={idx}>
-                {child}
-              </span>
-            ))}
-          </span>
-          ,{" "}
-          <span className="font-bold bg-gradient-to-br from-[#58ffb4] to-[#289061] bg-clip-text text-transparent">
-            {"Precision".split("").map((child, idx) => (
-              <span className="hoverText" key={idx}>
-                {child}
-              </span>
-            ))}
-          </span>
-          {", and".split("").map((child, idx) => (
-            <span className="hoverText" key={idx}>
-              {child}
-            </span>
-          ))}{" "}
-          <span className="font-bold bg-gradient-to-br from-[#58ffb4] to-[#289061] bg-clip-text text-transparent">
-            {"Artistry".split("").map((child, idx) => (
-              <span className="hoverText" key={idx}>
-                {child}
-              </span>
-            ))}
-          </span>
-        </motion.p>
-
-        <div className="flex gap-6 mt-20">
+        <div className="flex gap-6 mt-10">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
