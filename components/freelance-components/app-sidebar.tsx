@@ -156,7 +156,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             <Founder
               url={"/walid.jpg"}
               name={"Walid Kouider Ayad"}
-              subtitle={"Available for freelance work"}
+              subtitle={"Available"}
             />
 
             <PrimaryBtn>
